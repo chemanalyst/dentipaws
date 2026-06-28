@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Dog Breeds — DentiPaws Dental Care Guides</title>
+  <meta name="description" content="Browse dental care guides for 16 dog breeds. Find common issues, risk levels, care routines and product recommendations for your breed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral:#FF6B6B; --coral-d:#E85555; --mint:#4ECDC4;
+      --cream:#FFFDF8; --surface:#FFF5EE; --ink:#1A1A2E;
+      --muted:#6B7280; --border:#F0E8DF; --radius:16px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Nunito',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+
+    /* ── TOPBAR ── */
+    .topbar { background:white; border-bottom:2px solid var(--border); padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:60px; position:sticky; top:0; z-index:100; }
+    .logo { font-weight:900; font-size:1.5em; color:var(--coral); text-decoration:none; }
+    .topbar-nav a { font-size:.9em; font-weight:700; color:var(--muted); text-decoration:none; margin-left:22px; }
+    .topbar-nav a:hover { color:var(--coral); }
+    .btn-quiz { background:var(--coral); color:white; border:none; padding:9px 20px; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:.88em; cursor:pointer; text-decoration:none; display:inline-block; transition:all .2s; }
+    .btn-quiz:hover { background:var(--coral-d); }
+
+    /* ── PAGE HERO ── */
+    .hero { background:linear-gradient(160deg, white 0%, var(--surface) 100%); padding:60px 20px 50px; text-align:center; border-bottom:2px solid var(--border); position:relative; overflow:hidden; }
+    .hero::before { content:'🐾'; position:absolute; font-size:200px; opacity:.04; top:-30px; left:-40px; transform:rotate(-20deg); }
+    .hero::after  { content:'🦷'; position:absolute; font-size:160px; opacity:.04; bottom:-20px; right:-20px; transform:rotate(15deg); }
+    .hero-pill { display:inline-block; background:#FFF0EE; color:var(--coral); border:2px solid #FFD5D0; padding:6px 18px; border-radius:50px; font-weight:800; font-size:.85em; margin-bottom:16px; }
+    .hero h1 { font-size:clamp(2em,5vw,3em); font-weight:900; margin-bottom:12px; }
+    .hero h1 em { color:var(--coral); font-style:normal; }
+    .hero-sub { font-size:1.05em; color:var(--muted); max-width:500px; margin:0 auto 28px; }
+
+    /* ── SEARCH & FILTER ── */
+    .controls { max-width:860px; margin:0 auto; padding:32px 20px 0; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+    .search-wrap { flex:1; min-width:220px; position:relative; }
+    .search-wrap input {
+      width:100%; padding:14px 20px 14px 46px;
+      border:2.5px solid var(--border); border-radius:50px;
+      font-family:'Nunito',sans-serif; font-size:1em; font-weight:600;
+      background:white; outline:none; transition:border .2s;
+    }
+    .search-wrap input:focus { border-color:var(--coral); }
+    .search-icon { position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:1.1em; pointer-events:none; }
+    .filter-btns { display:flex; gap:8px; flex-wrap:wrap; }
+    .filter-btn {
+      padding:10px 20px; border-radius:50px; border:2.5px solid var(--border);
+      background:white; font-family:'Nunito',sans-serif; font-weight:700;
+      font-size:.88em; cursor:pointer; color:var(--muted); transition:all .2s;
+    }
+    .filter-btn:hover { border-color:var(--coral); color:var(--coral); }
+    .filter-btn.active { background:var(--coral); border-color:var(--coral); color:white; }
+    .filter-btn.active-medium { background:#FFA502; border-color:#FFA502; color:white; }
+    .filter-btn.active-low    { background:#2ED573; border-color:#2ED573; color:#1A1A2E; }
+
+    /* ── COUNT ── */
+    .results-count { max-width:860px; margin:16px auto 0; padding:0 20px; font-size:.88em; color:var(--muted); font-weight:600; }
+
+    /* ── GRID ── */
+    .breeds-grid { max-width:860px; margin:20px auto 0; padding:0 20px 80px; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:18px; }
+
+    .breed-card {
+      background:white; border:2.5px solid var(--border); border-radius:var(--radius);
+      overflow:hidden; text-decoration:none; color:inherit;
+      transition:all .25s; display:flex; flex-direction:column;
+    }
+    .breed-card:hover { transform:translateY(-4px); border-color:var(--coral); box-shadow:0 8px 28px rgba(255,107,107,.15); }
+    .breed-card.hidden { display:none; }
+
+    .card-top { padding:24px 20px 16px; display:flex; align-items:center; gap:14px; }
+    .card-emoji { font-size:2.8em; background:var(--surface); width:58px; height:58px; border-radius:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .card-meta { flex:1; }
+    .card-name { font-weight:900; font-size:1.1em; margin-bottom:5px; }
+    .risk-pill { display:inline-flex; align-items:center; gap:5px; padding:4px 12px; border-radius:50px; font-size:.78em; font-weight:800; }
+    .risk-pill.h { background:#FFF0EE; color:#C0392B; }
+    .risk-pill.m { background:#FFF8EE; color:#B7590A; }
+    .risk-pill.l { background:#F0FFF8; color:#1A7A6E; }
+    .risk-dot { width:7px; height:7px; border-radius:50%; }
+    .risk-dot.h { background:#FF4757; }
+    .risk-dot.m { background:#FFA502; }
+    .risk-dot.l { background:#2ED573; }
+
+    .card-body { padding:0 20px 20px; flex:1; display:flex; flex-direction:column; gap:10px; }
+    .card-desc { font-size:.88em; color:var(--muted); line-height:1.5; }
+    .card-issues { display:flex; flex-wrap:wrap; gap:5px; }
+    .issue-tag { background:var(--cream); border:1.5px solid var(--border); padding:3px 10px; border-radius:20px; font-size:.76em; font-weight:700; color:var(--muted); }
+    .card-cta { margin-top:auto; display:flex; align-items:center; justify-content:space-between; padding-top:12px; border-top:1.5px solid var(--border); }
+    .card-cta span { font-size:.85em; font-weight:800; color:var(--coral); }
+    .card-cta .arrow { font-size:1em; color:var(--coral); transition:transform .2s; }
+    .breed-card:hover .arrow { transform:translateX(4px); }
+
+    /* ── EMPTY STATE ── */
+    .empty-state { text-align:center; padding:60px 20px; display:none; }
+    .empty-state .e-icon { font-size:4em; margin-bottom:16px; }
+    .empty-state h3 { font-size:1.4em; font-weight:900; margin-bottom:8px; }
+    .empty-state p { color:var(--muted); }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta { background:linear-gradient(135deg, var(--coral), #FF8E53); color:white; padding:50px 20px; text-align:center; }
+    .bottom-cta h2 { font-size:1.8em; font-weight:900; margin-bottom:10px; }
+    .bottom-cta p { opacity:.95; margin-bottom:24px; font-size:1.05em; }
+    .btn-white { background:white; color:var(--coral); padding:14px 36px; border:none; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:900; font-size:1em; cursor:pointer; text-decoration:none; display:inline-block; transition:all .25s; }
+    .btn-white:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.15); }
+
+    /* ── FOOTER ── */
+    footer { background:#1A1A2E; color:rgba(255,255,255,.6); text-align:center; padding:30px 20px; font-size:.88em; line-height:1.9; }
+    footer strong { color:white; }
+
+    @media(max-width:560px) {
+      .topbar-nav { display:none; }
+      .breeds-grid { grid-template-columns:1fr; }
+      .controls { flex-direction:column; }
+      .search-wrap { width:100%; }
+    }
+  
+    /* AI chat temporarily hidden */
+    #chat-fab, #chat-panel, #chat-bubble, .btn-chat-top { display:none !important; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="logo">🦷 DentiPaws</a>
+  <nav class="topbar-nav">
+    <a href="index.html">Home</a>
+    <a href="all-breeds.html">All Breeds</a>
+    <a href="about.html">Oliver's Story</a>
+  </nav>
+  <a href="index.html" class="btn-quiz">⚡ Free Quiz</a>
+</header>
+
+<div class="hero">
+  <div class="hero-pill">🐕 16 breeds covered</div>
+  <h1>All Breed <em>Dental Guides</em></h1>
+  <p class="hero-sub">Find your dog's breed to see their specific risks, care routine, and recommended products.</p>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search breed…" oninput="filterBreeds()">
+  </div>
+  <div class="filter-btns">
+    <button class="filter-btn active" id="btn-all"    onclick="setFilter('all',   this)">All</button>
+    <button class="filter-btn"        id="btn-high"   onclick="setFilter('high',  this)">🔴 High risk</button>
+    <button class="filter-btn"        id="btn-medium" onclick="setFilter('medium',this)">🟡 Medium risk</button>
+    <button class="filter-btn"        id="btn-low"    onclick="setFilter('low',   this)">🟢 Low risk</button>
+  </div>
+</div>
+
+<div class="results-count" id="resultsCount">Showing 16 breeds</div>
+
+<div class="breeds-grid" id="breedsGrid">
+
+  <!-- HIGH RISK -->
+  <a href="breeds/greyhound.html" class="breed-card" data-risk="high" data-name="greyhound">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Greyhound</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 32%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Highest dental disease rate of any breed — thin enamel and deep gum pockets.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Thin enamel</span>
+        <span class="issue-tag">Deep gum pockets</span>
+        <span class="issue-tag">Rapid progression</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/chihuahua.html" class="breed-card" data-risk="high" data-name="chihuahua">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Chihuahua</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 28%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Smallest jaw, highest rate — extreme crowding and retained baby teeth.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Extreme crowding</span>
+        <span class="issue-tag">Retained baby teeth</span>
+        <span class="issue-tag">Rapid tartar</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/pug.html" class="breed-card" data-risk="high" data-name="pug">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Pug</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 27%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Extreme brachycephalic jaw — rotated, overlapping teeth impossible to clean properly.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Jaw compression</span>
+        <span class="issue-tag">Rotated teeth</span>
+        <span class="issue-tag">Gum fold infections</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/toy-poodle.html" class="breed-card" data-risk="high" data-name="toy poodle">
+    <div class="card-top">
+      <div class="card-emoji">🐩</div>
+      <div class="card-meta">
+        <div class="card-name">Toy Poodle</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 26%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Oliver's breed — tiny jaw, rapid plaque formation, top-5 highest risk.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Crowding</span>
+        <span class="issue-tag">Rapid tartar</span>
+        <span class="issue-tag">Baby teeth</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/french-bulldog.html" class="breed-card" data-risk="high" data-name="french bulldog">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">French Bulldog</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 26%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Severe jaw compression in a medium dog — home brushing is structurally limited.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Jaw compression</span>
+        <span class="issue-tag">Misalignment</span>
+        <span class="issue-tag">Gum folds</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/cavalier-king-charles-spaniel.html" class="breed-card" data-risk="high" data-name="cavalier king charles spaniel">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Cavalier King Charles</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 25%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Spaniel genetics plus mild flat-face crowding — consistently top-5 in studies.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Genetic predisposition</span>
+        <span class="issue-tag">Upper jaw crowding</span>
+        <span class="issue-tag">Gum inflammation</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/shih-tzu.html" class="breed-card" data-risk="high" data-name="shih tzu">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Shih Tzu</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 25%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Flat face AND toy size — the double dental problem with rapid disease progression.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Flat face + tiny jaw</span>
+        <span class="issue-tag">Underbite</span>
+        <span class="issue-tag">Silent pain</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/dachshund.html" class="breed-card" data-risk="high" data-name="dachshund">
+    <div class="card-top">
+      <div class="card-emoji">🌭</div>
+      <div class="card-meta">
+        <div class="card-name">Dachshund</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 24%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Long narrow jaw still causes crowding — especially at the front and back molars.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Front crowding</span>
+        <span class="issue-tag">Molar tartar</span>
+        <span class="issue-tag">Root abscesses</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/pomeranian.html" class="breed-card" data-risk="high" data-name="pomeranian">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Pomeranian</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 24%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Fluffy coat hides a mouth that needs daily attention — disease progresses fast.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Tiny jaw</span>
+        <span class="issue-tag">Baby teeth</span>
+        <span class="issue-tag">Coat hides signs</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/yorkshire-terrier.html" class="breed-card" data-risk="high" data-name="yorkshire terrier yorkie">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Yorkshire Terrier</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 22%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Fast tartar formation and early-onset gum disease — visible on lower teeth by age 2.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Rapid tartar</span>
+        <span class="issue-tag">Early disease</span>
+        <span class="issue-tag">Baby teeth</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/maltese.html" class="breed-card" data-risk="high" data-name="maltese">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Maltese</div>
+        <span class="risk-pill h"><span class="risk-dot h"></span>High Risk · 23%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Fluffy face hides dental disease — owners often don't notice until it's advanced.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Rapid plaque</span>
+        <span class="issue-tag">Coat hides signs</span>
+        <span class="issue-tag">Crowding</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- MEDIUM RISK -->
+  <a href="breeds/beagle.html" class="breed-card" data-risk="medium" data-name="beagle">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Beagle</div>
+        <span class="risk-pill m"><span class="risk-dot m"></span>Medium Risk · 18%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Manageable risk — but notorious for cracking teeth on hard objects.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Back molar tartar</span>
+        <span class="issue-tag">Tooth fractures</span>
+        <span class="issue-tag">Food gulping</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/labrador-retriever.html" class="breed-card" data-risk="medium" data-name="labrador retriever lab">
+    <div class="card-top">
+      <div class="card-emoji">🦮</div>
+      <div class="card-meta">
+        <div class="card-name">Labrador Retriever</div>
+        <span class="risk-pill m"><span class="risk-dot m"></span>Medium Risk · 15%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Good natural spacing but powerful chewing causes tooth fractures on hard objects.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Tooth fractures</span>
+        <span class="issue-tag">Food gulping</span>
+        <span class="issue-tag">Moderate plaque</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/golden-retriever.html" class="breed-card" data-risk="medium" data-name="golden retriever">
+    <div class="card-top">
+      <div class="card-emoji">🦮</div>
+      <div class="card-meta">
+        <div class="card-name">Golden Retriever</div>
+        <span class="risk-pill m"><span class="risk-dot m"></span>Medium Risk · 14%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Low-medium risk — but love of chewing creates tooth fracture problems.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Tooth fractures</span>
+        <span class="issue-tag">Gum sensitivity</span>
+        <span class="issue-tag">Moderate plaque</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- LOW RISK -->
+  <a href="breeds/german-shepherd.html" class="breed-card" data-risk="low" data-name="german shepherd alsatian">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">German Shepherd</div>
+        <span class="risk-pill l"><span class="risk-dot l"></span>Low Risk · 12%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Large jaw offers natural protection — but powerful bite causes tooth fractures.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Tooth fractures</span>
+        <span class="issue-tag">Moderate plaque</span>
+        <span class="issue-tag">Some gum lines</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="breeds/great-dane.html" class="breed-card" data-risk="low" data-name="great dane">
+    <div class="card-top">
+      <div class="card-emoji">🐕</div>
+      <div class="card-meta">
+        <div class="card-name">Great Dane</div>
+        <span class="risk-pill l"><span class="risk-dot l"></span>Low Risk · 8%</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">Lowest dental disease rate of any breed — but don't neglect those giant teeth.</p>
+      <div class="card-issues">
+        <span class="issue-tag">Drool plaque</span>
+        <span class="issue-tag">Play fractures</span>
+        <span class="issue-tag">Short lifespan</span>
+      </div>
+      <div class="card-cta"><span>View full guide</span><span class="arrow">→</span></div>
+    </div>
+  </a>
+
+</div>
+
+<div class="empty-state" id="emptyState">
+  <div class="e-icon">🔍</div>
+  <h3>No breeds found</h3>
+  <p>Try a different search or clear the filter.</p>
+</div>
+
+<div class="bottom-cta">
+  <h2>Not sure about your dog's risk?</h2>
+  <p>Take the 60-second quiz — get an instant triage result and action plan</p>
+  <a href="index.html" class="btn-white">⚡ Take the Free Quiz</a>
+</div>
+
+<footer>
+  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
+  Evidence-based advice from peer-reviewed veterinary research<br>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+</footer>
+
+<script>
+  let activeFilter = 'all';
+
+  function setFilter(risk, btn) {
+    activeFilter = risk;
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('active', 'active-medium', 'active-low');
+    });
+    if (risk === 'all')    btn.classList.add('active');
+    if (risk === 'high')   btn.classList.add('active');
+    if (risk === 'medium') btn.classList.add('active-medium');
+    if (risk === 'low')    btn.classList.add('active-low');
+    filterBreeds();
+  }
+
+  function filterBreeds() {
+    const query  = document.getElementById('searchInput').value.toLowerCase().trim();
+    const cards  = document.querySelectorAll('.breed-card');
+    let visible  = 0;
+
+    cards.forEach(card => {
+      const nameMatch = card.dataset.name.includes(query);
+      const riskMatch = activeFilter === 'all' || card.dataset.risk === activeFilter;
+      const show = nameMatch && riskMatch;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    document.getElementById('resultsCount').textContent =
+      visible === 16 ? 'Showing all 16 breeds' : `Showing ${visible} breed${visible !== 1 ? 's' : ''}`;
+    document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>
