@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Labrador Retriever Dental Care Guide — DentiPaws</title>
+  <meta name="description" content="Complete dental care guide for Labrador Retrievers. Common issues, medium risk (15%), care routine and product recommendations.">
+  <style>
+  :root{
+    --coral:#FF6B6B;--coral-d:#E85555;--mint:#4ECDC4;--amber:#FFB347;
+    --cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;--muted:#6B7280;
+    --border:#F0E8DF;--radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+  .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+  .logo{font-weight:900;font-size:1.4em;color:var(--coral);text-decoration:none;}
+  .topbar-nav a{font-size:0.9em;font-weight:600;color:var(--muted);text-decoration:none;margin-left:20px;}
+  .topbar-nav a:hover{color:var(--coral);}
+  .btn-chat-top{background:var(--coral);color:white;border:none;padding:9px 18px;border-radius:50px;font-weight:700;font-size:0.88em;cursor:pointer;}
+  .breed-hero{padding:50px 24px;background:linear-gradient(160deg,#fff 0%,var(--surface) 100%);border-bottom:2px solid var(--border);}
+  .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:30px;}
+  .breed-emo{font-size:6em;background:rgba(255,107,107,0.1);padding:20px;border-radius:20px;}
+  .breadcrumb{font-size:0.85em;color:var(--muted);margin-bottom:12px;}
+  .breadcrumb a{color:var(--coral);text-decoration:none;}
+  h1{font-size:clamp(1.8em,4vw,2.8em);font-weight:900;margin-bottom:10px;}
+  .risk-pill{display:inline-block;color:white;padding:6px 18px;border-radius:50px;font-weight:700;font-size:0.9em;margin-bottom:12px;}
+  .hero-sub{color:var(--muted);font-size:1.05em;}
+  .page-body{max-width:980px;margin:0 auto;padding:40px 20px 80px;}
+  .section{background:white;border-radius:var(--radius);padding:36px;margin-bottom:24px;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
+  .section-head{display:flex;align-items:center;gap:12px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--border);}
+  .section-head h2{font-size:1.6em;font-weight:900;}
+  .s-icon{font-size:2em;}
+  .issues-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+  .issue-card{background:var(--cream);padding:22px;border-radius:12px;border-left:4px solid var(--coral);}
+  .issue-freq{display:inline-block;font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:10px;background:#FFD5D0;color:#C0392B;margin-bottom:10px;}
+  .issue-card h3{font-size:1.1em;font-weight:800;margin-bottom:8px;}
+  .issue-card p{color:var(--muted);font-size:0.93em;line-height:1.6;}
+  .risk-big{text-align:center;padding:30px;border-radius:12px;margin-bottom:24px;border:3px solid;}
+  .risk-pct{font-size:4.5em;font-weight:900;margin-bottom:6px;}
+  .risk-sub{font-size:1.2em;font-weight:700;}
+  .risk-why{background:var(--cream);padding:20px;border-radius:12px;margin-bottom:16px;color:var(--muted);line-height:1.7;}
+  .risk-factors{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .risk-factors li{padding:12px 16px;background:var(--cream);border-radius:10px;padding-left:40px;position:relative;font-size:0.95em;}
+  .risk-factors li::before{content:"⚠️";position:absolute;left:12px;}
+  .care-blocks{display:flex;flex-direction:column;gap:16px;}
+  .care-block{background:var(--cream);border-radius:12px;padding:22px;border-left:5px solid var(--coral);}
+  .care-block h3{color:var(--coral);font-weight:800;font-size:1.1em;margin-bottom:16px;}
+  .care-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+  .care-item:last-child{border-bottom:none;padding-bottom:0;}
+  .care-ico{font-size:1.6em;min-width:32px;text-align:center;}
+  .care-item h4{font-weight:800;margin-bottom:4px;font-size:0.97em;}
+  .care-item p{color:var(--muted);font-size:0.88em;line-height:1.5;}
+  .prod-list{display:flex;flex-direction:column;gap:14px;}
+  .prod-item{display:flex;gap:16px;align-items:center;padding:18px;border:2px solid var(--border);border-radius:12px;transition:border-color .2s;}
+  .prod-item:hover{border-color:var(--coral);}
+  .prod-ico{width:50px;height:50px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.6em;flex-shrink:0;}
+  .prod-info h4{font-weight:800;margin-bottom:4px;font-size:0.97em;}
+  .prod-info p{color:var(--muted);font-size:0.88em;}
+  .breed-note{background:linear-gradient(135deg,#FFF0EE,white);border:2px solid #FFD5D0;border-radius:12px;padding:22px;margin-top:24px;display:flex;gap:14px;align-items:flex-start;}
+  .breed-note p{color:var(--muted);font-size:0.95em;line-height:1.6;}
+  .cta-box{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;border-radius:var(--radius);padding:40px;text-align:center;margin-top:32px;}
+  .cta-box h2{font-size:1.6em;font-weight:900;margin-bottom:10px;}
+  .cta-box p{opacity:.9;margin-bottom:22px;}
+  .btn-cta{background:white;color:var(--coral);padding:14px 36px;border:none;border-radius:50px;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-block;}
+  footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:30px 20px;font-size:0.88em;line-height:1.8;}
+  footer strong{color:white;}
+  /* Chat */
+  #chat-fab{position:fixed;bottom:24px;right:24px;z-index:500;background:var(--coral);color:white;border:none;border-radius:50px;padding:14px 22px;font-weight:800;font-size:0.95em;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(255,107,107,.4);transition:all .2s;}
+  #chat-fab:hover{transform:translateY(-2px);}
+  #chat-panel{position:fixed;bottom:22px;right:22px;width:360px;max-width:calc(100vw - 28px);max-height:560px;background:white;border-radius:20px;box-shadow:0 16px 50px rgba(0,0,0,.2);z-index:600;display:flex;flex-direction:column;overflow:hidden;transform:scale(.9) translateY(20px);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.34,1.56,.64,1);}
+  #chat-panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+  .cp-header{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;padding:16px 18px;display:flex;align-items:center;gap:12px;}
+  .cp-av{width:40px;height:40px;background:rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3em;}
+  .cp-title strong{font-weight:800;font-size:1em;display:block;}
+  .cp-title span{font-size:.78em;opacity:.9;}
+  .cp-close{background:rgba(255,255,255,.2);border:none;color:white;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1em;margin-left:auto;}
+  .chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
+  .msg{max-width:85%;display:flex;flex-direction:column;}
+  .msg.bot{align-self:flex-start;}
+  .msg.user{align-self:flex-end;}
+  .msg-b{padding:11px 14px;border-radius:14px;font-size:.91em;line-height:1.5;}
+  .msg.bot .msg-b{background:#F3F4F6;color:var(--ink);border-radius:4px 14px 14px 14px;}
+  .msg.user .msg-b{background:var(--coral);color:white;border-radius:14px 4px 14px 14px;}
+  .msg-t{font-size:.7em;color:#bbb;margin-top:3px;padding:0 3px;}
+  .msg.user .msg-t{text-align:right;}
+  .typing{display:flex;gap:5px;padding:12px 14px;background:#F3F4F6;border-radius:4px 14px 14px 14px;width:fit-content;}
+  .td{width:7px;height:7px;background:#9CA3AF;border-radius:50%;animation:bounce 1.2s infinite;}
+  .td:nth-child(2){animation-delay:.2s;}.td:nth-child(3){animation-delay:.4s;}
+  @keyframes bounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
+  .qr-bar{padding:0 14px 10px;display:flex;gap:7px;flex-wrap:wrap;}
+  .qr{background:white;border:2px solid var(--border);padding:6px 13px;border-radius:50px;font-size:.8em;font-weight:600;cursor:pointer;color:var(--ink);transition:all .2s;}
+  .qr:hover{border-color:var(--coral);color:var(--coral);}
+  .chat-bar{padding:12px 14px;border-top:2px solid var(--border);display:flex;gap:8px;align-items:center;}
+  #ci{flex:1;border:2px solid var(--border);border-radius:50px;padding:9px 16px;font-size:.9em;outline:none;}
+  #ci:focus{border-color:var(--coral);}
+  #cs{background:var(--coral);border:none;color:white;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:.95em;}
+  @media(max-width:600px){.hero-inner{flex-direction:column;text-align:center;}.issues-grid{grid-template-columns:1fr;}}
+
+    /* AI chat temporarily hidden */
+    #chat-fab, #chat-panel, #chat-bubble, .btn-chat-top { display:none !important; }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">🦷 DentiPaws</a>
+  <nav class="topbar-nav">
+    <a href="../index.html">Home</a>
+    <a href="../all-breeds.html">All Breeds</a>
+    <a href="../about.html">Oliver's Story</a>
+  </nav>
+  <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
+</header>
+
+<div class="breed-hero">
+  <div class="hero-inner">
+    <div class="breed-emo">🦮</div>
+    <div>
+      <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Breeds</a> › Labrador Retriever</div>
+      <span class="risk-pill" style="background:#FFB347">Medium Risk — 15% prevalence</span>
+      <h1>Labrador Retriever Dental Care Guide</h1>
+      <p class="hero-sub">Good natural spacing but notorious for cracking teeth on hard objects</p>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <div class="section">
+    <div class="section-head"><span class="s-icon">📋</span><h2>Common Dental Issues</h2></div>
+    <div class="issues-grid">
+    <div class="issue-card">
+      <span class="issue-freq">Common</span>
+      <h3>Tooth Fractures from Hard Chewing</h3>
+      <p>Labs chew everything — and powerfully. Rocks, bones, stiff toys, and antlers regularly cause slab fractures on the large carnassial teeth. These fractures expose the nerve and cause significant pain.</p>
+    </div>
+
+    <div class="issue-card">
+      <span class="issue-freq">Common</span>
+      <h3>Moderate Tartar Buildup</h3>
+      <p>Large-breed Labs have good tooth spacing, but plaque still accumulates. Without brushing, tartar forms — just more slowly than in small breeds.</p>
+    </div>
+
+    <div class="issue-card">
+      <span class="issue-freq">Moderate</span>
+      <h3>Food Gulping Reduces Cleaning</h3>
+      <p>Labs are notorious for eating fast without chewing. This eliminates the natural dental cleaning that proper chewing provides.</p>
+    </div>
+
+    <div class="issue-card">
+      <span class="issue-freq">Low-Moderate</span>
+      <h3>Standard Periodontal Risk</h3>
+      <p>Without any care, Labs will develop periodontal disease over time — they're just lower risk than smaller breeds. Senior Labs without care commonly show advanced disease.</p>
+    </div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="s-icon">⚠️</span><h2>Risk Level</h2></div>
+    <div class="risk-big" style="background:#FFFBF0;border-color:#FFB347">
+      <div class="risk-pct" style="color:#B7590A">15%</div>
+      <div class="risk-sub" style="color:#B7590A">MEDIUM RISK</div>
+    </div>
+    <div class="risk-why">Labs have a natural size advantage — their large jaw provides good tooth spacing that reduces bacterial accumulation. But their powerful chewing behavior and food-gulping tendencies mean tooth fractures and moderate disease are still common.</div>
+    <ul class="risk-factors"><li>Powerful chewing behavior causes tooth fractures on hard objects</li>
+<li>Food gulping habit reduces natural cleaning from chewing</li>
+<li>Standard plaque buildup still occurs without brushing</li>
+<li>Senior Labs without care develop significant disease</li>
+<li>Large size offers protection but not immunity</li></ul>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="s-icon">✅</span><h2>Care Routine</h2></div>
+    <div class="care-blocks">
+      <div class="care-block">
+        <h3>Daily Care</h3>
+        
+    <div class="care-item">
+      <span class="care-ico">🪥</span>
+      <div><h4>Daily brushing</h4><p>Large-breed brushing is easier than small breeds — more mouth space to work with. Labs are usually food-motivated and accept brushing well.</p></div>
+    </div>
+
+    <div class="care-item">
+      <span class="care-ico">🎾</span>
+      <div><h4>Safe chew toys — NOT hard bones</h4><p>Replace rocks, sticks, and bones with rubber dental toys rated for powerful chewers. KONG and West Paw Zogoflex are designed for Labs.</p></div>
+    </div>
+
+    <div class="care-item">
+      <span class="care-ico">🦴</span>
+      <div><h4>Daily VOHC dental chew</h4><p>Large size appropriate. Use dental chews instead of rawhide or bones.</p></div>
+    </div>
+      </div>
+      <div class="care-block">
+        <h3>Professional Vet Care</h3>
+        <div class="care-item">
+          <span class="care-ico">🏥</span>
+          <div><h4>Dental Examination — Annual dental exam</h4>
+          <p>Full dental exam with X-rays. X-rays catch the 60% of disease that lives below the gumline. Ask specifically for a dental assessment — it's often skipped unless you request it.</p></div>
+        </div>
+        <div class="care-item">
+          <span class="care-ico">🦷</span>
+          <div><h4>Professional Scaling When Needed</h4>
+          <p>Full cleaning under anesthesia removes calcified tartar that home brushing can't touch. Your vet will advise frequency based on your individual dog's condition.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="s-icon">🛒</span><h2>Recommended Products</h2></div>
+    <div class="prod-list">
+    <div class="prod-item">
+      <div class="prod-ico">🎾</div>
+      <div class="prod-info"><h4>KONG Extreme Dental Toy (L)</h4><p>Designed for powerful chewers. Rubber won't crack teeth. Can be stuffed with toothpaste.</p></div>
+    </div>
+
+    <div class="prod-item">
+      <div class="prod-ico">🦴</div>
+      <div class="prod-info"><h4>Greenies Large Dental Treats</h4><p>VOHC approved. Appropriate size for adult Labs. Daily use effective.</p></div>
+    </div>
+
+    <div class="prod-item">
+      <div class="prod-ico">🪥</div>
+      <div class="prod-info"><h4>Arm & Hammer Large Dog Toothbrush Kit</h4><p>Designed for large mouths. Labs usually accept brushing well with a food-flavored paste.</p></div>
+    </div></div>
+    <div class="breed-note"><span style="font-size:1.8em">💡</span><p><strong>Key tip:</strong> If you see a Lab flinching while chewing or suddenly avoiding hard toys, get a vet check. Slab fractures are painful and often overlooked as behaviour changes.</p></div>
+  </div>
+
+  <div class="cta-box">
+    <h2>Not sure about your Labrador Retriever?</h2>
+    <p>Take our 60-second triage quiz for a personalised action plan</p>
+    <a href="../index.html" class="btn-cta">Take the Free Quiz</a>
+  </div>
+
+</div>
+
+<footer>
+  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
+  Evidence-based advice from peer-reviewed veterinary research<br>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+</footer>
+
+<!-- Chat -->
+<button id="chat-fab" onclick="openChat()">💬 DentiPaws Assistant</button>
+<div id="chat-panel">
+  <div class="cp-header">
+    <div class="cp-av">🐾</div>
+    <div class="cp-title"><strong>DentiPaws Assistant</strong><span>AI-powered · Not a real vet</span></div>
+    <button class="cp-close" onclick="closeChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot"><div class="msg-b">Hi! I'm the DentiPaws Assistant 🐾 Ask me anything about your Labrador Retriever's dental health — symptoms, routines, products, or when to call a vet.</div><div class="msg-t">Just now</div></div>
+  </div>
+  <div class="qr-bar" id="qr-bar">
+    <button class="qr" onclick="sendQ('Is bad breath normal for a Labrador Retriever?')">Bad breath?</button>
+    <button class="qr" onclick="sendQ('How do I brush a Labrador Retriever's teeth?')">Brushing tips</button>
+    <button class="qr" onclick="sendQ('What products work best for a Labrador Retriever?')">Best products</button>
+  </div>
+  <div class="chat-bar">
+    <input id="ci" type="text" placeholder="Ask about Labrador Retriever dental care…">
+    <button id="cs" onclick="sendChat()">➤</button>
+  </div>
+</div>
+<script>
+const chatHistory=[];
+function openChat(){document.getElementById('chat-panel').classList.add('open');document.getElementById('chat-fab').style.display='none';setTimeout(()=>document.getElementById('ci').focus(),300);}
+function closeChat(){document.getElementById('chat-panel').classList.remove('open');document.getElementById('chat-fab').style.display='flex';}
+function sendQ(t){document.getElementById('qr-bar').style.display='none';addUserMsg(t);callAI(t);}
+function sendChat(){const i=document.getElementById('ci');const t=i.value.trim();if(!t)return;i.value='';document.getElementById('qr-bar').style.display='none';addUserMsg(t);callAI(t);}
+document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
+function addUserMsg(t){chatHistory.push({role:'user',content:t});renderMsg('user',t);}
+function renderMsg(role,text){const now=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});const d=document.createElement('div');d.className='msg '+role;d.innerHTML='<div class="msg-b">'+text.replace(/\n/g,'<br>')+'</div><div class="msg-t">'+now+'</div>';const m=document.getElementById('chatMsgs');m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function showTyping(){const d=document.createElement('div');d.className='msg bot';d.id='typing-msg';d.innerHTML='<div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>';const m=document.getElementById('chatMsgs');m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.remove();}
+async function callAI(msg){
+  showTyping();
+  document.getElementById('cs').disabled=true;
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:1000,
+        system:`You are DentiPaws Assistant — a warm, knowledgeable AI guide for dog dental health. You speak like a caring friend who knows a lot about dog teeth.
+
+Key facts:
+- 80% of dogs over 3 have periodontal disease
+- Small/toy breeds are 5x higher risk than giant breeds
+- Only 4% of owners brush daily — but it works 3x better than dental chews alone
+- Bad breath = bacterial infection, not just normal dog breath
+- Heavy tartar + red gums = needs vet now
+- Greyhounds: 32% risk (highest), Chihuahua: 28%, Pug: 27%, Toy Poodle: 26%
+- VOHC seal = clinically proven products
+- Periodontal disease causes kidney disease (2.3x risk) and heart valve infection (6.3x)
+- DentiPaws mascot is Oliver, a male Toy Poodle who lost 7 teeth
+
+Style: warm, direct, conversational. Under 130 words unless detail is needed. If symptoms sound serious, say "see a vet soon." Use 1-2 emojis max. Never be preachy.`,
+        messages:chatHistory.slice(-10)
+      })
+    });
+    const data=await res.json();
+    removeTyping();
+    const reply=data.content?.find(b=>b.type==='text')?.text||"Sorry, I couldn't get a response — try again in a moment! 🐾";
+    chatHistory.push({role:'assistant',content:reply});
+    renderMsg('bot',reply);
+  }catch(e){
+    removeTyping();
+    renderMsg('bot',"Oops — something went wrong. Please try again! 🐾");
+  }
+  document.getElementById('cs').disabled=false;
+}
+</script>
+</body>
+</html>
