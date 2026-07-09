@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block generator scripts (not web pages)
+Disallow: /gen_*.py
+Disallow: /add_*.py
+
+Sitemap: https://www.dentipaws.com/sitemap.xml

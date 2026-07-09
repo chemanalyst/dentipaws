@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dog Dental Insurance Compared — Is It Worth It? — DentiPaws Blog</title>
+  <meta name="description" content="We compare the top pet insurance plans that cover dental care — premiums, exclusions, annual limits, and what a real claim looks like for a small breed dog.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+  :root{--coral:#FF6B6B;--coral-d:#E85555;--mint:#4ECDC4;--cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;--muted:#6B7280;--border:#F0E8DF;--radius:16px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+  .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+  .logo{font-weight:900;font-size:1.5em;color:var(--coral);text-decoration:none;font-family:'Nunito',sans-serif;}
+  .topbar-nav a{font-size:.9em;font-weight:700;color:var(--muted);text-decoration:none;margin-left:22px;}
+  .topbar-nav a:hover,.topbar-nav a.active{color:var(--coral);}
+  .btn-quiz{background:var(--coral);color:white;border:none;padding:9px 20px;border-radius:50px;font-weight:800;font-size:.88em;cursor:pointer;text-decoration:none;display:inline-block;}
+  .btn-quiz:hover{background:var(--coral-d);}
+  .art-hero{padding:50px 20px 40px;border-bottom:2px solid var(--border);background:linear-gradient(160deg,white 0%,var(--surface) 100%);}
+  .art-hero-inner{max-width:760px;margin:0 auto;}
+  .breadcrumb{font-size:.82em;color:var(--muted);margin-bottom:14px;}
+  .breadcrumb a{color:var(--coral);text-decoration:none;}
+  .cat-pill{display:inline-block;padding:5px 14px;border-radius:50px;font-size:.8em;font-weight:800;margin-bottom:14px;}
+  .cat-pill.food{background:#FFF0EE;color:#C0392B;}
+  .cat-pill.insurance{background:#F3E8FF;color:#6B21A8;}
+  .cat-pill.nutrition{background:#E8FFF8;color:#1A7A6E;}
+  .cat-pill.tips{background:#EBF8FF;color:#1A5276;}
+  .cat-pill.research{background:#EDE9FE;color:#4C1D95;}
+  .cat-pill.care{background:#FFFBEB;color:#92400E;}
+  h1.art-title{font-size:clamp(1.8em,4vw,2.6em);font-weight:900;line-height:1.2;margin-bottom:14px;color:var(--ink);}
+  .art-meta{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:.88em;font-weight:600;margin-bottom:20px;}
+  .art-intro{font-size:1.1em;color:#374151;line-height:1.8;font-style:italic;border-left:4px solid var(--coral);padding-left:20px;}
+  .page-wrap{max-width:1060px;margin:0 auto;padding:40px 20px 80px;display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:start;}
+  .article-body{background:white;border-radius:var(--radius);padding:40px;box-shadow:0 2px 16px rgba(0,0,0,.06);}
+  h2.section-h{font-size:1.45em;font-weight:900;color:var(--ink);margin:40px 0 16px;padding-top:10px;border-top:2px solid var(--border);}
+  h2.section-h:first-child{margin-top:0;border-top:none;padding-top:0;}
+  .article-body p{font-size:1em;color:#374151;line-height:1.8;margin-bottom:16px;}
+  .article-body ul,.article-body ol{margin:14px 0 18px 24px;}
+  .article-body li{color:#374151;line-height:1.75;margin-bottom:8px;font-size:.97em;}
+  .article-body strong{color:var(--ink);}
+  .takeaway-box{background:linear-gradient(135deg,#FFF0EE,white);border:2px solid #FFD5D0;border-radius:12px;padding:24px;margin-top:36px;}
+  .takeaway-box h3{font-weight:900;font-size:1.05em;color:var(--coral);margin-bottom:10px;}
+  .takeaway-box p{font-size:.95em;color:#374151;margin:0;line-height:1.7;}
+  .related-posts{margin-top:32px;padding-top:24px;border-top:2px solid var(--border);}
+  .related-posts h3{font-weight:900;font-size:1.05em;margin-bottom:14px;}
+  .related-list{display:flex;flex-direction:column;gap:10px;}
+  .related-item{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--cream);border-radius:10px;text-decoration:none;color:var(--ink);font-size:.9em;font-weight:700;transition:all .2s;border:1.5px solid var(--border);}
+  .related-item:hover{border-color:var(--coral);color:var(--coral);background:#FFF5F5;}
+  .sidebar{display:flex;flex-direction:column;gap:18px;}
+  .sb-card{background:white;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.06);padding:20px;}
+  .sb-card h3{font-weight:900;font-size:1em;margin-bottom:14px;}
+  .quiz-sb{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;border-radius:var(--radius);padding:22px;}
+  .quiz-sb h3{font-weight:900;font-size:1.1em;margin-bottom:8px;color:white;}
+  .quiz-sb p{font-size:.88em;opacity:.95;margin-bottom:16px;line-height:1.5;}
+  .btn-white{display:block;background:white;color:var(--coral);text-align:center;padding:12px;border-radius:50px;font-weight:900;font-size:.9em;text-decoration:none;}
+  .toc{background:var(--cream);border-radius:12px;padding:18px;}
+  .toc h3{font-weight:900;font-size:.9em;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px;}
+  .toc ol{margin-left:16px;display:flex;flex-direction:column;gap:7px;}
+  .toc li{font-size:.87em;color:var(--ink);line-height:1.4;}
+  .toc a{color:var(--coral);text-decoration:none;font-weight:700;}
+  .toc a:hover{text-decoration:underline;}
+  footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:30px 20px;font-size:.88em;line-height:1.9;}
+  footer strong{color:white;}
+  #chat-fab,#chat-panel,#chat-bubble,.btn-chat-top{display:none !important;}
+  @media(max-width:860px){.page-wrap{grid-template-columns:1fr;}.sidebar{order:2;}}
+  @media(max-width:500px){.topbar-nav{display:none;}.article-body{padding:24px 18px;}}
+
+  .references{margin-top:40px;padding-top:28px;border-top:2px solid var(--border);}
+  .references h3{font-weight:900;font-size:1.05em;margin-bottom:16px;color:var(--ink);}
+  .ref-list{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;}
+  .ref-list li{font-size:.84em;color:var(--muted);line-height:1.6;padding-left:28px;position:relative;}
+  .ref-list li::before{content:attr(data-num);position:absolute;left:0;font-weight:900;color:var(--coral);}
+  .ref-list a{color:var(--coral);text-decoration:none;word-break:break-word;}
+  .ref-list a:hover{text-decoration:underline;}
+
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="../index.html" class="logo">🦷 DentiPaws</a>
+  <nav class="topbar-nav">
+    <a href="../index.html">Home</a>
+    <a href="../all-breeds.html">All Breeds</a>
+    <a href="index.html" class="active">Blog</a>
+    <a href="../about.html">Puffy's Story</a>
+  </nav>
+  <a href="../index.html" class="btn-quiz">⚡ Free Quiz</a>
+</header>
+
+<div class="art-hero">
+  <div class="art-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Insurance</div>
+    <span class="cat-pill insurance">Insurance</span>
+    <h1 class="art-title">Dog Dental Insurance Compared — Is It Worth It?</h1>
+    <div class="art-meta">
+      <span>📅 June 2025</span>
+      <span>⏱️ 8 min read</span>
+    </div>
+    <p class="art-intro">A routine professional dental cleaning under anaesthesia costs $300–800. A cleaning that uncovers teeth needing extraction can easily reach $1,500–3,000. Yet dental coverage is one of the most misunderstood areas of pet insurance — with exclusions buried in the small print that catch owners off guard at exactly the wrong moment. Here's what you actually need to know before you buy.</p>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="main-col">
+    <div class="article-body">
+      <h2 class="section-h" id="s1">Why dental coverage is complicated</h2>
+<p>Most pet insurance policies treat dental care very differently from other veterinary care. The key distinction almost every policy makes is between <strong>dental illness</strong> (disease, infection, periodontal disease) and <strong>dental accidents</strong> (fractured tooth from trauma).
+
+Basic policies typically cover only dental accidents. Comprehensive policies may cover dental illness — but almost always with conditions attached, such as requiring a dental exam within a set period of taking out the policy, or excluding pre-existing dental conditions.
+
+Periodic professional cleanings (preventive care) are excluded from the vast majority of insurance policies. Some providers offer wellness add-ons that reimburse a portion of preventive dental costs — these are worth examining separately.</p>
+<h2 class="section-h" id="s2">The pre-existing condition problem</h2>
+<p>This is where most owners get caught out.
+
+If your dog has any evidence of dental disease at the time you take out a policy — even just minor tartar noted on an exam — that condition will typically be classified as pre-existing and excluded from coverage. For small breeds, which often have dental disease developing by age 3, this means many dogs are already partially or fully excluded by the time their owners think to insure them.
+
+<strong>The practical implication:</strong> If you have a puppy or young dog, especially a high-risk small breed, insure them before their first professional dental exam if possible. Once disease is documented in their records, your coverage options narrow significantly.</p>
+<h2 class="section-h" id="s3">Comparing the major providers</h2>
+<p><strong>Healthy Paws</strong><br>Covers dental illness (not just accidents) under its standard plan. No annual or per-incident limits — coverage is based on actual costs after deductible and co-insurance. Does not offer a wellness add-on for preventive cleaning. Pre-existing conditions excluded. Premiums from ~$35/month for a small breed.
+
+<strong>Trupanion</strong><br>Covers dental disease including periodontal disease treatment and extractions — one of the more generous dental policies. 90% reimbursement after deductible. No annual payout limit. Preventive dental not covered. Premiums vary significantly by breed and age.
+
+<strong>Nationwide (formerly VPI)</strong><br>Offers a comprehensive plan that includes dental illness. Their Whole Pet plan includes dental disease. Also offers a wellness plan that partially reimburses preventive cleanings (~$75–150/year toward dental). Higher premiums but broader coverage.
+
+<strong>Embrace</strong><br>Covers dental illness including periodontal disease. Offers a wellness rewards add-on ($200–650/year in reimbursements) that can cover preventive dental. Good option if preventive cleaning reimbursement is a priority.
+
+<strong>Figo</strong><br>Covers dental illness under their Complete plan. Clean, transparent policy structure. App-based claims. Competitive premiums for younger dogs. Worth comparing for tech-savvy owners who want clear policy terms.</p>
+<h2 class="section-h" id="s4">What a real claim looks like</h2>
+<p>To make this concrete: Puffy's second dental surgery — four extractions, full anaesthesia, X-rays, post-operative care — totalled approximately $2,200.
+
+Under a typical comprehensive policy (80% reimbursement, $250 annual deductible):
+<ul><li>Total bill: $2,200</li><li>Minus deductible: $1,950 claimable</li><li>80% reimbursement: $1,560 paid by insurance</li><li>Owner pays: $640 out of pocket</li></ul>
+
+Without insurance: $2,200 out of pocket.
+
+For a Toy Poodle with two major dental surgeries over a lifetime, comprehensive dental insurance typically pays for itself many times over — provided the policy was taken out before disease was documented.</p>
+<h2 class="section-h" id="s5">The wellness add-on question</h2>
+<p>Wellness add-ons that partially reimburse preventive dental cleaning are worth calculating carefully.
+
+A typical wellness add-on costs $15–30/month (~$180–360/year) and reimburses $75–200 toward dental cleaning. If your dog needs annual professional cleaning at $400–600, the math can work in your favour — particularly for high-risk small breeds that genuinely need yearly cleanings.
+
+However: wellness add-ons rarely cover the full cost of cleaning, and they won't help with the expensive extractions and disease treatment that represent the real financial risk. Don't choose a policy primarily for its wellness dental benefit at the expense of comprehensive illness coverage.</p>
+
+      <div class="takeaway-box">
+        <h3>💡 Key Takeaway</h3>
+        <p>Insure early — before dental disease is documented. Look for policies that cover dental illness, not just accidents. For high-risk small breeds, comprehensive coverage with dental illness included is worth the higher premium. Calculate the wellness add-on against your actual preventive cleaning costs.</p>
+      </div>
+      
+      <div class="references">
+        <h3>📚 References</h3>
+        <ul class="ref-list">
+          <li data-num="[1]"><strong>Banfield Pet Hospital (2024)</strong> — State of Pet Dental Health — 73% of dogs seen at Banfield in 2023 diagnosed with dental-related issues. <a href="https://www.banfield.com/about-banfield/newsroom/press-releases/2024/state-of-pet-dental-health" target="_blank" rel="noopener">https://www.banfield.com/about-banfield/newsroom/press-releases/2024/state-of-pet-dental-health</a></li>
+<li data-num="[2]"><strong>Banfield Pet Hospital (2024)</strong> — State of Pet Dental Health Press Release — 2.3x kidney disease risk, 6.3x endocarditis risk. <a href="https://www.prnewswire.com/news-releases/state-of-pet-dental-health-significant-majority-of-us-dogs-and-cats-have-oral-health-issues-302063737.html" target="_blank" rel="noopener">https://www.prnewswire.com/news-releases/state-of-pet-dental-health-significant-majority-of-us-dogs-and-cats-have-oral-health-issues-302063737.html</a></li>
+<li data-num="[3]"><strong>Pavlica Z et al. (2008)</strong> — Periodontal Disease Burden and Pathological Changes in Organs of Dogs. Journal of Veterinary Dentistry, 25(2): 97–105. <a href="https://pubmed.ncbi.nlm.nih.gov/18677876/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/18677876/</a></li>
+<li data-num="[4]"><strong>JAVMA (2009)</strong> — Evaluation of the Risk of Endocarditis and Other Cardiovascular Events on the Basis of the Severity of Periodontal Disease in Dogs. J Am Vet Med Assoc 234(4). <a href="https://pubmed.ncbi.nlm.nih.gov/19222358/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/19222358/</a></li>
+<li data-num="[5]"><strong>Enlund KB et al. (2020)</strong> — Dog Owners' Perspectives on Canine Dental Health. Frontiers in Veterinary Science — 80–89% prevalence over age 3. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7297050/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC7297050/</a></li>
+        </ul>
+      </div>
+      <div class="related-posts">
+        <h3>Related articles</h3>
+        <div class="related-list"><a href="best-kibble-for-dog-teeth.html" class="related-item">Best Kibble for Dog Teeth <span>→</span></a>
+<a href="signs-of-dental-disease-in-dogs.html" class="related-item">7 Signs of Dental Disease Owners Miss <span>→</span></a>
+<a href="nutritional-targets-dog-dental-health.html" class="related-item">Nutritional Targets for Dog Dental Health <span>→</span></a></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="quiz-sb">
+      <h3>Is your dog okay?</h3>
+      <p>60-second check → instant risk score and action plan.</p>
+      <a href="../index.html" class="btn-white">⚡ Take Free Quiz</a>
+    </div>
+    <div class="sb-card">
+      <div class="toc">
+        <h3>In this article</h3>
+        <ol><li><a href="#s1">Why dental coverage is complicated</a></li>
+<li><a href="#s2">The pre-existing condition problem</a></li>
+<li><a href="#s3">Comparing the major providers</a></li>
+<li><a href="#s4">What a real claim looks like</a></li>
+<li><a href="#s5">The wellness add-on question</a></li></ol>
+      </div>
+    </div>
+    <div class="sb-card">
+      <h3>🐕 High-risk breeds</h3>
+      <a href="../breeds/chihuahua.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">Chihuahua <span style="color:var(--coral)">→</span></a><a href="../breeds/toy-poodle.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">Toy Poodle <span style="color:var(--coral)">→</span></a><a href="../breeds/pug.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">Pug <span style="color:var(--coral)">→</span></a><a href="../breeds/french-bulldog.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">French Bulldog <span style="color:var(--coral)">→</span></a><a href="../breeds/greyhound.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">Greyhound <span style="color:var(--coral)">→</span></a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
+  Evidence-based advice from peer-reviewed veterinary research<br>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+</footer>
+
+</body>
+</html>
