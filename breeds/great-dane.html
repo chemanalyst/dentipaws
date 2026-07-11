@@ -111,23 +111,25 @@
 
     /* AI chat temporarily hidden */
     #chat-fab, #chat-panel, #chat-bubble, .btn-chat-top { display:none !important; }
-  
-    /* ── MOBILE HAMBURGER ── */
-    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
     .hamburger span{display:block;width:24px;height:2.5px;background:white;border-radius:3px;transition:all .3s;}
-    .hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
-    .mobile-nav{display:none;position:absolute;top:60px;left:0;right:0;background:#1A1A2E;z-index:99;flex-direction:column;padding:8px 0;box-shadow:0 8px 24px rgba(0,0,0,.2);}
-    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:14px 24px;font-weight:700;font-size:.95em;border-bottom:1px solid rgba(255,255,255,.07);display:block;transition:background .2s;}
-    .mobile-nav a:last-child{border-bottom:none;}
-    .mobile-nav a:hover{background:rgba(255,255,255,.08);color:var(--coral);}
-    .mobile-nav.open{display:flex;}
-    @media(max-width:680px){
-      .hamburger{display:flex;}
-      .topbar-nav{display:none;}
+    
       .btn-chat-top{display:none !important;}
     }
+  
+    
+  
+    /* ── MOBILE NAV ── */
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+    .hamburger span{display:block;width:24px;height:3px;background:white;border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:15px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav a:active{background:rgba(255,255,255,.1);}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
   </style>
 
   <script type="application/ld+json">
@@ -158,16 +160,16 @@
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
-  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 <nav class="mobile-nav" id="mobileNav">
-      <a href="../index.html">Home</a>
-      <a href="../all-breeds.html">All Breeds</a>
-      <a href="../blog/index.html">Blog</a>
-      <a href="../about.html">Puffy's Story</a>
-    </nav>
+  <a href="../index.html">Home</a>
+  <a href="../all-breeds.html">All Breeds</a>
+  <a href="../blog/index.html">Blog</a>
+  <a href="../about.html">Puffy's Story</a>
+</nav>
 
 <div class="breed-hero">
   <div class="hero-inner">
@@ -365,6 +367,11 @@ Style: warm, direct, conversational. Under 130 words unless detail is needed. If
   }
   document.getElementById('cs').disabled=false;
 }
+</script>
+
+<script>
+function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
+document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
 </script>
 </body>
 </html>
