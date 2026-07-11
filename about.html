@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oliver's Story — Why DentiPaws Exists</title>
-  <meta name="description" content="Oliver is a Toy Poodle who lost 7 teeth to preventable dental disease. His story is the reason DentiPaws was built.">
+  <title>Puffy's Story — A Toy Poodle Who Lost 7 Teeth | DentiPaws</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dentipaws.com/about.html">
+  <meta property="og:title" content="Puffy's Story — A Toy Poodle Who Lost 7 Teeth | DentiPaws">
+  <meta property="og:description" content="Puffy is a 7-year-old Toy Poodle who lost 7 teeth to preventable dental disease. His story is why DentiPaws exists — and why early prevention matters.">
+  <meta property="og:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta property="og:site_name" content="DentiPaws">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Puffy's Story — A Toy Poodle Who Lost 7 Teeth | DentiPaws">
+  <meta name="twitter:description" content="Puffy is a 7-year-old Toy Poodle who lost 7 teeth to preventable dental disease. His story is why DentiPaws exists — and why early prevention matters.">
+  <meta name="twitter:image" content="https://www.dentipaws.com/images/og-default.png">
+  <link rel="canonical" href="https://www.dentipaws.com/about.html">
+  <meta name="description" content="Puffy is a 7-year-old Toy Poodle who lost 7 teeth to preventable dental disease. His story is why DentiPaws exists — and why early prevention matters.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -15,29 +27,42 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
 
+    /* ── TOPBAR ── */
     .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
     .logo{font-weight:900;font-size:1.5em;color:var(--coral);text-decoration:none;}
     .topbar-nav a{font-size:.9em;font-weight:700;color:var(--muted);text-decoration:none;margin-left:22px;}
     .topbar-nav a:hover{color:var(--coral);}
     .btn-chat-top{background:var(--coral);color:white;border:none;padding:9px 20px;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.88em;cursor:pointer;}
 
-    .hero{background:linear-gradient(160deg,white 0%,var(--surface) 100%);padding:70px 20px 50px;text-align:center;border-bottom:2px solid var(--border);}
-    .oliver-face{font-size:7em;margin-bottom:16px;display:block;}
-    .hero h1{font-size:clamp(2em,5vw,3em);font-weight:900;margin-bottom:12px;}
-    .hero h1 em{color:var(--coral);font-style:normal;}
-    .hero-sub{font-size:1.1em;color:var(--muted);max-width:460px;margin:0 auto;}
+    /* ── HERO ── */
+    .hero{background:linear-gradient(160deg,white 0%,var(--surface) 100%);padding:60px 20px 50px;border-bottom:2px solid var(--border);}
+    .hero-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:40px;}
+.puffy-photo{
+      flex-shrink:0;
+      width:200px;height:200px;
+      border-radius:50%;
+      border:5px solid var(--coral);
+      box-shadow:0 8px 30px rgba(255,107,107,.25);
+      overflow:hidden;
+    }
+    .puffy-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    
 
+    .hero-text h1{font-size:clamp(2em,5vw,2.8em);font-weight:900;margin-bottom:10px;}
+    .hero-text h1 em{color:var(--coral);font-style:normal;}
+    .hero-text .tagline{font-size:1.05em;color:var(--muted);line-height:1.6;}
+
+    /* ── STORY ── */
     .story-wrap{max-width:720px;margin:0 auto;padding:50px 20px 80px;}
-
     .story p{font-size:1.05em;color:#374151;line-height:1.85;margin-bottom:22px;}
     .story strong{color:var(--ink);}
-
     h2{font-size:1.8em;font-weight:900;color:var(--ink);margin:50px 0 20px;}
 
-    .timeline{background:white;border-radius:var(--radius);padding:32px;margin:30px 0;box-shadow:0 2px 16px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:0;}
+    /* ── TIMELINE ── */
+    .timeline{background:white;border-radius:var(--radius);padding:32px;margin:30px 0;box-shadow:0 2px 16px rgba(0,0,0,.06);}
     .tl-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);}
     .tl-item:last-child{border-bottom:none;padding-bottom:0;}
-    .tl-left{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:0;}
+    .tl-left{flex-shrink:0;display:flex;flex-direction:column;align-items:center;}
     .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--coral);flex-shrink:0;margin-top:4px;}
     .tl-line{width:2px;flex:1;background:var(--border);margin-top:6px;}
     .tl-item:last-child .tl-line{display:none;}
@@ -45,10 +70,12 @@
     .tl-content h3{font-weight:900;font-size:1.05em;margin-bottom:6px;}
     .tl-content p{font-size:.93em;color:var(--muted);line-height:1.6;margin:0;}
 
+    /* ── CALLOUT ── */
     .callout{background:#FFF0EE;border-left:5px solid var(--coral);padding:24px 28px;border-radius:0 12px 12px 0;margin:28px 0;}
     .callout p{font-size:1.02em;color:#374151;line-height:1.8;margin:0;}
     .callout p + p{margin-top:12px;}
 
+    /* ── MISSION ── */
     .mission{background:linear-gradient(135deg,#ebf8ff,#e6fffa);border:2px solid #90CDF4;border-radius:var(--radius);padding:32px;margin:30px 0;}
     .mission h3{font-size:1.3em;font-weight:900;color:#2B6CB0;margin-bottom:16px;}
     .mission ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;}
@@ -60,47 +87,45 @@
     .sig{text-align:right;margin-top:40px;padding-top:28px;border-top:2px solid var(--border);color:var(--muted);font-size:1.05em;}
     .sig strong{color:var(--ink);display:block;font-size:1.2em;margin-bottom:4px;}
 
+    /* ── CTA ── */
     .cta-box{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;border-radius:var(--radius);padding:40px;text-align:center;margin-top:40px;}
-    .cta-box h2{font-size:1.6em;margin:0 0 10px;font-weight:900;}
+    .cta-box h2{font-size:1.6em;margin:0 0 10px;font-weight:900;color:white;}
     .cta-box p{opacity:.95;margin-bottom:22px;font-size:1em;}
-    .btn-cta{background:white;color:var(--coral);padding:14px 36px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:900;font-size:1em;cursor:pointer;text-decoration:none;display:inline-block;}
+    .btn-cta{background:white;color:var(--coral);padding:14px 36px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:900;font-size:1em;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
     .btn-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15);}
 
+    /* ── FOOTER ── */
     footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:32px 20px;font-size:.88em;line-height:1.9;}
     footer strong{color:white;}
 
-    /* Chat */
-    #chat-fab{position:fixed;bottom:24px;right:24px;z-index:500;background:var(--coral);color:white;border:none;border-radius:50px;padding:14px 22px;font-family:'Nunito',sans-serif;font-weight:900;font-size:.93em;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(255,107,107,.4);transition:all .2s;}
-    #chat-fab:hover{transform:translateY(-2px);}
-    #chat-panel{position:fixed;bottom:22px;right:22px;width:360px;max-width:calc(100vw - 24px);max-height:560px;background:white;border-radius:20px;box-shadow:0 16px 50px rgba(0,0,0,.2);z-index:600;display:flex;flex-direction:column;overflow:hidden;transform:scale(.9) translateY(20px);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.34,1.56,.64,1);}
-    #chat-panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
-    .cp-head{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;padding:15px 18px;display:flex;align-items:center;gap:11px;}
-    .cp-av{width:40px;height:40px;background:rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3em;}
-    .cp-ttl strong{font-weight:900;font-size:.98em;display:block;}
-    .cp-ttl span{font-size:.76em;opacity:.9;}
-    .cp-x{background:rgba(255,255,255,.2);border:none;color:white;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1em;margin-left:auto;}
-    .chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
-    .msg{max-width:85%;display:flex;flex-direction:column;}
-    .msg.bot{align-self:flex-start;}.msg.user{align-self:flex-end;}
-    .msg-b{padding:11px 14px;border-radius:14px;font-size:.9em;line-height:1.55;}
-    .msg.bot .msg-b{background:#F3F4F6;color:var(--ink);border-radius:4px 14px 14px 14px;}
-    .msg.user .msg-b{background:var(--coral);color:white;border-radius:14px 4px 14px 14px;}
-    .msg-t{font-size:.7em;color:#bbb;margin-top:3px;padding:0 3px;}
-    .msg.user .msg-t{text-align:right;}
-    .typing{display:flex;gap:5px;padding:11px 14px;background:#F3F4F6;border-radius:4px 14px 14px 14px;width:fit-content;}
-    .td{width:7px;height:7px;background:#9CA3AF;border-radius:50%;animation:bou 1.2s infinite;}
-    .td:nth-child(2){animation-delay:.2s;}.td:nth-child(3){animation-delay:.4s;}
-    @keyframes bou{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
-    .chat-bar{padding:12px 14px;border-top:2px solid var(--border);display:flex;gap:8px;align-items:center;}
-    #ci{flex:1;border:2px solid var(--border);border-radius:50px;padding:9px 16px;font-size:.89em;outline:none;font-family:'Nunito',sans-serif;}
-    #ci:focus{border-color:var(--coral);}
-    #cs{background:var(--coral);border:none;color:white;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:.95em;}
+    /* Chat hidden until API ready */
+    #chat-fab,#chat-panel,#chat-bubble,.btn-chat-top{display:none !important;}
 
-    @media(max-width:500px){.topbar-nav{display:none;}.hero{padding:50px 20px 40px;}.oliver-face{font-size:5em;}}
-  
-    /* AI chat temporarily hidden */
-    #chat-fab, #chat-panel, #chat-bubble, .btn-chat-top { display:none !important; }
+    @media(max-width:600px){
+      .topbar-nav{display:none;}
+      .hero-inner{flex-direction:column;text-align:center;}
+      .puffy-photo{width:160px;height:160px;}
+      .hero{padding:40px 20px 36px;}
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "headline": "Puffy's Story — A Toy Poodle Who Lost 7 Teeth | DentiPaws",
+      "description": "Puffy is a 7-year-old Toy Poodle who lost 7 teeth to preventable dental disease. His story is why DentiPaws exists — and why early prevention matters.",
+      "url": "https://www.dentipaws.com/about.html",
+      "datePublished": "2026-04-01",
+      "dateModified": "2026-04-01",
+      "author": {"@type": "Organization", "name": "DentiPaws"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "DentiPaws",
+        "url": "https://www.dentipaws.com"
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -109,25 +134,36 @@
   <nav class="topbar-nav">
     <a href="index.html">Home</a>
     <a href="all-breeds.html">All Breeds</a>
+    <a href="blog/index.html">Blog</a>
     <a href="index.html">Quiz</a>
   </nav>
-  <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
+  <button class="btn-chat-top">💬 DentiPaws Assistant</button>
 </header>
 
+<!-- ── HERO ── -->
 <div class="hero">
-  <span class="oliver-face">🐩</span>
-  <h1>Hi, I'm <em>Oliver</em></h1>
-  <p class="hero-sub">A 9-year-old Toy Poodle with 7 fewer teeth than I should have — and a mission to make sure your dog keeps theirs.</p>
+  <div class="hero-inner">
+
+    <div class="puffy-photo">
+      <img src="puffy1.jpg" alt="Puffy the Toy Poodle">
+    </div>
+
+    <div class="hero-text">
+      <h1>Hi, I'm <em>Puffy</em></h1>
+      <p class="tagline">A 7-year-old Toy Poodle with 7 fewer teeth than I should have — and a mission to make sure your dog keeps theirs.</p>
+    </div>
+  </div>
 </div>
 
+<!-- ── STORY ── -->
 <div class="story-wrap">
   <div class="story">
 
-    <p>I'm not going to pretend I understood what was happening when I woke up from my first surgery, groggy and sore, with a mouth full of stitches where three of my teeth used to be. I just knew something felt very wrong.</p>
+    <p>I'm not going to pretend I understood what was happening the first time I woke up from surgery — groggy, sore, and confused about the stitches in my mouth where three of my teeth used to be. I just knew something felt very wrong.</p>
 
-    <p>What I know now — what my humans learned the hard way — is that those three teeth didn't have to go. Neither did the four that followed in my second surgery two years later. <strong>Seven teeth. Gone.</strong> All from a disease that research says is almost entirely preventable.</p>
+    <p>What I know now — what my humans learned the hard way — is that those three teeth didn't have to go. Neither did the four that followed in my second surgery, less than a year later. <strong>Seven teeth. Gone.</strong> All from a disease that research says is almost entirely preventable. And I'm only 7.</p>
 
-    <p>I'm a Toy Poodle. If you've looked at DentiPaws, you know that puts me in the highest-risk category for dental disease — 26% of Toy Poodles are affected. That's one in four. My humans didn't know that when I was a puppy. They loved me. They fed me quality food, took me to annual checkups, and brushed my teeth when they remembered. Maybe once a week. They thought that was enough.</p>
+    <p>I'm a Toy Poodle. If you've looked at DentiPaws, you know that makes me one of the highest-risk breeds for dental disease — 26% of Toy Poodles are affected. That's one in four. My humans didn't know that when I was a puppy. They loved me. They fed me quality food, took me to annual vet checkups, and brushed my teeth when they remembered. Maybe once a week, sometimes less. They thought that was enough.</p>
 
     <p>It wasn't.</p>
 
@@ -137,90 +173,90 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <div class="tl-year">Years 1 – 4 &nbsp;·&nbsp; The quiet beginning</div>
+          <div class="tl-year">Years 1 – 3 &nbsp;·&nbsp; The quiet beginning</div>
           <h3>Everything looked fine. It wasn't.</h3>
-          <p>Weekly brushing. Annual vet checkups. A dental chew here and there. My teeth looked okay to the naked eye. What nobody knew was that periodontal disease was already developing below my gumline — in the 60% of my mouth that no one could see without X-rays.</p>
+          <p>Annual checkups, occasional brushing, dental chews when we remembered. My teeth looked okay to the naked eye at routine exams. What nobody saw was that periodontal disease was already forming below my gumline — in the 60% of my mouth that can only be seen with X-rays under anaesthesia.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <div class="tl-year">Year 5 &nbsp;·&nbsp; First signs</div>
+          <div class="tl-year">Year 4 &nbsp;·&nbsp; First warning signs</div>
           <h3>The breath that started the worry.</h3>
-          <p>My humans noticed my breath had changed. Not just normal dog breath — something they described as "fishy" and "off." I started dropping food sometimes when I ate. They finally scheduled a proper dental exam under anesthesia, with X-rays.</p>
+          <p>My humans noticed my breath had changed — not just normal dog breath, but something they described as "off" and "fishy." I started dropping food sometimes when I chewed. They finally booked a proper dental examination under anaesthesia, with X-rays. What the vet found shocked them.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <div class="tl-year">Year 6 &nbsp;·&nbsp; First surgery</div>
+          <div class="tl-year">Year 5 &nbsp;·&nbsp; First surgery</div>
           <h3>Three teeth extracted. A very hard day.</h3>
-          <p>Severe periodontal disease. Three teeth so damaged they had to come out. My humans cried in the car. I didn't fully understand why, but I remember the recovery clearly — soft food only, pain medication, and them gently stopping me from pawing at my sore mouth.</p>
+          <p>Severe periodontal disease. Three teeth were so far gone they had to come out. My humans cried in the car on the way home. I remember the recovery — soft food only, pain medication, and them gently stopping me from pawing at my sore mouth. It took weeks to feel normal again.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <div class="tl-year">Years 6 – 8 &nbsp;·&nbsp; Too late to fully fix</div>
-          <h3>Everything changed. But the damage was done.</h3>
-          <p>After that surgery, my humans brushed my teeth every single day. VOHC-approved chews. Water additive. Professional cleanings every six months. They did everything right. But the disease that had been silently advancing for four years had already done damage that consistent care couldn't fully reverse.</p>
+          <div class="tl-year">Years 5 – 6 &nbsp;·&nbsp; Too late to fully undo</div>
+          <h3>Everything changed — but the damage was already done.</h3>
+          <p>After that first surgery my humans brushed my teeth every single day without fail. VOHC-approved chews. Water additive. Professional cleanings every six months. They did everything right. But four years of slow, silent disease had already caused bone loss that consistent care couldn't reverse.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <div class="tl-year">Year 8 &nbsp;·&nbsp; Second surgery</div>
+          <div class="tl-year">Year 6 &nbsp;·&nbsp; Second surgery</div>
           <h3>Four more extractions.</h3>
-          <p>The bone loss from those early years had progressed too far. Four more teeth had to go. This time there were no surprises — we knew what to expect — but somehow that made it harder. Another recovery. More stitches. Seven teeth total, gone before my ninth birthday.</p>
+          <p>The bone loss from those early years had progressed beyond saving. Four more teeth came out. This time we all knew what to expect — somehow that made it harder, not easier. Another anaesthetic. More stitches. More recovery. Seven teeth in total, gone before my seventh birthday.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-dot"></div></div>
         <div class="tl-content">
-          <div class="tl-year">Year 9 &nbsp;·&nbsp; Today</div>
-          <h3>Living well — but differently.</h3>
-          <p>I manage. Soft food is easier now. Some toys are frustrating. But I'm happy, cared for, and determined that my story means something. My humans don't carry guilt anymore — I've made my peace with that. They didn't know what they didn't know. Now they do. Now you can too.</p>
+          <div class="tl-year">Year 7 &nbsp;·&nbsp; Today</div>
+          <h3>Living well — but with consequences.</h3>
+          <p>I'm happy. I'm loved. Soft food is easier now, and some toys aren't what they used to be — but I manage. My humans have let go of their guilt, and I've made my peace with what happened. They didn't know what they didn't know. That's exactly why this website exists.</p>
         </div>
       </div>
     </div>
 
     <div class="callout">
-      <p><strong>What I wish my humans had known from day one:</strong> As a Toy Poodle, I was at 5 times higher risk than a large breed dog. My tiny jaw crammed a full set of adult teeth into a space too small for them — creating constant plaque traps that I couldn't clean naturally. Daily brushing from puppyhood, combined with 6-monthly professional exams with X-rays, could have caught everything early. When disease is caught early, it's reversible. Once it reaches bone, it isn't.</p>
-      <p>Those first five years of weekly-when-we-remember brushing set the stage for everything that followed. <strong>Four years of under-care became seven extractions.</strong></p>
+      <p><strong>What I wish my humans had known from the start:</strong> As a Toy Poodle I was at 5 times higher risk than a large breed dog. My tiny jaw crammed a full set of adult teeth into a space too small for them — creating constant plaque traps that no amount of chewing could clean. Daily brushing from puppyhood, combined with professional dental exams including X-rays every six months, could have caught everything while it was still reversible.</p>
+      <p>Four years of "when we remember" brushing became seven extractions before age 7. <strong>That timeline can be different for your dog.</strong></p>
     </div>
 
     <h2>Why DentiPaws exists</h2>
 
-    <p>After my second surgery, my human spent weeks reading every piece of veterinary research she could find. She learned that 80% of dogs over 3 have periodontal disease. That only 4% of owners brush daily. That bad breath isn't just "dog breath" — it's bacterial infection. That the disease I had is directly linked to kidney failure and heart valve infections in dogs.</p>
+    <p>After my second surgery, my human spent weeks reading every piece of veterinary research she could find. She learned that 80% of dogs over 3 have periodontal disease. That only 4% of owners brush daily. That the "fishy breath" she first noticed wasn't cosmetic — it was active bacterial infection. That the disease I had is directly linked to kidney failure and heart valve infections.</p>
 
-    <p>She also found that the information existed — scattered across academic journals and veterinary publications — but no one had made it easy for regular dog owners to find and act on. There was no simple way to say: <em>"Your breed is at high risk. Here's exactly what to do. Here's what to buy."</em></p>
+    <p>She also found that the research existed — spread across journals, clinical studies, vet publications — but nobody had made it genuinely accessible for regular dog owners. No one had built something that simply said: <em>"Your breed is high risk. Here is exactly what to do. Here is what to buy. Do it today."</em></p>
 
-    <p>So she built it. For me. And for every other dog who deserves to keep their teeth.</p>
+    <p>So she built it. For me. For every dog who still has a chance to keep their teeth.</p>
 
     <div class="mission">
       <h3>DentiPaws was built to:</h3>
       <ul>
-        <li>Give every breed their own guide — because a Greyhound's risks are not a Lab's risks</li>
-        <li>Give owners immediate, actionable steps — not overwhelming information</li>
-        <li>Flag urgency honestly — some situations need a vet this week, not next year</li>
-        <li>Make daily dental care feel achievable — because 2 minutes a day is genuinely enough</li>
-        <li>Prevent other dogs from losing teeth they didn't have to lose</li>
+        <li>Give every breed their own guide — because a Greyhound's risks are nothing like a Lab's</li>
+        <li>Give owners immediate, specific steps — not overwhelming walls of information</li>
+        <li>Be honest about urgency — some situations need a vet this week, not next year</li>
+        <li>Make daily dental care feel achievable — 2 minutes a day is genuinely enough if you start early</li>
+        <li>Prevent other dogs from losing teeth they should never have lost</li>
       </ul>
     </div>
 
-    <h2>A letter to your dog's owner</h2>
+    <h2>A note to your dog's owner</h2>
 
-    <p class="plea">If you're reading this because you Googled your dog's bad breath, or noticed some yellowing, or your vet mentioned "dental disease" at the last visit — you're in the right place, and you're not too late.</p>
+    <p class="plea">If you found this page because you Googled your dog's bad breath, noticed some yellowing, or your vet casually mentioned "some tartar buildup" — you're in exactly the right place, and you have not missed your window.</p>
 
-    <p class="plea">The research behind this website studied millions of dogs. The patterns are clear. The preventive measures are proven. Daily brushing works. Early professional exams catch disease when it's still reversible. VOHC-approved products are genuinely effective.</p>
+    <p class="plea">The research behind this website is based on millions of dogs across decades of veterinary studies. The patterns are consistent. Daily brushing works. Early professional exams catch disease when it's reversible. VOHC-approved products are genuinely effective. None of this is complicated — it just has to start.</p>
 
-    <p class="plea">The only thing standing between your dog and what happened to me is <strong>starting now</strong>. Not when the bad breath gets worse. Not at the next annual vet visit. Now.</p>
+    <p class="plea">The only thing standing between your dog and what happened to me is <strong>starting now.</strong> Not when the smell gets worse. Not at the next routine visit. Right now.</p>
 
     <p class="plea">I can't get my seven teeth back. But your dog can keep theirs.</p>
 
     <div class="sig">
-      <strong>Oliver 🐩</strong>
-      Toy Poodle · Age 9 · Seven teeth lighter · Still very much in charge
+      <strong>Puffy 🐩</strong>
+      Toy Poodle · Age 7 · Seven teeth lighter · Still completely in charge
     </div>
 
   </div>
@@ -239,47 +275,5 @@
   <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
 </footer>
 
-<!-- Chat FAB -->
-<button id="chat-fab" onclick="openChat()">💬 DentiPaws Assistant</button>
-<div id="chat-panel">
-  <div class="cp-head">
-    <div class="cp-av">🐾</div>
-    <div class="cp-ttl"><strong>DentiPaws Assistant</strong><span>AI-powered · Not a real vet</span></div>
-    <button class="cp-x" onclick="closeChat()">✕</button>
-  </div>
-  <div class="chat-msgs" id="chatMsgs">
-    <div class="msg bot"><div class="msg-b">Hi! I'm the DentiPaws Assistant 🐾 Oliver's story got to you? Ask me anything about your own dog's dental health — I'm here to help.</div><div class="msg-t">Just now</div></div>
-  </div>
-  <div class="chat-bar">
-    <input id="ci" type="text" placeholder="Ask about your dog's teeth…">
-    <button id="cs" onclick="sendChat()">➤</button>
-  </div>
-</div>
-
-<script>
-const chatHistory=[];
-function openChat(){document.getElementById('chat-panel').classList.add('open');document.getElementById('chat-fab').style.display='none';setTimeout(()=>document.getElementById('ci').focus(),300);}
-function closeChat(){document.getElementById('chat-panel').classList.remove('open');document.getElementById('chat-fab').style.display='flex';}
-function sendChat(){const i=document.getElementById('ci');const t=i.value.trim();if(!t)return;i.value='';addUserMsg(t);callAI(t);}
-document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
-function addUserMsg(t){chatHistory.push({role:'user',content:t});renderMsg('user',t);}
-function renderMsg(role,text){const now=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});const d=document.createElement('div');d.className='msg '+role;d.innerHTML='<div class="msg-b">'+text.replace(/\n/g,'<br>')+'</div><div class="msg-t">'+now+'</div>';const m=document.getElementById('chatMsgs');m.appendChild(d);m.scrollTop=m.scrollHeight;}
-function showTyping(){const d=document.createElement('div');d.className='msg bot';d.id='typ';d.innerHTML='<div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>';const m=document.getElementById('chatMsgs');m.appendChild(d);m.scrollTop=m.scrollHeight;}
-function removeTyping(){const t=document.getElementById('typ');if(t)t.remove();}
-async function callAI(msg){
-  showTyping();document.getElementById('cs').disabled=true;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-      model:'claude-sonnet-4-6',max_tokens:1000,
-      system:`You are DentiPaws Assistant — a warm AI guide for dog dental health. Speak like a knowledgeable, caring friend. Key facts: 80% of dogs over 3 have periodontal disease; small/toy breeds are 5× higher risk; only 4% of owners brush daily but it works 3× better than chews alone; bad breath = bacterial infection; heavy tartar + red gums = needs vet now. Top risks: Greyhound 32%, Chihuahua 28%, Pug 27%, Toy Poodle 26%. VOHC seal = proven. DentiPaws mascot is Oliver, a male Toy Poodle who lost 7 teeth. Be direct, under 130 words, warm, never preachy. Max 2 emojis.`,
-      messages:chatHistory.slice(-10)
-    })});
-    const data=await res.json();removeTyping();
-    const reply=data.content?.find(b=>b.type==='text')?.text||"Sorry, try again in a moment! 🐾";
-    chatHistory.push({role:'assistant',content:reply});renderMsg('bot',reply);
-  }catch(e){removeTyping();renderMsg('bot',"Something went wrong — please try again 🐾");}
-  document.getElementById('cs').disabled=false;
-}
-</script>
 </body>
 </html>
