@@ -98,7 +98,26 @@
     #chat-fab,#chat-panel,#chat-bubble,.btn-chat-top{display:none !important;}
 
     @media(max-width:860px){.page-wrap{grid-template-columns:1fr;}.sidebar{order:2;}}
-    @media(max-width:500px){.topbar-nav{display:none;}.articles-grid{grid-template-columns:1fr;}}
+    .articles-grid{grid-template-columns:1fr;}}
+    .hamburger span{display:block;width:24px;height:2.5px;background:white;border-radius:3px;transition:all .3s;}
+    
+      .btn-chat-top{display:none !important;}
+    }
+  
+    
+  
+    /* ── MOBILE NAV ── */
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+    .hamburger span{display:block;width:24px;height:3px;background:white;border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:15px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav a:active{background:rgba(255,255,255,.1);}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
   </style>
 </head>
 <body>
@@ -112,7 +131,16 @@
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <a href="../index.html" class="btn-quiz">⚡ Free Quiz</a>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../all-breeds.html">All Breeds</a>
+  <a href="index.html">Blog</a>
+  <a href="../about.html">Puffy's Story</a>
+</nav>
 
 <div class="hero">
   <div class="hero-pill">📝 Tips, research & guides</div>
@@ -153,7 +181,7 @@
           <h3>Dog Dental Insurance Compared — Is It Worth It?</h3>
           <p>We compare the top pet insurance plans that cover dental — premiums, exclusions, and what a real claim looks like for a small breed.</p>
           <div class="card-footer">
-            <span class="card-date">Jun 2025</span>
+            <span class="card-date">July 2026</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -169,7 +197,7 @@
           <h3>Nutritional Targets for Dog Dental Health — What Does Your Dog Actually Need?</h3>
           <p>Calcium, phosphorus, vitamin D — the key nutrients that support strong teeth and healthy gums, and how to check if your dog's diet covers them.</p>
           <div class="card-footer">
-            <span class="card-date">Jun 2025</span>
+            <span class="card-date">June 2026</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -185,7 +213,7 @@
           <h3>How to Actually Get Your Dog to Accept Tooth Brushing</h3>
           <p>The step-by-step desensitisation method that turns resistant dogs into cooperative ones — even the stubborn ones.</p>
           <div class="card-footer">
-            <span class="card-date">May 2025</span>
+            <span class="card-date">June 2026</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -201,7 +229,7 @@
           <h3>What Does the VOHC Seal Actually Mean?</h3>
           <p>Most dental products make big claims. The VOHC seal is the only one that requires clinical proof. Here's how the approval process works — and which products have earned it.</p>
           <div class="card-footer">
-            <span class="card-date">May 2025</span>
+            <span class="card-date">June 2026</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -217,7 +245,7 @@
           <h3>Wet Food vs Dry Food — Which is Worse for Your Dog's Teeth?</h3>
           <p>The answer is more nuanced than you'd expect. Wet food isn't automatically the villain, and dry food isn't automatically protective — here's the actual evidence.</p>
           <div class="card-footer">
-            <span class="card-date">Apr 2025</span>
+            <span class="card-date">June 2026</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -233,7 +261,7 @@
           <h3>7 Signs Your Dog Has Dental Disease — and Most Owners Miss Them</h3>
           <p>Dogs don't cry when their teeth hurt. They just quietly suffer. Here are the subtle signs to look for at home before the problem becomes a vet emergency.</p>
           <div class="card-footer">
-            <span class="card-date">Apr 2025</span>
+            <span class="card-date">June 2026</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -300,5 +328,10 @@
   <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
 </footer>
 
+
+<script>
+function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
+document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
+</script>
 </body>
 </html>
