@@ -107,6 +107,23 @@
       .puffy-photo{width:160px;height:160px;}
       .hero{padding:40px 20px 36px;}
     }
+  
+    /* ── MOBILE HAMBURGER ── */
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+    .hamburger span{display:block;width:24px;height:2.5px;background:white;border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:absolute;top:60px;left:0;right:0;background:#1A1A2E;z-index:99;flex-direction:column;padding:8px 0;box-shadow:0 8px 24px rgba(0,0,0,.2);}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:14px 24px;font-weight:700;font-size:.95em;border-bottom:1px solid rgba(255,255,255,.07);display:block;transition:background .2s;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav a:hover{background:rgba(255,255,255,.08);color:var(--coral);}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){
+      .hamburger{display:flex;}
+      .topbar-nav{display:none;}
+      .btn-chat-top{display:none !important;}
+    }
   </style>
 
   <script type="application/ld+json">
@@ -116,8 +133,8 @@
       "headline": "Puffy's Story — A Toy Poodle Who Lost 7 Teeth | DentiPaws",
       "description": "Puffy is a 7-year-old Toy Poodle who lost 7 teeth to preventable dental disease. His story is why DentiPaws exists — and why early prevention matters.",
       "url": "https://www.dentipaws.com/about.html",
-      "datePublished": "2026-04-01",
-      "dateModified": "2026-04-01",
+      "datePublished": "2025-04-01",
+      "dateModified": "2025-04-01",
       "author": {"@type": "Organization", "name": "DentiPaws"},
       "publisher": {
         "@type": "Organization",
@@ -134,18 +151,29 @@
   <nav class="topbar-nav">
     <a href="index.html">Home</a>
     <a href="all-breeds.html">All Breeds</a>
-    <a href="blog-index.html">Blog</a>
+    <a href="blog/index.html">Blog</a>
     <a href="index.html">Quiz</a>
   </nav>
   <button class="btn-chat-top">💬 DentiPaws Assistant</button>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 </header>
+<nav class="mobile-nav" id="mobileNav">
+
+    <a href="index.html">Home</a>
+    <a href="all-breeds.html">All Breeds</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="index.html">Quiz</a>
+  
+    </nav>
 
 <!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-inner">
 
     <div class="puffy-photo">
-      <img src="puffy1.jpg" alt="Puffy the Toy Poodle">
+      <img src="" alt="Puffy the Toy Poodle">
     </div>
 
     <div class="hero-text">
