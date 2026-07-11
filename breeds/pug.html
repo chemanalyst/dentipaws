@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pug Dental Care Guide — DentiPaws</title>
-  <meta name="description" content="Complete dental care guide for Pugs. Common issues, high risk (27%), care routine and product recommendations.">
+  <title>Pug Dental Care Guide — High Risk (27%) | DentiPaws</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dentipaws.com/breeds/pug.html">
+  <meta property="og:title" content="Pug Dental Care Guide — High Risk (27%) | DentiPaws">
+  <meta property="og:description" content="Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.">
+  <meta property="og:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta property="og:site_name" content="DentiPaws">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pug Dental Care Guide — High Risk (27%) | DentiPaws">
+  <meta name="twitter:description" content="Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.">
+  <meta name="twitter:image" content="https://www.dentipaws.com/images/og-default.png">
+  <link rel="canonical" href="https://www.dentipaws.com/breeds/pug.html">
+  <meta name="description" content="Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.">
   <style>
   :root{
     --coral:#FF6B6B;--coral-d:#E85555;--mint:#4ECDC4;--amber:#FFB347;
@@ -99,7 +111,42 @@
 
     /* AI chat temporarily hidden */
     #chat-fab, #chat-panel, #chat-bubble, .btn-chat-top { display:none !important; }
+  
+    /* ── MOBILE HAMBURGER ── */
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+    .hamburger span{display:block;width:24px;height:2.5px;background:white;border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:absolute;top:60px;left:0;right:0;background:#1A1A2E;z-index:99;flex-direction:column;padding:8px 0;box-shadow:0 8px 24px rgba(0,0,0,.2);}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:14px 24px;font-weight:700;font-size:.95em;border-bottom:1px solid rgba(255,255,255,.07);display:block;transition:background .2s;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav a:hover{background:rgba(255,255,255,.08);color:var(--coral);}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){
+      .hamburger{display:flex;}
+      .topbar-nav{display:none;}
+      .btn-chat-top{display:none !important;}
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Pug Dental Care Guide — High Risk (27%) | DentiPaws",
+      "description": "Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.",
+      "url": "https://www.dentipaws.com/breeds/pug.html",
+      "datePublished": "2025-04-01",
+      "dateModified": "2025-04-01",
+      "author": {"@type": "Organization", "name": "DentiPaws"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "DentiPaws",
+        "url": "https://www.dentipaws.com"
+      }
+    }
+  </script>
 </head>
 <body>
 <header class="topbar">
@@ -107,10 +154,20 @@
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
     <a href="../all-breeds.html">All Breeds</a>
-    <a href="../about.html">Oliver's Story</a>
+        <a href="../blog/index.html">Blog</a>
+    <a href="../about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 </header>
+<nav class="mobile-nav" id="mobileNav">
+      <a href="../index.html">Home</a>
+      <a href="../all-breeds.html">All Breeds</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../about.html">Puffy's Story</a>
+    </nav>
 
 <div class="breed-hero">
   <div class="hero-inner">
@@ -297,7 +354,7 @@ Key facts:
 - Greyhounds: 32% risk (highest), Chihuahua: 28%, Pug: 27%, Toy Poodle: 26%
 - VOHC seal = clinically proven products
 - Periodontal disease causes kidney disease (2.3x risk) and heart valve infection (6.3x)
-- DentiPaws mascot is Oliver, a male Toy Poodle who lost 7 teeth
+- DentiPaws mascot is Puffy, a male Toy Poodle who lost 7 teeth
 
 Style: warm, direct, conversational. Under 130 words unless detail is needed. If symptoms sound serious, say "see a vet soon." Use 1-2 emojis max. Never be preachy.`,
         messages:chatHistory.slice(-10)
