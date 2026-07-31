@@ -10,12 +10,12 @@
   <meta property="og:url" content="https://www.dentipaws.com/">
   <meta property="og:title" content="Is Your Dog's Mouth Healthy? Free 60-Second Check | DentiPaws">
   <meta property="og:description" content="Free dental triage for your dog. Answer 5 questions, get an instant risk score, and an exact action plan based on your breed. Takes 60 seconds.">
-  <meta property="og:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
   <meta property="og:site_name" content="DentiPaws">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Is Your Dog's Mouth Healthy? Free 60-Second Check | DentiPaws">
   <meta name="twitter:description" content="Free dental triage for your dog. Answer 5 questions, get an instant risk score, and an exact action plan based on your breed. Takes 60 seconds.">
-  <meta name="twitter:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta name="twitter:image" content="https://www.dentipaws.com/og-default.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -171,7 +171,35 @@
     .mobile-nav a:active{background:rgba(255,255,255,.1);}
     .mobile-nav.open{display:flex;}
     @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
+  
+    /* ── HERO BACKGROUND IMAGE ── */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg-img),
+    .breed-hero > *:not(.hero-bg-img),
+    .art-hero > *:not(.hero-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .hero, .breed-hero, .art-hero {
+      position: relative;
+      overflow: hidden;
+    }
   </style>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
 </head>
 <body>
 
@@ -180,7 +208,7 @@
   <nav class="topbar-nav">
     <a href="index.html">Home</a>
     <a href="all-breeds.html">All Breeds</a>
-    <a href="blog-index.html">Blog</a>
+    <a href="blog/blog-index.html">Blog</a>
     <a href="about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top">💬 DentiPaws Assistant</button>
@@ -191,11 +219,13 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="index.html">Home</a>
   <a href="all-breeds.html">All Breeds</a>
-  <a href="blog-index.html">Blog</a>
+  <a href="blog/blog-index.html">Blog</a>
   <a href="about.html">Puffy's Story</a>
 </nav>
 
 <div class="hero">
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-pill">🐶 Free · No sign-up · Instant results</div>
   <h1>Is your dog's mouth<br><em>actually okay?</em></h1>
   <p class="hero-sub">80% of dogs over 3 have dental disease — and most owners have no idea. Find out in 60 seconds.</p>
