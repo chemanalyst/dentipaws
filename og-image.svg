@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img">
+  <title>DentiPaws — Is your dog's mouth actually okay?</title>
+  <defs>
+    <!-- Background gradient matching site -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e6e"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+    <!-- Coral gradient for accent shapes -->
+    <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="100%" stop-color="#FF8E53"/>
+    </linearGradient>
+    <!-- Subtle circle overlay -->
+    <radialGradient id="glow" cx="75%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#FF6B6B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FF6B6B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Glow overlay -->
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Decorative large circles — background depth -->
+  <circle cx="980" cy="100" r="280" fill="none" stroke="#FF6B6B" stroke-width="1" opacity="0.12"/>
+  <circle cx="980" cy="100" r="200" fill="none" stroke="#FF6B6B" stroke-width="1" opacity="0.10"/>
+  <circle cx="980" cy="100" r="120" fill="none" stroke="#FF6B6B" stroke-width="1" opacity="0.08"/>
+
+  <!-- Bottom left decorative circle -->
+  <circle cx="80" cy="560" r="160" fill="none" stroke="#4ECDC4" stroke-width="1" opacity="0.10"/>
+  <circle cx="80" cy="560" r="90" fill="none" stroke="#4ECDC4" stroke-width="1" opacity="0.08"/>
+
+  <!-- LEFT — Large icon -->
+  <!-- Icon background square -->
+  <rect x="90" y="155" width="220" height="220" rx="50" fill="url(#cg)"/>
+
+  <!-- Tooth crown -->
+  <rect x="128" y="174" width="144" height="116" rx="36" fill="white"/>
+  <!-- Tooth left root -->
+  <rect x="128" y="276" width="58" height="72" rx="22" fill="white"/>
+  <!-- Tooth right root -->
+  <rect x="214" y="276" width="58" height="72" rx="22" fill="white"/>
+
+  <!-- Paw print on tooth -->
+  <!-- Central pad -->
+  <ellipse cx="200" cy="265" rx="26" ry="22" fill="#FF6B6B"/>
+  <!-- Top-left toe -->
+  <circle cx="163" cy="234" r="14" fill="#FF6B6B"/>
+  <!-- Top-centre-left toe -->
+  <circle cx="188" cy="218" r="14" fill="#FF6B6B"/>
+  <!-- Top-centre-right toe -->
+  <circle cx="213" cy="218" r="14" fill="#FF6B6B"/>
+  <!-- Top-right toe -->
+  <circle cx="238" cy="234" r="14" fill="#FF6B6B"/>
+
+  <!-- RIGHT — Text content -->
+  <!-- Brand name -->
+  <text x="370" y="228" font-family="'Nunito', 'Arial Rounded MT Bold', Arial, sans-serif" font-weight="900" font-size="88" fill="white" letter-spacing="-2">Denti<tspan fill="#FF6B6B">Paws</tspan></text>
+
+  <!-- Divider line -->
+  <rect x="370" y="252" width="80" height="4" rx="2" fill="#FF6B6B"/>
+
+  <!-- Headline -->
+  <text x="370" y="320" font-family="'Nunito', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="42" fill="white" opacity="0.95">Is your dog's mouth</text>
+  <text x="370" y="374" font-family="'Nunito', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="42" fill="#FF6B6B">actually okay?</text>
+
+  <!-- Sub copy -->
+  <text x="370" y="432" font-family="'Nunito', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="28" fill="white" opacity="0.70">Free 60-second dental check for your dog</text>
+
+  <!-- Domain -->
+  <text x="370" y="540" font-family="'Nunito', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="26" fill="white" opacity="0.45">dentipaws.com</text>
+</svg>
