@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DentiPaws Blog — Dental Health Tips, Guides & Research</title>
-  <meta name="description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance, nutrition, brushing tips and more.">
+  <title>Dog Dental Health Blog — Tips, Research & Guides | DentiPaws</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dentipaws.com/blog-index.html">
+  <meta property="og:title" content="Dog Dental Health Blog — Tips, Research & Guides | DentiPaws">
+  <meta property="og:description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
+  <meta property="og:site_name" content="DentiPaws">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dog Dental Health Blog — Tips, Research & Guides | DentiPaws">
+  <meta name="twitter:description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.">
+  <meta name="twitter:image" content="https://www.dentipaws.com/og-default.png">
+  <link rel="canonical" href="https://www.dentipaws.com/blog-index.html">
+  <meta name="description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -118,7 +129,45 @@
     .mobile-nav a:active{background:rgba(255,255,255,.1);}
     .mobile-nav.open{display:flex;}
     @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
+  
+    /* ── HERO BACKGROUND IMAGE ── */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg-img),
+    .breed-hero > *:not(.hero-bg-img),
+    .art-hero > *:not(.hero-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .hero, .breed-hero, .art-hero {
+      position: relative;
+      overflow: hidden;
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Dog Dental Health Blog — Tips, Research & Guides | DentiPaws",
+    "description": "Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.",
+    "url": "https://www.dentipaws.com/blog-index.html"
+  }
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
 </head>
 <body>
 
@@ -127,7 +176,7 @@
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
     <a href="../all-breeds.html">All Breeds</a>
-    <a href="blog-index.html" class="active">Blog</a>
+    <a href="index.html" class="active">Blog</a>
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <a href="../index.html" class="btn-quiz">⚡ Free Quiz</a>
@@ -138,11 +187,13 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="../index.html">Home</a>
   <a href="../all-breeds.html">All Breeds</a>
-  <a href="blog-index.html">Blog</a>
+  <a href="index.html">Blog</a>
   <a href="../about.html">Puffy's Story</a>
 </nav>
 
 <div class="hero">
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-pill">📝 Tips, research & guides</div>
   <h1>The DentiPaws <em>Blog</em></h1>
   <p class="hero-sub">Practical articles on dog dental health — from the best kibble for teeth to navigating dental insurance.</p>
@@ -171,7 +222,7 @@
     <!-- ARTICLE GRID -->
     <div class="articles-grid">
 
- <!-- <a href="dog-dental-insurance-compared.html" class="article-card">
+      <a href="dog-dental-insurance-compared.html" class="article-card">
         <div class="card-img insurance">🛡️</div>
         <div class="card-content">
           <div class="card-meta">
@@ -181,12 +232,11 @@
           <h3>Dog Dental Insurance Compared — Is It Worth It?</h3>
           <p>We compare the top pet insurance plans that cover dental — premiums, exclusions, and what a real claim looks like for a small breed.</p>
           <div class="card-footer">
-            <span class="card-date">July 2026</span>
+            <span class="card-date">Jun 2025</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
-      </a> 
-      -->
+      </a>
 
       <a href="nutritional-targets-dog-dental-health.html" class="article-card">
         <div class="card-img nutrition">🥗</div>
@@ -198,7 +248,7 @@
           <h3>Nutritional Targets for Dog Dental Health — What Does Your Dog Actually Need?</h3>
           <p>Calcium, phosphorus, vitamin D — the key nutrients that support strong teeth and healthy gums, and how to check if your dog's diet covers them.</p>
           <div class="card-footer">
-            <span class="card-date">June 2026</span>
+            <span class="card-date">Jun 2025</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -214,7 +264,7 @@
           <h3>How to Actually Get Your Dog to Accept Tooth Brushing</h3>
           <p>The step-by-step desensitisation method that turns resistant dogs into cooperative ones — even the stubborn ones.</p>
           <div class="card-footer">
-            <span class="card-date">June 2026</span>
+            <span class="card-date">May 2025</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -230,7 +280,7 @@
           <h3>What Does the VOHC Seal Actually Mean?</h3>
           <p>Most dental products make big claims. The VOHC seal is the only one that requires clinical proof. Here's how the approval process works — and which products have earned it.</p>
           <div class="card-footer">
-            <span class="card-date">June 2026</span>
+            <span class="card-date">May 2025</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -246,7 +296,7 @@
           <h3>Wet Food vs Dry Food — Which is Worse for Your Dog's Teeth?</h3>
           <p>The answer is more nuanced than you'd expect. Wet food isn't automatically the villain, and dry food isn't automatically protective — here's the actual evidence.</p>
           <div class="card-footer">
-            <span class="card-date">June 2026</span>
+            <span class="card-date">Apr 2025</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
@@ -262,7 +312,7 @@
           <h3>7 Signs Your Dog Has Dental Disease — and Most Owners Miss Them</h3>
           <p>Dogs don't cry when their teeth hurt. They just quietly suffer. Here are the subtle signs to look for at home before the problem becomes a vet emergency.</p>
           <div class="card-footer">
-            <span class="card-date">June 2026</span>
+            <span class="card-date">Apr 2025</span>
             <span class="card-arrow">Read →</span>
           </div>
         </div>
