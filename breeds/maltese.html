@@ -9,12 +9,12 @@
   <meta property="og:url" content="https://www.dentipaws.com/breeds/maltese.html">
   <meta property="og:title" content="Maltese Dental Care Guide — High Risk (23%) | DentiPaws">
   <meta property="og:description" content="Complete dental care guide for Malteses. Common dental issues, high risk (23% prevalence), daily care routine and vet-recommended products.">
-  <meta property="og:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
   <meta property="og:site_name" content="DentiPaws">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Maltese Dental Care Guide — High Risk (23%) | DentiPaws">
   <meta name="twitter:description" content="Complete dental care guide for Malteses. Common dental issues, high risk (23% prevalence), daily care routine and vet-recommended products.">
-  <meta name="twitter:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta name="twitter:image" content="https://www.dentipaws.com/og-default.png">
   <link rel="canonical" href="https://www.dentipaws.com/breeds/maltese.html">
   <meta name="description" content="Complete dental care guide for Malteses. Common dental issues, high risk (23% prevalence), daily care routine and vet-recommended products.">
   <style>
@@ -32,7 +32,7 @@
   .btn-chat-top{background:var(--coral);color:white;border:none;padding:9px 18px;border-radius:50px;font-weight:700;font-size:0.88em;cursor:pointer;}
   .breed-hero{padding:50px 24px;background:linear-gradient(160deg,#fff 0%,var(--surface) 100%);border-bottom:2px solid var(--border);}
   .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:30px;}
-  .breed-emo{font-size:6em;background:rgba(255,107,107,0.1);padding:20px;border-radius:20px;}
+  .breed-emo{display:none;}
   .breadcrumb{font-size:0.85em;color:var(--muted);margin-bottom:12px;}
   .breadcrumb a{color:var(--coral);text-decoration:none;}
   h1{font-size:clamp(1.8em,4vw,2.8em);font-weight:900;margin-bottom:10px;}
@@ -130,6 +130,64 @@
     .mobile-nav a:active{background:rgba(255,255,255,.1);}
     .mobile-nav.open{display:flex;}
     @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
+  
+    /* ── HERO BACKGROUND IMAGE ── */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg-img),
+    .breed-hero > *:not(.hero-bg-img),
+    .art-hero > *:not(.hero-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .hero, .breed-hero, .art-hero {
+      position: relative;
+      overflow: hidden;
+    }
+  
+    /* ── BREED PHOTO PLACEHOLDER ── */
+    .breed-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+      background: rgba(255,107,107,0.12);
+      border: 3px dashed rgba(255,107,107,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .breed-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 17px;
+      display: block;
+    }
+    .breed-photo-placeholder {
+      font-size: 3em;
+      opacity: 0.5;
+    }
+  
+  /* ── FAQ SECTION ── */
+  .article-body .faq-q { color: var(--ink); }
+  
+  .faq-section { margin-top: 0; }
+  .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-size: 1.05em; font-weight: 800; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .faq-a { font-size: 0.93em; color: var(--muted); line-height: 1.7; margin: 0; }
+  .article-body .faq-item { padding: 18px 0; }
   </style>
 
   <script type="application/ld+json">
@@ -149,6 +207,53 @@
       }
     }
   </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does my Maltese have bad breath?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bad breath in a Maltese almost always indicates active bacterial infection from plaque or periodontal disease — not normal dog breath. Maltese are a high-risk breed (23% prevalence) with tiny jaws and rapid plaque formation. Their long facial coat also frequently masks early visual signs, meaning disease is often more advanced than it appears. A vet dental examination is recommended promptly when bad breath is noticed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check my Maltese's teeth through all that fur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gently part the facial coat at the mouth and lift the lips to expose the teeth and gumline. Do this monthly. Check for yellowing or brown tartar (especially on back teeth), red or swollen gums, and any loose or missing teeth. Early yellowing caught at this stage is still reversible with daily brushing; the same buildup left for 6 months may require professional removal under anaesthesia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should a Maltese have a professional dental cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every 6 months from age 1. Maltese develop periodontal disease early — often before age 3 — and the disease progresses quickly in their tiny jaws. Regular professional examinations with X-rays are essential to catch sub-gumline disease that home inspection cannot detect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size dental chews are safe for a Maltese?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XS size only. Standard dental chews are choking hazards for Maltese. Choose treats specifically labelled for dogs under 5–7 lbs. Whimzees XS and Greenies Teenie are VOHC-accepted options at appropriate sizes. Always supervise chewing."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <header class="topbar">
@@ -156,7 +261,7 @@
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
     <a href="../all-breeds.html">All Breeds</a>
-        <a href="../blog/index.html">Blog</a>
+        <a href="../blog/blog-index.html">Blog</a>
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
@@ -167,13 +272,19 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="../index.html">Home</a>
   <a href="../all-breeds.html">All Breeds</a>
-  <a href="../blog/index.html">Blog</a>
+  <a href="../blog/blog-index.html">Blog</a>
   <a href="../about.html">Puffy's Story</a>
 </nav>
 
 <div class="breed-hero">
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-inner">
-    <div class="breed-emo">🐕</div>
+    <div class="breed-photo">
+        <!-- Replace src with your breed image e.g. /images/breeds/maltese.jpg -->
+        <img src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="breed-photo-placeholder" id="emo-maltese">🐕</span>
+      </div>
     <div>
       <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Breeds</a> › Maltese</div>
       <span class="risk-pill" style="background:#FF6B6B">High Risk — 23% prevalence</span>
@@ -288,6 +399,26 @@
     <h2>Not sure about your Maltese?</h2>
     <p>Take our 60-second triage quiz for a personalised action plan</p>
     <a href="../index.html" class="btn-cta">Take the Free Quiz</a>
+  </div>
+
+  <div class="section faq-section">
+    <div class="section-head"><span class="s-icon">❓</span><h2>Frequently Asked Questions</h2></div>
+    <div class="faq-item">
+      <h3 class="faq-q">Why does my Maltese have bad breath?</h3>
+      <p class="faq-a">Bad breath in a Maltese almost always indicates active bacterial infection from plaque or periodontal disease — not normal dog breath. Maltese are a high-risk breed (23% prevalence) with tiny jaws and rapid plaque formation. Their long facial coat also frequently masks early visual signs, meaning disease is often more advanced than it appears. A vet dental examination is recommended promptly when bad breath is noticed.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How do I check my Maltese's teeth through all that fur?</h3>
+      <p class="faq-a">Gently part the facial coat at the mouth and lift the lips to expose the teeth and gumline. Do this monthly. Check for yellowing or brown tartar (especially on back teeth), red or swollen gums, and any loose or missing teeth. Early yellowing caught at this stage is still reversible with daily brushing; the same buildup left for 6 months may require professional removal under anaesthesia.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How often should a Maltese have a professional dental cleaning?</h3>
+      <p class="faq-a">Every 6 months from age 1. Maltese develop periodontal disease early — often before age 3 — and the disease progresses quickly in their tiny jaws. Regular professional examinations with X-rays are essential to catch sub-gumline disease that home inspection cannot detect.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What size dental chews are safe for a Maltese?</h3>
+      <p class="faq-a">XS size only. Standard dental chews are choking hazards for Maltese. Choose treats specifically labelled for dogs under 5–7 lbs. Whimzees XS and Greenies Teenie are VOHC-accepted options at appropriate sizes. Always supervise chewing.</p>
+    </div>
   </div>
 
 </div>

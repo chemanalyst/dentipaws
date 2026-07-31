@@ -9,12 +9,12 @@
   <meta property="og:url" content="https://www.dentipaws.com/breeds/french-bulldog.html">
   <meta property="og:title" content="French Bulldog Dental Care Guide — High Risk (26%) | DentiPaws">
   <meta property="og:description" content="Complete dental care guide for French Bulldogs. Common dental issues, high risk (26% prevalence), daily care routine and vet-recommended products.">
-  <meta property="og:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
   <meta property="og:site_name" content="DentiPaws">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="French Bulldog Dental Care Guide — High Risk (26%) | DentiPaws">
   <meta name="twitter:description" content="Complete dental care guide for French Bulldogs. Common dental issues, high risk (26% prevalence), daily care routine and vet-recommended products.">
-  <meta name="twitter:image" content="https://www.dentipaws.com/images/og-default.png">
+  <meta name="twitter:image" content="https://www.dentipaws.com/og-default.png">
   <link rel="canonical" href="https://www.dentipaws.com/breeds/french-bulldog.html">
   <meta name="description" content="Complete dental care guide for French Bulldogs. Common dental issues, high risk (26% prevalence), daily care routine and vet-recommended products.">
   <style>
@@ -32,7 +32,7 @@
   .btn-chat-top{background:var(--coral);color:white;border:none;padding:9px 18px;border-radius:50px;font-weight:700;font-size:0.88em;cursor:pointer;}
   .breed-hero{padding:50px 24px;background:linear-gradient(160deg,#fff 0%,var(--surface) 100%);border-bottom:2px solid var(--border);}
   .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:30px;}
-  .breed-emo{font-size:6em;background:rgba(255,107,107,0.1);padding:20px;border-radius:20px;}
+  .breed-emo{display:none;}
   .breadcrumb{font-size:0.85em;color:var(--muted);margin-bottom:12px;}
   .breadcrumb a{color:var(--coral);text-decoration:none;}
   h1{font-size:clamp(1.8em,4vw,2.8em);font-weight:900;margin-bottom:10px;}
@@ -130,6 +130,64 @@
     .mobile-nav a:active{background:rgba(255,255,255,.1);}
     .mobile-nav.open{display:flex;}
     @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
+  
+    /* ── HERO BACKGROUND IMAGE ── */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg-img),
+    .breed-hero > *:not(.hero-bg-img),
+    .art-hero > *:not(.hero-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .hero, .breed-hero, .art-hero {
+      position: relative;
+      overflow: hidden;
+    }
+  
+    /* ── BREED PHOTO PLACEHOLDER ── */
+    .breed-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+      background: rgba(255,107,107,0.12);
+      border: 3px dashed rgba(255,107,107,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .breed-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 17px;
+      display: block;
+    }
+    .breed-photo-placeholder {
+      font-size: 3em;
+      opacity: 0.5;
+    }
+  
+  /* ── FAQ SECTION ── */
+  .article-body .faq-q { color: var(--ink); }
+  
+  .faq-section { margin-top: 0; }
+  .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-size: 1.05em; font-weight: 800; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .faq-a { font-size: 0.93em; color: var(--muted); line-height: 1.7; margin: 0; }
+  .article-body .faq-item { padding: 18px 0; }
   </style>
 
   <script type="application/ld+json">
@@ -149,6 +207,53 @@
       }
     }
   </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do French Bulldogs have so many dental problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "French Bulldogs have severe brachycephalic jaw compression that physically rotates and overlaps their teeth. Despite being a medium-sized dog, they carry high dental disease risk (26% prevalence) purely due to jaw structure. Many French Bulldogs cannot open their mouths wide enough for thorough brushing. The structural limitation means home care can only partially compensate — professional cleaning every 6 months is critical."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I brush my French Bulldog's teeth with a regular toothbrush?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A regular toothbrush is usually too rigid for a French Bulldog's compressed jaw. A silicone finger brush offers better access and flexibility. Apply enzymatic toothpaste and cover as many surfaces as possible. Supplement with a dental gel applied directly to gum surfaces for areas the brush cannot reach. Do not give up because complete coverage is impossible — partial cleaning is significantly better than none."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does a French Bulldog need professional dental cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every 6 months — this is more critical for French Bulldogs than for almost any other breed. The structural limitations of their jaw physically restrict what home care can achieve, making professional cleaning an irreplaceable part of their dental health plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are dental chews safe for French Bulldogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With caution. French Bulldogs can struggle with some chew shapes and textures due to jaw compression. Purina Pro Plan Dental Health kibble (VOHC accepted) can be safer than treats for Frenchies who struggle to chew effectively. If using dental chews, supervise closely and choose soft textures. Hard dental chews are not recommended."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <header class="topbar">
@@ -156,7 +261,7 @@
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
     <a href="../all-breeds.html">All Breeds</a>
-        <a href="../blog/index.html">Blog</a>
+        <a href="../blog/blog-index.html">Blog</a>
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
@@ -167,13 +272,19 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="../index.html">Home</a>
   <a href="../all-breeds.html">All Breeds</a>
-  <a href="../blog/index.html">Blog</a>
+  <a href="../blog/blog-index.html">Blog</a>
   <a href="../about.html">Puffy's Story</a>
 </nav>
 
 <div class="breed-hero">
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-inner">
-    <div class="breed-emo">🐕</div>
+    <div class="breed-photo">
+        <!-- Replace src with your breed image e.g. /images/breeds/french-bulldog.jpg -->
+        <img src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="breed-photo-placeholder" id="emo-french-bulldog">🐕</span>
+      </div>
     <div>
       <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Breeds</a> › French Bulldog</div>
       <span class="risk-pill" style="background:#FF6B6B">High Risk — 26% prevalence</span>
@@ -293,6 +404,26 @@
     <h2>Not sure about your French Bulldog?</h2>
     <p>Take our 60-second triage quiz for a personalised action plan</p>
     <a href="../index.html" class="btn-cta">Take the Free Quiz</a>
+  </div>
+
+  <div class="section faq-section">
+    <div class="section-head"><span class="s-icon">❓</span><h2>Frequently Asked Questions</h2></div>
+    <div class="faq-item">
+      <h3 class="faq-q">Why do French Bulldogs have so many dental problems?</h3>
+      <p class="faq-a">French Bulldogs have severe brachycephalic jaw compression that physically rotates and overlaps their teeth. Despite being a medium-sized dog, they carry high dental disease risk (26% prevalence) purely due to jaw structure. Many French Bulldogs cannot open their mouths wide enough for thorough brushing. The structural limitation means home care can only partially compensate — professional cleaning every 6 months is critical.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Can I brush my French Bulldog's teeth with a regular toothbrush?</h3>
+      <p class="faq-a">A regular toothbrush is usually too rigid for a French Bulldog's compressed jaw. A silicone finger brush offers better access and flexibility. Apply enzymatic toothpaste and cover as many surfaces as possible. Supplement with a dental gel applied directly to gum surfaces for areas the brush cannot reach. Do not give up because complete coverage is impossible — partial cleaning is significantly better than none.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How often does a French Bulldog need professional dental cleaning?</h3>
+      <p class="faq-a">Every 6 months — this is more critical for French Bulldogs than for almost any other breed. The structural limitations of their jaw physically restrict what home care can achieve, making professional cleaning an irreplaceable part of their dental health plan.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Are dental chews safe for French Bulldogs?</h3>
+      <p class="faq-a">With caution. French Bulldogs can struggle with some chew shapes and textures due to jaw compression. Purina Pro Plan Dental Health kibble (VOHC accepted) can be safer than treats for Frenchies who struggle to chew effectively. If using dental chews, supervise closely and choose soft textures. Hard dental chews are not recommended.</p>
+    </div>
   </div>
 
 </div>
