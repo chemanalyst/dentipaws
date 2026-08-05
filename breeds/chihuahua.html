@@ -262,6 +262,14 @@
   ]
 }
   </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7P4XWEVJMV');
+  </script>
 </head>
 <body>
 <header class="topbar">
@@ -269,7 +277,7 @@
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
     <a href="../all-breeds.html">All Breeds</a>
-        <a href="../blog/blog-index.html">Blog</a>
+        <a href="../blog/index.html">Blog</a>
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
@@ -280,17 +288,18 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="../index.html">Home</a>
   <a href="../all-breeds.html">All Breeds</a>
-  <a href="../blog/blog-index.html">Blog</a>
+  <a href="../blog/index.html">Blog</a>
   <a href="../about.html">Puffy's Story</a>
 </nav>
 
 <div class="breed-hero">
-  <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
-  <!-- Add your hero dog image: src="" -->
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-inner">
     <div class="breed-photo">
-        
-        <img src="/images/chihuahua.jpg" alt="">
+        <!-- Replace src with your breed image e.g. /images/breeds/chihuahua.jpg -->
+        <img src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="breed-photo-placeholder" id="emo-chihuahua">🐕</span>
       </div>
     <div>
       <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Breeds</a> › Chihuahua</div>
@@ -388,22 +397,22 @@
     <div class="prod-list">
     <div class="prod-item">
       <div class="prod-ico">🪥</div>
-      <div class="prod-info"><h4>Vet's Best Finger Brush</h4><p>Extra-small, fits tiny Chihuahua mouths. Better control than any traditional toothbrush.</p></div>
+      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B001LKT4OC/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Vet's Best Finger Brush</a></h4><p>Extra-small, fits tiny Chihuahua mouths. Better control than any traditional toothbrush.</p></div>
     </div>
 
     <div class="prod-item">
       <div class="prod-ico">🦴</div>
-      <div class="prod-info"><h4>Greenies Teenie Dental Treats</h4><p>Smallest available, for dogs 2–7 lbs. VOHC approved. Always supervise.</p></div>
+      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B00T7R7HLC/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Greenies Teenie Dental Treats</a></h4><p>Smallest available, for dogs 2–7 lbs. VOHC approved. Always supervise.</p></div>
     </div>
 
     <div class="prod-item">
       <div class="prod-ico">💧</div>
-      <div class="prod-info"><h4>TropiClean Fresh Breath Water Additive</h4><p>Tasteless, odorless. Essential for Chihuahuas who resist brushing.</p></div>
+      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B00379KT66/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">TropiClean Fresh Breath Water Additive</a></h4><p>Tasteless, odorless. Essential for Chihuahuas who resist brushing.</p></div>
     </div>
 
     <div class="prod-item">
       <div class="prod-ico">🧴</div>
-      <div class="prod-info"><h4>PetzLife Oral Care Gel</h4><p>Apply to gumline. Works overnight while your dog sleeps. Good backup for resistant brushers.</p></div>
+      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B003NLKR2K/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">PetzLife Oral Care Gel</a></h4><p>Apply to gumline. Works overnight while your dog sleeps. Good backup for resistant brushers.</p></div>
     </div></div>
     <div class="breed-note"><span style="font-size:1.8em">💡</span><p><strong>Key tip:</strong> Retained baby teeth should be extracted at 6 months — often done at the same time as spay/neuter. Don't skip this.</p></div>
   </div>
@@ -443,7 +452,11 @@
 <footer>
   <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
   Evidence-based advice from peer-reviewed veterinary research<br>
-  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span><br>
+  <span style="margin-top:10px;display:inline-block;font-size:.82em;opacity:.6;">
+    As an Amazon Associate we earn from qualifying purchases. &nbsp;|&nbsp;
+    <a href="../privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Privacy Policy &amp; Affiliate Disclosure</a>
+  </span>
 </footer>
 
 <!-- Chat -->

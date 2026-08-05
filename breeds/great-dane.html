@@ -254,6 +254,14 @@
   ]
 }
   </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7P4XWEVJMV');
+  </script>
 </head>
 <body>
 <header class="topbar">
@@ -261,7 +269,7 @@
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
     <a href="../all-breeds.html">All Breeds</a>
-        <a href="../blog/blog-index.html">Blog</a>
+        <a href="../blog/index.html">Blog</a>
     <a href="../about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
@@ -272,18 +280,18 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="../index.html">Home</a>
   <a href="../all-breeds.html">All Breeds</a>
-  <a href="../blog/blog-index.html">Blog</a>
+  <a href="../blog/index.html">Blog</a>
   <a href="../about.html">Puffy's Story</a>
 </nav>
 
 <div class="breed-hero">
-  <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
-  <!-- Add your hero dog image: src="" -->
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-inner">
     <div class="breed-photo">
-        
-        <img src="/images/great-dane.jpg" alt="">
-        
+        <!-- Replace src with your breed image e.g. /images/breeds/great-dane.jpg -->
+        <img src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="breed-photo-placeholder" id="emo-great-dane">🐕</span>
       </div>
     <div>
       <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Breeds</a> › Giant Dane</div>
@@ -384,12 +392,12 @@
 
     <div class="prod-item">
       <div class="prod-ico">🎾</div>
-      <div class="prod-info"><h4>Jolly Ball Romp-N-Roll (XL)</h4><p>Safe play toy that won't fracture teeth. Important for enthusiastic giant breeds.</p></div>
+      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B0002DHNZA/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Jolly Ball Romp-N-Roll (XL)</a></h4><p>Safe play toy that won't fracture teeth. Important for enthusiastic giant breeds.</p></div>
     </div>
 
     <div class="prod-item">
       <div class="prod-ico">🦴</div>
-      <div class="prod-info"><h4>Greenies Large Dental Treats</h4><p>VOHC approved. Use large size daily — jumbo if appropriate for weight.</p></div>
+      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B000KAJ51U/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Greenies Large Dental Treats</a></h4><p>VOHC approved. Use large size daily — jumbo if appropriate for weight.</p></div>
     </div></div>
     <div class="breed-note"><span style="font-size:1.8em">💡</span><p><strong>Key tip:</strong> Great Danes age fast. A 7-year-old Dane is effectively senior. Start or intensify dental care at the 5-year mark before age-related risk increases.</p></div>
   </div>
@@ -425,7 +433,11 @@
 <footer>
   <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
   Evidence-based advice from peer-reviewed veterinary research<br>
-  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span><br>
+  <span style="margin-top:10px;display:inline-block;font-size:.82em;opacity:.6;">
+    As an Amazon Associate we earn from qualifying purchases. &nbsp;|&nbsp;
+    <a href="../privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Privacy Policy &amp; Affiliate Disclosure</a>
+  </span>
 </footer>
 
 <!-- Chat -->
