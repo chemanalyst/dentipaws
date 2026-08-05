@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Dental Health Blog — Tips, Research & Guides | DentiPaws</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dentipaws.com/blog-index.html">
+  <meta property="og:title" content="Dog Dental Health Blog — Tips, Research & Guides | DentiPaws">
+  <meta property="og:description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
+  <meta property="og:site_name" content="DentiPaws">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dog Dental Health Blog — Tips, Research & Guides | DentiPaws">
+  <meta name="twitter:description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.">
+  <meta name="twitter:image" content="https://www.dentipaws.com/og-default.png">
+  <link rel="canonical" href="https://www.dentipaws.com/blog-index.html">
+  <meta name="description" content="Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --coral:#FF6B6B;--coral-d:#E85555;--mint:#4ECDC4;
+      --cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;
+      --muted:#6B7280;--border:#F0E8DF;--radius:16px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+
+    /* ── TOPBAR ── */
+    .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+    .logo{font-weight:900;font-size:1.5em;color:var(--coral);text-decoration:none;}
+    .topbar-nav a{font-size:.9em;font-weight:700;color:var(--muted);text-decoration:none;margin-left:22px;transition:color .2s;}
+    .topbar-nav a:hover,.topbar-nav a.active{color:var(--coral);}
+    .btn-quiz{background:var(--coral);color:white;border:none;padding:9px 20px;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.88em;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
+    .btn-quiz:hover{background:var(--coral-d);}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(160deg,white 0%,var(--surface) 100%);padding:60px 20px 50px;text-align:center;border-bottom:2px solid var(--border);position:relative;overflow:hidden;}
+    .hero::before{content:'📝';position:absolute;font-size:200px;opacity:.04;top:-30px;left:-40px;transform:rotate(-15deg);}
+    .hero::after{content:'🦷';position:absolute;font-size:160px;opacity:.04;bottom:-20px;right:-20px;transform:rotate(15deg);}
+    .hero-pill{display:inline-block;background:#FFF0EE;color:var(--coral);border:2px solid #FFD5D0;padding:6px 18px;border-radius:50px;font-weight:800;font-size:.85em;margin-bottom:16px;}
+    .hero h1{font-size:clamp(2em,5vw,3em);font-weight:900;margin-bottom:12px;}
+    .hero h1 em{color:var(--coral);font-style:normal;}
+    .hero-sub{font-size:1.05em;color:var(--muted);max-width:500px;margin:0 auto;}
+
+    /* ── LAYOUT ── */
+    .page-wrap{max-width:1080px;margin:0 auto;padding:40px 20px 80px;display:grid;grid-template-columns:1fr 290px;gap:32px;align-items:start;}
+
+    /* ── FEATURED ARTICLE ── */
+    .featured{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(255,107,107,.1);border:2px solid var(--border);margin-bottom:28px;text-decoration:none;color:inherit;display:block;transition:all .25s;}
+    .featured:hover{transform:translateY(-3px);border-color:var(--coral);box-shadow:0 8px 30px rgba(255,107,107,.15);}
+    .featured-img{height:220px;background:linear-gradient(135deg,var(--coral),#FF8E53);display:flex;align-items:center;justify-content:center;font-size:5em;position:relative;}
+    .featured-badge{position:absolute;top:16px;left:16px;background:white;color:var(--coral);padding:5px 14px;border-radius:50px;font-size:.78em;font-weight:800;}
+    .featured-body{padding:28px;}
+    .featured-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+    .cat-tag{background:var(--surface);color:var(--coral);padding:4px 12px;border-radius:20px;font-size:.78em;font-weight:800;}
+    .read-time{font-size:.8em;color:var(--muted);font-weight:600;}
+    .featured-body h2{font-size:1.6em;font-weight:900;margin-bottom:10px;line-height:1.25;}
+    .featured-body p{color:var(--muted);font-size:.95em;line-height:1.6;margin-bottom:16px;}
+    .read-more{font-weight:800;color:var(--coral);font-size:.9em;display:flex;align-items:center;gap:5px;}
+
+    /* ── ARTICLE GRID ── */
+    .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+    .article-card{background:white;border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .25s;}
+    .article-card:hover{transform:translateY(-3px);border-color:var(--coral);box-shadow:0 6px 24px rgba(255,107,107,.12);}
+    .card-img{height:130px;display:flex;align-items:center;justify-content:center;font-size:3.5em;}
+    .card-img.nutrition{background:linear-gradient(135deg,#84fab0,#8fd3f4);}
+    .card-img.insurance{background:linear-gradient(135deg,#a18cd1,#fbc2eb);}
+    .card-img.care{background:linear-gradient(135deg,#ffecd2,#fcb69f);}
+    .card-img.research{background:linear-gradient(135deg,#667eea,#764ba2);color:white;}
+    .card-img.food{background:linear-gradient(135deg,#f093fb,#f5576c);color:white;}
+    .card-img.tips{background:linear-gradient(135deg,#4facfe,#00f2fe);}
+    .card-content{padding:18px;flex:1;display:flex;flex-direction:column;}
+    .card-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+    .card-content h3{font-size:1.05em;font-weight:900;margin-bottom:8px;line-height:1.3;flex:1;}
+    .card-content p{color:var(--muted);font-size:.87em;line-height:1.55;flex:1;}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1.5px solid var(--border);}
+    .card-date{font-size:.77em;color:var(--muted);font-weight:600;}
+    .card-arrow{font-size:.85em;font-weight:800;color:var(--coral);}
+
+    /* ── SIDEBAR ── */
+    .sidebar{display:flex;flex-direction:column;gap:18px;}
+    .sb-card{background:white;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.06);padding:20px;}
+    .sb-card h3{font-weight:900;font-size:1.05em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+    .topic-list{display:flex;flex-direction:column;gap:6px;}
+    .topic-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--cream);border-radius:10px;text-decoration:none;color:var(--ink);font-size:.88em;font-weight:700;transition:all .2s;}
+    .topic-item:hover{background:#FFF0EE;color:var(--coral);}
+    .topic-count{background:var(--border);color:var(--muted);padding:2px 8px;border-radius:10px;font-size:.75em;font-weight:800;}
+    .popular-list{display:flex;flex-direction:column;gap:10px;}
+    .popular-item{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:inherit;padding:8px 0;border-bottom:1px solid var(--border);}
+    .popular-item:last-child{border-bottom:none;padding-bottom:0;}
+    .pop-num{font-size:1.3em;font-weight:900;color:var(--coral);min-width:24px;}
+    .pop-title{font-size:.87em;font-weight:700;color:var(--ink);line-height:1.35;}
+    .pop-title:hover{color:var(--coral);}
+    .newsletter{background:linear-gradient(135deg,#FFF0EE,white);border:2px solid #FFD5D0;border-radius:var(--radius);padding:20px;}
+    .newsletter h3{font-weight:900;font-size:1em;margin-bottom:6px;}
+    .newsletter p{font-size:.85em;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .newsletter input{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:50px;font-size:.88em;font-family:'Nunito',sans-serif;outline:none;margin-bottom:8px;}
+    .newsletter input:focus{border-color:var(--coral);}
+    .newsletter button{width:100%;padding:11px;background:var(--coral);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.9em;cursor:pointer;}
+    .newsletter button:hover{background:var(--coral-d);}
+
+    /* ── FOOTER ── */
+    footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:30px 20px;font-size:.88em;line-height:1.9;}
+    footer strong{color:white;}
+
+    /* Chat hidden */
+    #chat-fab,#chat-panel,#chat-bubble,.btn-chat-top{display:none !important;}
+
+    @media(max-width:860px){.page-wrap{grid-template-columns:1fr;}.sidebar{order:2;}}
+    .articles-grid{grid-template-columns:1fr;}}
+    .hamburger span{display:block;width:24px;height:2.5px;background:white;border-radius:3px;transition:all .3s;}
+    
+      .btn-chat-top{display:none !important;}
+    }
+  
+    
+  
+    /* ── MOBILE NAV ── */
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+    .hamburger span{display:block;width:24px;height:3px;background:white;border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:15px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav a:active{background:rgba(255,255,255,.1);}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
+  
+    /* ── HERO BACKGROUND IMAGE ── */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg-img),
+    .breed-hero > *:not(.hero-bg-img),
+    .art-hero > *:not(.hero-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .hero, .breed-hero, .art-hero {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Dog Dental Health Blog — Tips, Research & Guides | DentiPaws",
+    "description": "Expert articles on dog dental health — best kibble for teeth, dental insurance comparisons, VOHC-approved products, brushing tips and vet-backed guides.",
+    "url": "https://www.dentipaws.com/blog-index.html"
+  }
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="../index.html" class="logo">🦷 DentiPaws</a>
+  <nav class="topbar-nav">
+    <a href="../index.html">Home</a>
+    <a href="../all-breeds.html">All Breeds</a>
+    <a href="blog-index.html" class="active">Blog</a>
+    <a href="../about.html">Puffy's Story</a>
+  </nav>
+  <a href="../index.html" class="btn-quiz">⚡ Free Quiz</a>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../all-breeds.html">All Breeds</a>
+  <a href="blog-index.html">Blog</a>
+  <a href="../about.html">Puffy's Story</a>
+</nav>
+
+<div class="hero">
+  <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
+  <div class="hero-pill">📝 Tips, research & guides</div>
+  <h1>The DentiPaws <em>Blog</em></h1>
+  <p class="hero-sub">Practical articles on dog dental health — from the best kibble for teeth to navigating dental insurance.</p>
+</div>
+
+<div class="page-wrap">
+  <div class="main-col">
+
+    <!-- FEATURED -->
+    <a href="best-kibble-for-dog-teeth.html" class="featured">
+      <div class="featured-img">
+        🦴
+        <span class="featured-badge">⭐ Featured</span>
+      </div>
+      <div class="featured-body">
+        <div class="featured-meta">
+          <span class="cat-tag">Nutrition</span>
+          <span class="read-time">⏱️ 6 min read</span>
+        </div>
+        <h2>The Best Kibble for Dog Teeth — What the Labels Don't Tell You</h2>
+        <p>Not all dry food is equal when it comes to dental health. We break down what to look for, which brands carry the VOHC seal, and why kibble size and texture matter more than most owners realise.</p>
+        <span class="read-more">Read article →</span>
+      </div>
+    </a>
+
+    <!-- ARTICLE GRID -->
+    <div class="articles-grid">
+
+      <a href="dog-dental-insurance-compared.html" class="article-card">
+        <div class="card-img insurance">🛡️</div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="cat-tag">Insurance</span>
+            <span class="read-time">⏱️ 8 min</span>
+          </div>
+          <h3>Dog Dental Insurance Compared — Is It Worth It?</h3>
+          <p>We compare the top pet insurance plans that cover dental — premiums, exclusions, and what a real claim looks like for a small breed.</p>
+          <div class="card-footer">
+            <span class="card-date">Jun 2025</span>
+            <span class="card-arrow">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="nutritional-targets-dog-dental-health.html" class="article-card">
+        <div class="card-img nutrition">🥗</div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="cat-tag">Nutrition</span>
+            <span class="read-time">⏱️ 7 min</span>
+          </div>
+          <h3>Nutritional Targets for Dog Dental Health — What Does Your Dog Actually Need?</h3>
+          <p>Calcium, phosphorus, vitamin D — the key nutrients that support strong teeth and healthy gums, and how to check if your dog's diet covers them.</p>
+          <div class="card-footer">
+            <span class="card-date">Jun 2025</span>
+            <span class="card-arrow">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="how-to-brush-dog-teeth.html" class="article-card">
+        <div class="card-img tips">🪥</div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="cat-tag">Care Tips</span>
+            <span class="read-time">⏱️ 5 min</span>
+          </div>
+          <h3>How to Actually Get Your Dog to Accept Tooth Brushing</h3>
+          <p>The step-by-step desensitisation method that turns resistant dogs into cooperative ones — even the stubborn ones.</p>
+          <div class="card-footer">
+            <span class="card-date">May 2025</span>
+            <span class="card-arrow">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="vohc-approved-products-guide.html" class="article-card">
+        <div class="card-img research">🔬</div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="cat-tag">Research</span>
+            <span class="read-time">⏱️ 6 min</span>
+          </div>
+          <h3>What Does the VOHC Seal Actually Mean?</h3>
+          <p>Most dental products make big claims. The VOHC seal is the only one that requires clinical proof. Here's how the approval process works — and which products have earned it.</p>
+          <div class="card-footer">
+            <span class="card-date">May 2025</span>
+            <span class="card-arrow">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="wet-food-vs-dry-food-teeth.html" class="article-card">
+        <div class="card-img food">🍖</div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="cat-tag">Nutrition</span>
+            <span class="read-time">⏱️ 5 min</span>
+          </div>
+          <h3>Wet Food vs Dry Food — Which is Worse for Your Dog's Teeth?</h3>
+          <p>The answer is more nuanced than you'd expect. Wet food isn't automatically the villain, and dry food isn't automatically protective — here's the actual evidence.</p>
+          <div class="card-footer">
+            <span class="card-date">Apr 2025</span>
+            <span class="card-arrow">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="signs-of-dental-disease-in-dogs.html" class="article-card">
+        <div class="card-img care">🔍</div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="cat-tag">Care Tips</span>
+            <span class="read-time">⏱️ 4 min</span>
+          </div>
+          <h3>7 Signs Your Dog Has Dental Disease — and Most Owners Miss Them</h3>
+          <p>Dogs don't cry when their teeth hurt. They just quietly suffer. Here are the subtle signs to look for at home before the problem becomes a vet emergency.</p>
+          <div class="card-footer">
+            <span class="card-date">Apr 2025</span>
+            <span class="card-arrow">Read →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sb-card">
+      <h3>📂 Topics</h3>
+      <div class="topic-list">
+        <a href="#" class="topic-item">🥗 Nutrition <span class="topic-count">3</span></a>
+        <a href="#" class="topic-item">🛡️ Insurance <span class="topic-count">1</span></a>
+        <a href="#" class="topic-item">🪥 Care Tips <span class="topic-count">2</span></a>
+        <a href="#" class="topic-item">🔬 Research <span class="topic-count">1</span></a>
+        <a href="#" class="topic-item">🐕 Breed Guides <span class="topic-count">16</span></a>
+      </div>
+    </div>
+
+    <div class="sb-card">
+      <h3>🔥 Most read</h3>
+      <div class="popular-list">
+        <a href="best-kibble-for-dog-teeth.html" class="popular-item">
+          <span class="pop-num">1</span>
+          <span class="pop-title">Best Kibble for Dog Teeth</span>
+        </a>
+        <a href="dog-dental-insurance-compared.html" class="popular-item">
+          <span class="pop-num">2</span>
+          <span class="pop-title">Dog Dental Insurance Compared</span>
+        </a>
+        <a href="how-to-brush-dog-teeth.html" class="popular-item">
+          <span class="pop-num">3</span>
+          <span class="pop-title">How to Get Your Dog to Accept Brushing</span>
+        </a>
+        <a href="signs-of-dental-disease-in-dogs.html" class="popular-item">
+          <span class="pop-num">4</span>
+          <span class="pop-title">7 Signs of Dental Disease Owners Miss</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <h3>📬 Get new articles</h3>
+      <p>One email when we publish. No spam, ever.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe</button>
+    </div>
+
+    <div class="sb-card" style="background:linear-gradient(135deg,#FFF0EE,white);border:2px solid #FFD5D0;">
+      <h3>🐩 Not sure about your dog?</h3>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:14px;line-height:1.5;">Take the free 60-second triage quiz and get an instant action plan.</p>
+      <a href="../index.html" style="display:block;background:var(--coral);color:white;text-align:center;padding:11px;border-radius:50px;font-weight:800;font-size:.9em;text-decoration:none;">⚡ Take Free Quiz</a>
+    </div>
+
+  </aside>
+</div>
+
+<footer>
+  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
+  Evidence-based advice from peer-reviewed veterinary research<br>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+</footer>
+
+
+<script>
+function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
+document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
+</script>
+</body>
+</html>
