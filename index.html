@@ -200,6 +200,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
   <meta name="theme-color" content="#FF6B6B">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7P4XWEVJMV');
+  </script>
 </head>
 <body>
 
@@ -208,7 +216,7 @@
   <nav class="topbar-nav">
     <a href="index.html">Home</a>
     <a href="all-breeds.html">All Breeds</a>
-    <a href="blog/blog-index.html">Blog</a>
+    <a href="blog/index.html">Blog</a>
     <a href="about.html">Puffy's Story</a>
   </nav>
   <button class="btn-chat-top">💬 DentiPaws Assistant</button>
@@ -219,12 +227,13 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="index.html">Home</a>
   <a href="all-breeds.html">All Breeds</a>
-  <a href="blog/blog-index.html">Blog</a>
+  <a href="blog/index.html">Blog</a>
   <a href="about.html">Puffy's Story</a>
 </nav>
 
 <div class="hero">
-  <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
+  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
+  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
   <div class="hero-pill">🐶 Free · No sign-up · Instant results</div>
   <h1>Is your dog's mouth<br><em>actually okay?</em></h1>
   <p class="hero-sub">80% of dogs over 3 have dental disease — and most owners have no idea. Find out in 60 seconds.</p>
@@ -347,7 +356,11 @@
 <footer>
   <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
   Evidence-based advice from peer-reviewed veterinary research<br>
-  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span><br>
+  <span style="margin-top:10px;display:inline-block;font-size:.82em;opacity:.6;">
+    As an Amazon Associate we earn from qualifying purchases. &nbsp;|&nbsp;
+    <a href="/privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Privacy Policy &amp; Affiliate Disclosure</a>
+  </span>
 </footer>
 
 <script>
@@ -404,7 +417,7 @@ function showResults(){
         {tone:'now',ico:'🪥',h:'Start brushing tonight',p:'It won\'t reverse existing disease, but it stops things getting worse while you wait for the appointment.'},
         {tone:'soon',ico:'💰',h:'Budget for treatment',p:'Professional cleaning under anaesthesia typically costs $300–800. Teeth may need extraction. Far cheaper than the organ damage that follows untreated disease.'}
       ],
-      prods:[{ico:'🪥',n:'Virbac C.E.T. Enzymatic Toothpaste',w:'Vet\'s #1 pick — enzyme system works even with imperfect brushing'},{ico:'💧',n:'Oxyfresh Water Additive',w:'Add to water bowl daily — bacteria control 24/7 while waiting for vet visit'}]
+      prods:[{ico:'🪥',n:'<a href="https://www.amazon.ca/dp/B00RZDXA7K/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Virbac C.E.T. Enzymatic Toothpaste</a>',w:'Vet\'s #1 pick — enzyme system works even with imperfect brushing'},{ico:'💧',n:'<a href="https://www.amazon.ca/dp/B07RK3TP8D/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Oxyfresh Water Additive</a>',w:'Add to water bowl daily — bacteria control 24/7 while waiting for vet visit'}]
     },
     warning:{cls:'warning',icon:'⚠️',title:'Early warning signs — act this week.',sub:'You\'re catching this at the right moment. Dental disease at this stage is still reversible. Wait 6 months and it won\'t be.',
       steps:[
@@ -412,7 +425,7 @@ function showResults(){
         {tone:'soon',ico:'🪥',h:'Daily brushing — starting now',p:'Set a daily alarm, after your dog\'s dinner works well. Two minutes, every day. This is the single most effective thing you can do.'},
         {tone:'keep',ico:'🦴',h:'Add a VOHC-approved chew',p:'One per day after brushing. Look for the VOHC seal — it means the product has clinical evidence behind it, not just marketing.'}
       ],
-      prods:[{ico:'🪥',n:'Complete Brushing Starter Kit',w:'Toothbrush + finger brush + enzymatic paste — everything to start today'},{ico:'🦴',n:'Greenies Dental Treats (VOHC)',w:'Proven to reduce tartar by 60% with daily use. Match the size to your breed'},{ico:'💧',n:'TropiClean Water Additive',w:'Tasteless and odorless — the easiest habit to build'}]
+      prods:[{ico:'🪥',n:'<a href="https://www.amazon.ca/dp/B00RZDXA7K/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Complete Brushing Starter Kit</a>',w:'Toothbrush + finger brush + enzymatic paste — everything to start today'},{ico:'🦴',n:'<a href="https://www.amazon.ca/dp/B006W6YHHI/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Greenies Dental Treats</a>' (VOHC)',w:'Proven to reduce tartar by 60% with daily use. Match the size to your breed'},{ico:'💧',n:'TropiClean Water Additive',w:'Tasteless and odorless — the easiest habit to build'}]
     },
     good:{cls:'good',icon:'🎉',title:ans.brush==='daily'?'You\'re already in the top 4% of owners.':'Looking good — keep building these habits.',sub:ans.brush==='daily'?'Daily brushing is genuinely rare. Your dog\'s mouth is almost certainly healthier than average.':'No urgent red flags. Focus on locking in daily habits before problems develop.',
       steps:[
@@ -420,7 +433,7 @@ function showResults(){
         {tone:'keep',ico:'🏥',h:ans.size==='toy'||ans.size==='small'?'Vet dental check every 6 months':'Annual dental exam',p:ans.size==='toy'||ans.size==='small'?'Small breeds need twice-yearly checks — disease progresses fast in tiny jaws.':'Make a dental exam part of your annual visit. Ask for X-rays to catch sub-gumline disease.'},
         {tone:'keep',ico:'🦴',h:'VOHC-approved products only',p:'Only products with the VOHC seal have real clinical evidence. Don\'t waste money on the rest.'}
       ],
-      prods:[{ico:'🪥',n:'Petsmile Professional Toothpaste',w:'VOHC approved — great flavour that dogs actually like'},{ico:'🦴',n:'Whimzees Natural Dental Chews',w:'VOHC accepted, all natural, great for daily maintenance'}]
+      prods:[{ico:'🪥',n:'<a href="https://www.amazon.ca/dp/B00OPCW5GG/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Petsmile Professional Toothpaste</a>',w:'VOHC approved — great flavour that dogs actually like'},{ico:'🦴',n:'Whimzees Natural Dental Chews',w:'VOHC accepted, all natural, great for daily maintenance'}]
     }
   };
   const t=data[tier];
