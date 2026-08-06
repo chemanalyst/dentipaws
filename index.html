@@ -200,14 +200,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
   <meta name="theme-color" content="#FF6B6B">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7P4XWEVJMV');
-  </script>
+
 </head>
 <body>
 
@@ -232,8 +225,8 @@
 </nav>
 
 <div class="hero">
-  <img class="hero-bg-img" src="" alt="" aria-hidden="true">
-  <!-- Add your hero dog image: src="/images/hero-dog.jpg" -->
+  <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
+ 
   <div class="hero-pill">🐶 Free · No sign-up · Instant results</div>
   <h1>Is your dog's mouth<br><em>actually okay?</em></h1>
   <p class="hero-sub">80% of dogs over 3 have dental disease — and most owners have no idea. Find out in 60 seconds.</p>
@@ -460,6 +453,57 @@ function showResults(){
 <script>
 function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
 document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
+</script>
+
+<!-- ── COOKIE CONSENT BANNER ── -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:16px 20px;background:#1A1A2E;border-top:3px solid #FF6B6B;box-shadow:0 -4px 24px rgba(0,0,0,.25);">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <p style="margin:0;font-family:'Nunito',sans-serif;font-size:.88em;color:rgba(255,255,255,.85);line-height:1.6;">
+        🍪 We use cookies to analyse site traffic via Google Analytics. No personal data is sold.
+        <a href="/privacy-policy.html" style="color:#FF6B6B;font-weight:700;text-decoration:none;white-space:nowrap;"> Privacy Policy</a>
+      </p>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="cookieChoice('declined')" style="padding:10px 20px;background:transparent;color:rgba(255,255,255,.6);border:1.5px solid rgba(255,255,255,.25);border-radius:50px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.87em;cursor:pointer;">Decline</button>
+      <button onclick="cookieChoice('accepted')" style="padding:10px 22px;background:#FF6B6B;color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.87em;cursor:pointer;">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Cookie consent ──────────────────────────────────────────────────────────
+(function() {
+  var consent = localStorage.getItem('dp_cookie_consent');
+  if (consent === 'accepted') { loadGA(); }
+  else if (!consent) {
+    document.addEventListener('DOMContentLoaded', function() {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.style.display = 'block';
+    });
+  }
+})();
+
+function cookieChoice(choice) {
+  localStorage.setItem('dp_cookie_consent', choice);
+  var b = document.getElementById('cookie-banner');
+  if (b) b.style.display = 'none';
+  if (choice === 'accepted') loadGA();
+}
+
+function loadGA() {
+  if (window.gaLoaded) return;
+  window.gaLoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-7P4XWEVJMV');
+}
 </script>
 </body>
 </html>
