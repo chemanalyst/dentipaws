@@ -152,6 +152,7 @@
       position: relative;
       overflow: hidden;
     }
+  .lang-switch{font-size:.82em;font-weight:800;color:var(--muted);text-decoration:none;margin-left:14px;border:1.5px solid var(--border);padding:4px 10px;border-radius:20px;}.lang-switch:hover{border-color:var(--coral);color:var(--coral);}
   </style>
 
   <script type="application/ld+json">
@@ -179,6 +180,7 @@
     <a href="../all-breeds.html">All Breeds</a>
     <a href="index.html" class="active">Blog</a>
     <a href="../about.html">Puffy's Story</a>
+      <a href="../fr/index.html" class="lang-switch">&#127467;&#127479; FR</a>
   </nav>
   <a href="../index.html" class="btn-quiz">⚡ Free Quiz</a>
   <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
@@ -190,11 +192,11 @@
   <a href="../all-breeds.html">All Breeds</a>
   <a href="index.html">Blog</a>
   <a href="../about.html">Puffy's Story</a>
+  <a href="../fr/index.html">&#127467;&#127479; Français</a>
 </nav>
 
 <div class="hero">
   <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
-  
   <div class="hero-pill">📝 Tips, research & guides</div>
   <h1>The DentiPaws <em>Blog</em></h1>
   <p class="hero-sub">Practical articles on dog dental health — from the best kibble for teeth to navigating dental insurance.</p>
@@ -204,6 +206,15 @@
   <div class="main-col">
 
     <!-- FEATURED -->
+        <!-- Puffy byline -->
+    <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#FFF0EE;border-radius:12px;border:1.5px solid #FFD5D0;margin-bottom:28px;flex-wrap:wrap;">
+      <img src="/images/puffy1.jpg" alt="Puffy — DentiPaws mascot"
+        style="width:52px;height:52px;border-radius:50%;border:2px solid #FF6B6B;flex-shrink:0;object-fit:cover;">
+      <div>
+        <div style="font-size:.8em;font-weight:900;color:#FF6B6B;text-transform:uppercase;letter-spacing:.06em;">🐩 Articles written by Puffy</div>
+        <p style="font-size:.87em;color:#374151;margin:0;line-height:1.5;">Toy Poodle · 7 years old · 9 teeth lost · Founder of DentiPaws</p>
+      </div>
+    </div>
     <a href="best-kibble-for-dog-teeth.html" class="featured">
       <div class="featured-img">
         🦴
@@ -324,63 +335,28 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-
-    <div class="sb-card">
-      <h3>📂 Topics</h3>
-      <div class="topic-list">
-        <a href="#" class="topic-item">🥗 Nutrition <span class="topic-count">3</span></a>
-        <a href="#" class="topic-item">🛡️ Insurance <span class="topic-count">1</span></a>
-        <a href="#" class="topic-item">🪥 Care Tips <span class="topic-count">2</span></a>
-        <a href="#" class="topic-item">🔬 Research <span class="topic-count">1</span></a>
-        <a href="#" class="topic-item">🐕 Breed Guides <span class="topic-count">16</span></a>
+      <div class="quiz-sb">
+        <h3>🐩 Not sure about your dog?</h3>
+        <p>Puffy's free 60-second quiz → instant risk score → exact action plan.</p>
+        <a href="index.html#quiz" class="btn-white">⚡ Take the Free Quiz</a>
       </div>
-    </div>
-
-    <div class="sb-card">
-      <h3>🔥 Most read</h3>
-      <div class="popular-list">
-        <a href="best-kibble-for-dog-teeth.html" class="popular-item">
-          <span class="pop-num">1</span>
-          <span class="pop-title">Best Kibble for Dog Teeth</span>
-        </a>
-        <a href="dog-dental-insurance-compared.html" class="popular-item">
-          <span class="pop-num">2</span>
-          <span class="pop-title">Dog Dental Insurance Compared</span>
-        </a>
-        <a href="how-to-brush-dog-teeth.html" class="popular-item">
-          <span class="pop-num">3</span>
-          <span class="pop-title">How to Get Your Dog to Accept Brushing</span>
-        </a>
-        <a href="signs-of-dental-disease-in-dogs.html" class="popular-item">
-          <span class="pop-num">4</span>
-          <span class="pop-title">7 Signs of Dental Disease Owners Miss</span>
-        </a>
+      <div class="sb-card">
+        <h3>🐕 High-risk breeds</h3>
+        <a href="breeds/chihuahua.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐕 Chihuahua <span style="color:var(--coral)">→</span></a>
+        <a href="breeds/toy-poodle.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐩 Toy Poodle <span style="color:var(--coral)">→</span></a>
+        <a href="breeds/pug.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐕 Pug <span style="color:var(--coral)">→</span></a>
+        <a href="breeds/french-bulldog.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐕 French Bulldog <span style="color:var(--coral)">→</span></a>
+        <a href="breeds/greyhound.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;">🐕 Greyhound <span style="color:var(--coral)">→</span></a>
       </div>
-    </div>
-
-    <div class="newsletter">
-      <h3>📬 Get new articles</h3>
-      <p>One email when we publish. No spam, ever.</p>
-      <input type="email" placeholder="your@email.com">
-      <button>Subscribe</button>
-    </div>
-
-    <div class="sb-card" style="background:linear-gradient(135deg,#FFF0EE,white);border:2px solid #FFD5D0;">
-      <h3>🐩 Not sure about your dog?</h3>
-      <p style="font-size:.88em;color:var(--muted);margin-bottom:14px;line-height:1.5;">Take the free 60-second triage quiz and get an instant action plan.</p>
-      <a href="../index.html" style="display:block;background:var(--coral);color:white;text-align:center;padding:11px;border-radius:50px;font-weight:800;font-size:.9em;text-decoration:none;">⚡ Take Free Quiz</a>
-    </div>
-
-  </aside>
+    </aside>
 </div>
 
 <footer>
-  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
-  Evidence-based advice from peer-reviewed veterinary research<br>
-  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span><br>
-  <span style="margin-top:10px;display:inline-block;font-size:.82em;opacity:.6;">
-    As an Amazon Associate we earn from qualifying purchases. &nbsp;|&nbsp;
-    <a href="/privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Privacy Policy &amp; Affiliate Disclosure</a>
+  <strong>DentiPaws</strong> — Dog Dental Care 🇨🇦<br>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet for health concerns.</span><br>
+  <span style="margin-top:8px;display:inline-block;font-size:.82em;opacity:.55;">
+    As an Amazon Associate we earn from qualifying purchases.&nbsp;|&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
   </span>
 </footer>
 
