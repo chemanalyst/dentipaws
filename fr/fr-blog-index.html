@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogue DentiPaws — Conseils & Guides de santé dentaire pour chiens</title>
+  <meta name="description" content="Articles experts sur la santé dentaire des chiens — meilleur kibble pour les dents, comparaisons d'assurances dentaires, produits approuvés, conseils de brossage et plus.">
+  <link rel="canonical" href="https://www.dentipaws.com/fr/blog/">
+  <link rel="alternate" hreflang="fr" href="https://www.dentipaws.com/fr/blog/">
+  <link rel="alternate" hreflang="en" href="https://www.dentipaws.com/blog/">
+  <meta property="og:title" content="Blogue DentiPaws — Santé dentaire pour chiens">
+  <meta property="og:url" content="https://www.dentipaws.com/fr/blog/">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--coral:#FF6B6B;--coral-d:#E85555;--cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;--muted:#6B7280;--border:#F0E8DF;--radius:16px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+    .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+    .logo{font-weight:900;font-size:1.5em;color:var(--coral);text-decoration:none;}
+    .topbar-nav a{font-size:.88em;font-weight:700;color:var(--muted);text-decoration:none;margin-left:20px;transition:color .2s;}
+    .topbar-nav a:hover,.topbar-nav a.active{color:var(--coral);}
+    .lang-switch{font-size:.82em;font-weight:800;border:1.5px solid var(--border);padding:4px 10px;border-radius:20px;}
+    .lang-switch:hover{border-color:var(--coral);color:var(--coral);}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+    .hamburger span{display:block;width:24px;height:3px;background:var(--ink);border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:14px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}}
+    .hero{background:linear-gradient(160deg,white 0%,var(--surface) 100%);padding:52px 20px 44px;text-align:center;border-bottom:2px solid var(--border);}
+    .hero-pill{display:inline-block;background:#FFF0EE;color:var(--coral);border:2px solid #FFD5D0;padding:6px 18px;border-radius:50px;font-weight:800;font-size:.85em;margin-bottom:16px;}
+    .hero h1{font-size:clamp(2em,5vw,3em);font-weight:900;margin-bottom:12px;}
+    .hero h1 em{color:var(--coral);font-style:normal;}
+    .hero-sub{font-size:1.05em;color:var(--muted);max-width:500px;margin:0 auto;}
+    .page-wrap{max-width:1080px;margin:0 auto;padding:40px 20px 80px;display:grid;grid-template-columns:1fr 290px;gap:32px;align-items:start;}
+    .featured{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(255,107,107,.1);border:2px solid var(--border);margin-bottom:28px;text-decoration:none;color:inherit;display:block;transition:all .25s;}
+    .featured:hover{transform:translateY(-3px);border-color:var(--coral);}
+    .featured-img{height:220px;background:linear-gradient(135deg,var(--coral),#FF8E53);display:flex;align-items:center;justify-content:center;font-size:5em;position:relative;}
+    .featured-badge{position:absolute;top:16px;left:16px;background:white;color:var(--coral);padding:5px 14px;border-radius:50px;font-size:.78em;font-weight:800;}
+    .featured-body{padding:28px;}
+    .featured-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+    .cat-tag{background:var(--surface);color:var(--coral);padding:4px 12px;border-radius:20px;font-size:.78em;font-weight:800;}
+    .read-time{font-size:.8em;color:var(--muted);font-weight:600;}
+    .featured-body h2{font-size:1.5em;font-weight:900;margin-bottom:10px;line-height:1.25;}
+    .featured-body p{color:var(--muted);font-size:.95em;margin-bottom:16px;}
+    .read-more{font-weight:800;color:var(--coral);font-size:.9em;}
+    .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+    .article-card{background:white;border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .25s;}
+    .article-card:hover{transform:translateY(-3px);border-color:var(--coral);box-shadow:0 6px 24px rgba(255,107,107,.12);}
+    .card-img{height:130px;display:flex;align-items:center;justify-content:center;font-size:3.5em;}
+    .card-img.nutrition{background:linear-gradient(135deg,#84fab0,#8fd3f4);}
+    .card-img.insurance{background:linear-gradient(135deg,#a18cd1,#fbc2eb);}
+    .card-img.care{background:linear-gradient(135deg,#ffecd2,#fcb69f);}
+    .card-img.research{background:linear-gradient(135deg,#667eea,#764ba2);color:white;}
+    .card-img.food{background:linear-gradient(135deg,#f093fb,#f5576c);color:white;}
+    .card-img.tips{background:linear-gradient(135deg,#4facfe,#00f2fe);}
+    .card-content{padding:18px;flex:1;display:flex;flex-direction:column;}
+    .card-content h3{font-size:1em;font-weight:900;margin-bottom:8px;line-height:1.3;flex:1;}
+    .card-content p{color:var(--muted);font-size:.87em;line-height:1.55;flex:1;}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1.5px solid var(--border);}
+    .card-date{font-size:.77em;color:var(--muted);font-weight:600;}
+    .card-arrow{font-size:.85em;font-weight:800;color:var(--coral);}
+    .sidebar{display:flex;flex-direction:column;gap:18px;}
+    .sb-card{background:white;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.06);padding:20px;}
+    .sb-card h3{font-weight:900;font-size:1.05em;margin-bottom:14px;}
+    .quiz-sb{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;border-radius:var(--radius);padding:22px;}
+    .quiz-sb h3{font-weight:900;font-size:1.1em;margin-bottom:8px;color:white;}
+    .quiz-sb p{font-size:.88em;opacity:.95;margin-bottom:16px;line-height:1.5;}
+    .btn-white{display:block;background:white;color:var(--coral);text-align:center;padding:12px;border-radius:50px;font-weight:900;font-size:.9em;text-decoration:none;}
+    footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:32px 20px;font-size:.88em;line-height:1.9;}
+    footer strong{color:white;}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px;}
+    footer a:hover{color:var(--coral);}
+    #chat-fab,#chat-panel,#chat-bubble{display:none !important;}
+    @media(max-width:860px){.page-wrap{grid-template-columns:1fr;}.sidebar{order:2;}}
+    @media(max-width:500px){.topbar-nav{display:none;}.articles-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">🦷 DentiPaws</a>
+  <nav class="topbar-nav">
+    <a href="../index.html">Accueil</a>
+    <a href="../all-breeds.html">Races</a>
+    <a href="index.html" class="active">Blogue</a>
+      <a href="../about.html">À propos</a>
+    <a href="../../blog/index.html" class="lang-switch">🇨🇦 EN</a>
+  </nav>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Accueil</a>
+  <a href="../all-breeds.html">Races</a>
+  <a href="index.html">Blogue</a>
+  <a href="../about.html">À propos</a>
+  <a href="../../blog/index.html">🇨🇦 English</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-pill">📝 Conseils, recherches & guides</div>
+  <h1>Le Blogue <em>DentiPaws</em></h1>
+  <p class="hero-sub">Des articles pratiques sur la santé dentaire des chiens — du meilleur kibble pour les dents à l'assurance dentaire.</p>
+</div>
+
+<div class="page-wrap">
+  <div class="main-col">
+    
+  <!-- Puffy byline -->
+  <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#FFF0EE;border-radius:12px;border:1.5px solid #FFD5D0;margin-bottom:28px;flex-wrap:wrap;">
+    <img src="/images/puffy.jpg" alt="Puffy — auteur DentiPaws"
+      style="width:52px;height:52px;border-radius:50%;border:2px solid #FF6B6B;flex-shrink:0;object-fit:cover;">
+    <div>
+      <div style="font-size:.8em;font-weight:900;color:#FF6B6B;text-transform:uppercase;letter-spacing:.06em;">🐩 Articles rédigés par Puffy</div>
+      <p style="font-size:.87em;color:#374151;margin:0;line-height:1.5;">Caniche Toy · 7 ans · 9 dents perdues · Fondateur de DentiPaws</p>
+    </div>
+  </div>
+    <a href="best-kibble-for-dog-teeth.html" class="featured">
+      <div class="featured-img">🦴<span class="featured-badge">⭐ À la une</span></div>
+      <div class="featured-body">
+        <div class="featured-meta"><span class="cat-tag">Nutrition</span><span class="read-time">⏱️ 6 min de lecture</span></div>
+        <h2>Le meilleur kibble pour les dents des chiens — Ce que les étiquettes ne disent pas</h2>
+        <p>Tous les aliments secs ne sont pas égaux en matière de santé dentaire. Nous analysons ce qu'il faut rechercher et pourquoi la texture et la taille importent plus que la plupart des propriétaires ne le réalisent.</p>
+        <span class="read-more">Lire l'article →</span>
+      </div>
+    </a>
+
+    <div class="articles-grid">
+      <a href="dog-dental-insurance-compared.html" class="article-card">
+        <div class="card-img insurance">🛡️</div>
+        <div class="card-content">
+          <div class="featured-meta"><span class="cat-tag">Assurance</span><span class="read-time">⏱️ 8 min</span></div>
+          <h3>Assurance dentaire pour chiens comparée — Ça vaut la peine?</h3>
+          <p>Nous comparons les principaux plans d'assurance animaux qui couvrent les soins dentaires — primes, exclusions et à quoi ressemble une vraie réclamation.</p>
+          <div class="card-footer"><span class="card-date">Juin 2026</span><span class="card-arrow">Lire →</span></div>
+        </div>
+      </a>
+      <a href="nutritional-targets-dog-dental-health.html" class="article-card">
+        <div class="card-img nutrition">🥗</div>
+        <div class="card-content">
+          <div class="featured-meta"><span class="cat-tag">Nutrition</span><span class="read-time">⏱️ 7 min</span></div>
+          <h3>Objectifs nutritionnels pour la santé dentaire des chiens</h3>
+          <p>Calcium, phosphore, vitamine D — les nutriments clés qui soutiennent des dents solides et des gencives saines.</p>
+          <div class="card-footer"><span class="card-date">Juin 2026</span><span class="card-arrow">Lire →</span></div>
+        </div>
+      </a>
+      <a href="how-to-brush-dog-teeth.html" class="article-card">
+        <div class="card-img tips">🪥</div>
+        <div class="card-content">
+          <div class="featured-meta"><span class="cat-tag">Conseils</span><span class="read-time">⏱️ 5 min</span></div>
+          <h3>Comment habituer votre chien au brossage des dents</h3>
+          <p>La méthode de désensibilisation étape par étape qui transforme les chiens résistants en patients coopératifs.</p>
+          <div class="card-footer"><span class="card-date">Juin 2026</span><span class="card-arrow">Lire →</span></div>
+        </div>
+      </a>
+      <a href="vohc-approved-products-guide.html" class="article-card">
+        <div class="card-img research">🔬</div>
+        <div class="card-content">
+          <div class="featured-meta"><span class="cat-tag">Recherche</span><span class="read-time">⏱️ 6 min</span></div>
+          <h3>Que signifie vraiment le sceau VOHC?</h3>
+          <p>La plupart des produits dentaires font de grandes promesses. Le sceau VOHC est le seul qui exige une preuve clinique.</p>
+          <div class="card-footer"><span class="card-date">Juin 2026</span><span class="card-arrow">Lire →</span></div>
+        </div>
+      </a>
+      <a href="wet-food-vs-dry-food-teeth.html" class="article-card">
+        <div class="card-img food">🍖</div>
+        <div class="card-content">
+          <div class="featured-meta"><span class="cat-tag">Nutrition</span><span class="read-time">⏱️ 5 min</span></div>
+          <h3>Nourriture humide vs sèche — Laquelle est pire pour les dents?</h3>
+          <p>La réponse est plus nuancée qu'on le croit. La nourriture humide n'est pas automatiquement la vilaine, et la nourriture sèche n'est pas automatiquement protectrice.</p>
+          <div class="card-footer"><span class="card-date">Juin 2026</span><span class="card-arrow">Lire →</span></div>
+        </div>
+      </a>
+      <a href="signs-of-dental-disease-in-dogs.html" class="article-card">
+        <div class="card-img care">🔍</div>
+        <div class="card-content">
+          <div class="featured-meta"><span class="cat-tag">Conseils</span><span class="read-time">⏱️ 4 min</span></div>
+          <h3>7 signes de maladie dentaire que la plupart des propriétaires manquent</h3>
+          <p>Les chiens ne pleurent pas quand leurs dents font mal. Ils souffrent silencieusement. Voici les signes subtils à surveiller.</p>
+          <div class="card-footer"><span class="card-date">Juin 2026</span><span class="card-arrow">Lire →</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+      <div class="quiz-sb">
+        <h3>🐩 Pas sûr pour votre chien?</h3>
+        <p>Le quiz gratuit de Puffy en 60 secondes → score de risque → plan d'action.</p>
+        <a href="../index.html#quiz" class="btn-white">⚡ Faire le quiz gratuit</a>
+      </div>
+      <div class="sb-card">
+        <h3>🐕 Races à risque élevé</h3>
+        <a href="../breeds/chihuahua.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐕 Chihuahua <span style="color:var(--coral)">→</span></a>
+        <a href="../breeds/toy-poodle.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐩 Caniche Toy <span style="color:var(--coral)">→</span></a>
+        <a href="../breeds/pug.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐕 Carlin <span style="color:var(--coral)">→</span></a>
+        <a href="../breeds/french-bulldog.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;margin-bottom:6px;">🐕 Bouledogue français <span style="color:var(--coral)">→</span></a>
+        <a href="../breeds/greyhound.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--cream);border-radius:8px;text-decoration:none;color:var(--ink);font-size:.87em;font-weight:700;">🐕 Lévrier <span style="color:var(--coral)">→</span></a>
+      </div>
+    </aside>
+</div>
+
+<footer>
+  <strong>DentiPaws</strong> — Soins dentaires pour chiens 🇨🇦<br>
+  <span style="opacity:.6;font-size:.85em">Consultez toujours votre vétérinaire pour les problèmes de santé.</span><br>
+  <span style="margin-top:8px;display:inline-block;font-size:.82em;opacity:.55;">
+    <a href="../../privacy-policy.html">Politique de confidentialité</a>
+  </span>
+</footer>
+
+<script>
+function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
+document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
+</script>
+</body>
+</html>

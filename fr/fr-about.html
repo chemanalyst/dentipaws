@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'histoire de Puffy — Caniche Toy | DentiPaws</title>
+  <meta name="description" content="Puffy est un Caniche Toy de 7 ans qui a perdu 9 dents à cause d'une maladie dentaire évitable. Son histoire est la raison d'être de DentiPaws.">
+  <link rel="canonical" href="https://www.dentipaws.com/fr/about.html">
+  <link rel="alternate" hreflang="fr" href="https://www.dentipaws.com/fr/about.html">
+  <link rel="alternate" hreflang="en" href="https://www.dentipaws.com/about.html">
+  <meta property="og:title" content="L'histoire de Puffy | DentiPaws">
+  <meta property="og:description" content="Puffy est un Caniche Toy de 7 ans qui a perdu 9 dents. Son histoire est pourquoi DentiPaws existe.">
+  <meta property="og:url" content="https://www.dentipaws.com/fr/about.html">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <meta name="theme-color" content="#FF6B6B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--coral:#FF6B6B;--coral-d:#E85555;--cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;--muted:#6B7280;--border:#F0E8DF;--radius:16px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+    .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+    .logo{font-weight:900;font-size:1.5em;color:var(--coral);text-decoration:none;}
+    .topbar-nav a{font-size:.9em;font-weight:700;color:var(--muted);text-decoration:none;margin-left:22px;transition:color .2s;}
+    .topbar-nav a:hover,.topbar-nav a.active{color:var(--coral);}
+    .lang-switch{font-size:.82em;font-weight:800;border:1.5px solid var(--border);padding:4px 10px;border-radius:20px;}
+    .lang-switch:hover{border-color:var(--coral);color:var(--coral);}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+    .hamburger span{display:block;width:24px;height:3px;background:var(--ink);border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:15px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}}
+    .hero{background:linear-gradient(160deg,white 0%,var(--surface) 100%);padding:56px 20px 48px;border-bottom:2px solid var(--border);position:relative;overflow:hidden;}
+    .hero-inner{max-width:780px;margin:0 auto;display:flex;gap:36px;align-items:center;flex-wrap:wrap;}
+    .puffy-photo{flex-shrink:0;width:200px;height:200px;border-radius:50%;border:5px solid var(--coral);box-shadow:0 8px 30px rgba(255,107,107,.25);overflow:hidden;}
+    .puffy-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .hero-text h1{font-size:clamp(1.8em,4vw,2.6em);font-weight:900;margin-bottom:10px;}
+    .hero-text h1 em{color:var(--coral);font-style:normal;}
+    .hero-text p{color:var(--muted);font-size:1em;line-height:1.7;}
+    .page-wrap{max-width:780px;margin:0 auto;padding:48px 20px 80px;}
+    .story-section{margin-bottom:36px;}
+    .story-section h2{font-size:1.25em;font-weight:900;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+    .story-section p{font-size:.97em;color:#374151;line-height:1.8;margin-bottom:14px;}
+    .story-section p:last-child{margin-bottom:0;}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0;}
+    .stat-box{background:white;border:2px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;}
+    .stat-num{font-size:2em;font-weight:900;color:var(--coral);display:block;margin-bottom:4px;}
+    .stat-label{font-size:.85em;color:var(--muted);font-weight:600;}
+    .cta-box{background:linear-gradient(135deg,var(--coral),#FF8E53);border-radius:var(--radius);padding:28px 32px;text-align:center;color:white;margin-top:36px;}
+    .cta-box h3{font-size:1.3em;font-weight:900;margin-bottom:8px;}
+    .cta-box p{opacity:.9;font-size:.95em;margin-bottom:18px;}
+    .btn-white{display:inline-block;background:white;color:var(--coral);padding:13px 32px;border-radius:50px;font-weight:900;font-size:.95em;text-decoration:none;}
+    footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:32px 20px;font-size:.88em;line-height:1.9;}
+    footer strong{color:white;}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px;}
+    footer a:hover{color:var(--coral);}
+    @media(max-width:600px){.hero-inner{flex-direction:column;text-align:center;}.stat-row{grid-template-columns:1fr;}.puffy-photo{width:160px;height:160px;}}
+    #chat-fab,#chat-panel,#chat-bubble{display:none !important;}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="logo">🦷 DentiPaws</a>
+  <nav class="topbar-nav">
+    <a href="index.html">Accueil</a>
+    <a href="../all-breeds.html">Races</a>
+    <a href="../blog/index.html">Blogue</a>
+    <a href="about.html" class="active">À propos</a>
+    <a href="../about.html" class="lang-switch">🇨🇦 EN</a>
+  </nav>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Accueil</a>
+  <a href="../all-breeds.html">Races</a>
+  <a href="../blog/index.html">Blogue</a>
+  <a href="about.html">À propos</a>
+  <a href="../about.html">🇨🇦 English</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="puffy-photo">
+      <img src="/images/puffy1.jpg" alt="Puffy le Caniche Toy">
+    </div>
+    <div class="hero-text">
+      <h1>L'histoire de <em>Puffy</em></h1>
+      <p>Un Caniche Toy de 7 ans qui a perdu 9 dents à cause d'une maladie dentaire évitable. Son histoire est pourquoi DentiPaws existe.</p>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="stat-num">7</span><span class="stat-label">Dents perdues</span></div>
+    <div class="stat-box"><span class="stat-num">7</span><span class="stat-label">Ans</span></div>
+    <div class="stat-box"><span class="stat-num">2</span><span class="stat-label">Chirurgies dentaires</span></div>
+  </div>
+
+  <div class="story-section">
+    <h2>Comment tout a commencé</h2>
+    <p>Puffy est un Caniche Toy mâle — une race connue pour avoir l'une des pires santés dentaires de tous les chiens. À l'âge de 4 ans, lors d'un contrôle vétérinaire de routine, son vétérinaire a mentionné que ses dents montraient des signes de problèmes. Un an plus tard, Puffy avait besoin d'une première chirurgie dentaire majeure.</p>
+    <p>Quatre dents ont dû être extraites lors de la première opération. Deux ans plus tard, lors d'une deuxième chirurgie, trois autres ont disparu. Puffy n'avait que 7 ans — et il avait perdu sept dents à cause d'une maladie évitable qui avait progressé silencieusement pendant des années.</p>
+  </div>
+
+  <div class="story-section">
+    <h2>Ce que nous avons appris</h2>
+    <p>Les chiens ne montrent pas la douleur comme les humains. Puffy continuait à manger, à jouer et à être lui-même — même lorsqu'une infection progressait sous ses gencives. Au moment où les signes sont devenus évidents, la maladie était avancée et irréversible.</p>
+    <p>Les Caniches Toy, les Chihuahuas, les Shih Tzus et de nombreuses autres petites races ont une mâchoire si petite que leurs dents s'entassent, se chevauchent et créent des zones impossibles à nettoyer correctement à la maison. Sans une routine quotidienne cohérente — et des visites régulières chez le vétérinaire — la maladie parodontale se développe rapidement.</p>
+    <p>L'histoire de Puffy n'est pas unique. C'est une histoire que des milliers de propriétaires de chiens vivent chaque année — souvent sans jamais réaliser ce qui se passe jusqu'à ce qu'il soit trop tard.</p>
+  </div>
+
+  <div class="story-section">
+    <h2>Pourquoi DentiPaws</h2>
+    <p>DentiPaws a été créé parce que l'information sur la santé dentaire des chiens est soit trop technique, soit trop vague. Nous voulions créer quelque chose d'actionnable : un quiz qui dit aux propriétaires exactement où ils en sont, des guides par race qui expliquent les risques spécifiques à leur chien, et des trousses de produits qui rendent la routine quotidienne facile à démarrer et à maintenir.</p>
+    <p>La plupart des problèmes dentaires sont évitables avec une routine quotidienne constante. Puffy nous a appris cela — à la dure.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Ne laissez pas cela arriver à votre chien</h3>
+    <p>Faites le quiz gratuit de 60 secondes et découvrez exactement où commencer.</p>
+    <a href="index.html#quiz" class="btn-white">⚡ Faire le quiz gratuit</a>
+  </div>
+
+</div>
+
+<footer>
+  <strong>DentiPaws</strong> — Soins dentaires pour chiens 🇨🇦<br>
+  <span style="opacity:.6;font-size:.85em">Consultez toujours votre vétérinaire pour les problèmes de santé.</span><br>
+  <span style="margin-top:8px;display:inline-block;font-size:.82em;opacity:.55;">
+    <a href="../privacy-policy.html">Politique de confidentialité</a>
+  </span>
+</footer>
+
+<script>
+function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
+document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
+</script>
+</body>
+</html>
