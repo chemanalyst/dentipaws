@@ -52,15 +52,9 @@
     footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px;}
     footer a:hover{color:var(--coral);}
     #chat-fab,#chat-panel,#chat-bubble,.btn-chat-top{display:none !important;}
+  .lang-switch{font-size:.82em;font-weight:800;color:var(--muted);text-decoration:none;margin-left:14px;border:1.5px solid var(--border);padding:4px 10px;border-radius:20px;}.lang-switch:hover{border-color:var(--coral);color:var(--coral);}
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7P4XWEVJMV');
-  </script>
+
 </head>
 <body>
 
@@ -71,6 +65,7 @@
     <a href="all-breeds.html">All Breeds</a>
     <a href="blog/index.html">Blog</a>
     <a href="about.html">Puffy's Story</a>
+      <a href="fr/index.html" class="lang-switch">&#127467;&#127479; FR</a>
   </nav>
   <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -81,6 +76,7 @@
   <a href="all-breeds.html">All Breeds</a>
   <a href="blog/index.html">Blog</a>
   <a href="about.html">Puffy's Story</a>
+  <a href="fr/index.html">&#127467;&#127479; Français</a>
 </nav>
 
 <div class="hero">
@@ -95,7 +91,7 @@
     <span class="aff-icon">🛒</span>
     <div class="aff-text">
       <h2>Affiliate Disclosure</h2>
-      <p>DentiPaws participates in the Amazon Associates Program. When you click a product link and make a purchase, we may earn a small commission — at no extra cost to you. This never influences our recommendations, which are based solely on veterinary research.</p>
+      <p>DentiPaws participates in the Amazon Associates Program. When you click a product link and make a purchase, we may earn a small commission — at no extra cost to you. This never influences our recommendations, which are based solely on research.</p>
     </div>
   </div>
 
@@ -107,7 +103,6 @@
   <div class="policy-section">
     <h2>What We Collect</h2>
     <p><strong>Newsletter:</strong> If you subscribe, we collect your email address and use it only to send DentiPaws updates. You can unsubscribe at any time.</p>
-    <p><strong>Quiz:</strong> Your quiz answers run entirely in your browser and are never sent to our servers.</p>
     <p><strong>Analytics:</strong> We use Google Analytics to understand how the site is used — pages visited, time on site, and traffic sources. This data is aggregated and anonymised. Google Analytics places cookies in your browser to track sessions. You can opt out via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out add-on</a>.</p>
   </div>
 
@@ -133,14 +128,24 @@
 
   <div class="policy-section">
     <h2>Contact</h2>
-    <p>Have a question about this policy? Use the form below.</p>
-    <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
-      <input id="cf-name" type="text" placeholder="Your name" style="padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93em;outline:none;background:white;">
-      <input id="cf-email" type="email" placeholder="Your email" style="padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93em;outline:none;background:white;">
-      <textarea id="cf-msg" placeholder="Your message" rows="4" style="padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93em;outline:none;resize:vertical;background:white;"></textarea>
-      <button onclick="sendForm()" style="padding:13px;background:var(--coral);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.95em;cursor:pointer;">Send Message</button>
-      <p id="cf-msg-sent" style="display:none;color:#16a34a;font-weight:700;font-size:.9em;text-align:center;">✓ Message sent — we'll be in touch shortly.</p>
-    </div>
+    <p>Have a question about this policy? Fill in the form below and we'll get back to you.</p>
+
+    <!-- Formspree contact form — sign up at formspree.io, replace YOUR_FORM_ID below -->
+    <form action="https://formspree.io/f/mkjwnpgg" method="POST"
+          style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+      <input type="text" name="name" placeholder="Your name" required
+             style="padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93em;outline:none;background:white;">
+      <input type="email" name="email" placeholder="Your email" required
+             style="padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93em;outline:none;background:white;">
+      <textarea name="message" placeholder="Your message" rows="4" required
+                style="padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93em;outline:none;resize:vertical;background:white;"></textarea>
+      <input type="hidden" name="_subject" value="DentiPaws contact form">
+      <input type="text" name="_gotcha" style="display:none;">
+      <button type="submit"
+              style="padding:13px;background:var(--coral);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.95em;cursor:pointer;">
+        Send Message
+      </button>
+    </form>
   </div>
 
   <div class="last-updated">Last updated: July 2026</div>
@@ -148,26 +153,71 @@
 </div>
 
 <footer>
-  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
-  Evidence-based advice from peer-reviewed veterinary research<br>
+  <strong>DentiPaws</strong> — Dog Dental Health 🇨🇦<br>
   <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span><br>
-  <span style="margin-top:10px;display:inline-block;font-size:.82em;opacity:.6;">
-    As an Amazon Associate we earn from qualifying purchases. &nbsp;|&nbsp;
-    <a href="privacy-policy.html">Privacy Policy &amp; Affiliate Disclosure</a>
+  <span style="margin-top:8px;display:inline-block;font-size:.82em;opacity:.55;">
+    As an Amazon Associate we earn from qualifying purchases.&nbsp;·&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
   </span>
 </footer>
 
 <script>
 function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
 document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
-function sendForm(){
-  var name=document.getElementById('cf-name').value.trim();
-  var email=document.getElementById('cf-email').value.trim();
-  var msg=document.getElementById('cf-msg').value.trim();
-  if(!name||!email||!msg){alert('Please fill in all fields.');return;}
-  // Submit via mailto fallback — replace with your form handler when ready
+// Submit via mailto fallback — replace with your form handler when ready
   window.location.href='mailto:contact@dentipaws.com?subject=Privacy+Policy+Enquiry+from+'+encodeURIComponent(name)+'&body='+encodeURIComponent(msg)+'%0A%0AFrom: '+encodeURIComponent(email);
   document.getElementById('cf-msg-sent').style.display='block';
+}
+</script>
+
+<!-- ── COOKIE CONSENT BANNER ── -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:16px 20px;background:#1A1A2E;border-top:3px solid #FF6B6B;box-shadow:0 -4px 24px rgba(0,0,0,.25);">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <p style="margin:0;font-family:'Nunito',sans-serif;font-size:.88em;color:rgba(255,255,255,.85);line-height:1.6;">
+        🍪 We use cookies to analyse site traffic via Google Analytics. No personal data is sold.
+        <a href="/privacy-policy.html" style="color:#FF6B6B;font-weight:700;text-decoration:none;white-space:nowrap;"> Privacy Policy</a>
+      </p>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="cookieChoice('declined')" style="padding:10px 20px;background:transparent;color:rgba(255,255,255,.6);border:1.5px solid rgba(255,255,255,.25);border-radius:50px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.87em;cursor:pointer;">Decline</button>
+      <button onclick="cookieChoice('accepted')" style="padding:10px 22px;background:#FF6B6B;color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.87em;cursor:pointer;">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Cookie consent ──────────────────────────────────────────────────────────
+(function() {
+  var consent = localStorage.getItem('dp_cookie_consent');
+  if (consent === 'accepted') { loadGA(); }
+  else if (!consent) {
+    document.addEventListener('DOMContentLoaded', function() {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.style.display = 'block';
+    });
+  }
+})();
+
+function cookieChoice(choice) {
+  localStorage.setItem('dp_cookie_consent', choice);
+  var b = document.getElementById('cookie-banner');
+  if (b) b.style.display = 'none';
+  if (choice === 'accepted') loadGA();
+}
+
+function loadGA() {
+  if (window.gaLoaded) return;
+  window.gaLoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-7P4XWEVJMV');
 }
 </script>
 </body>
