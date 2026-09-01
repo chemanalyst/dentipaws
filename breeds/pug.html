@@ -2,302 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pug Dental Care Guide — High Risk (27%) | DentiPaws</title>
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.dentipaws.com/breeds/pug.html">
-  <meta property="og:title" content="Pug Dental Care Guide — High Risk (27%) | DentiPaws">
-  <meta property="og:description" content="Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.">
-  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
-  <meta property="og:site_name" content="DentiPaws">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pug Dental Care Guide — High Risk (27%) | DentiPaws">
-  <meta name="twitter:description" content="Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.">
-  <meta name="twitter:image" content="https://www.dentipaws.com/og-default.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pug Dental Care Guide | DentiPaws</title>
+  <meta name="description" content="Pug dental care guide. High Risk — common issues, daily routine and Canadian-made products on Amazon.ca.">
+  <meta name="author" content="Puffy — DentiPaws">
   <link rel="canonical" href="https://www.dentipaws.com/breeds/pug.html">
-  <meta name="description" content="Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.">
-  <style>
-  :root{
-    --coral:#FF6B6B;--coral-d:#E85555;--mint:#4ECDC4;--amber:#FFB347;
-    --cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;--muted:#6B7280;
-    --border:#F0E8DF;--radius:16px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
-  .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
-  .logo{font-weight:900;font-size:1.4em;color:var(--coral);text-decoration:none;}
-  .topbar-nav a{font-size:0.9em;font-weight:600;color:var(--muted);text-decoration:none;margin-left:20px;}
-  .topbar-nav a:hover{color:var(--coral);}
-  .btn-chat-top{background:var(--coral);color:white;border:none;padding:9px 18px;border-radius:50px;font-weight:700;font-size:0.88em;cursor:pointer;}
-  .breed-hero{padding:50px 24px;background:linear-gradient(160deg,#fff 0%,var(--surface) 100%);border-bottom:2px solid var(--border);}
-  .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:30px;}
-  .breed-emo{display:none;}
-  .breadcrumb{font-size:0.85em;color:var(--muted);margin-bottom:12px;}
-  .breadcrumb a{color:var(--coral);text-decoration:none;}
-  h1{font-size:clamp(1.8em,4vw,2.8em);font-weight:900;margin-bottom:10px;}
-  .risk-pill{display:inline-block;color:white;padding:6px 18px;border-radius:50px;font-weight:700;font-size:0.9em;margin-bottom:12px;}
-  .hero-sub{color:var(--muted);font-size:1.05em;}
-  .page-body{max-width:980px;margin:0 auto;padding:40px 20px 80px;}
-  .section{background:white;border-radius:var(--radius);padding:36px;margin-bottom:24px;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
-  .section-head{display:flex;align-items:center;gap:12px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--border);}
-  .section-head h2{font-size:1.6em;font-weight:900;}
-  .s-icon{font-size:2em;}
-  .issues-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
-  .issue-card{background:var(--cream);padding:22px;border-radius:12px;border-left:4px solid var(--coral);}
-  .issue-freq{display:inline-block;font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:10px;background:#FFD5D0;color:#C0392B;margin-bottom:10px;}
-  .issue-card h3{font-size:1.1em;font-weight:800;margin-bottom:8px;}
-  .issue-card p{color:var(--muted);font-size:0.93em;line-height:1.6;}
-  .risk-big{text-align:center;padding:30px;border-radius:12px;margin-bottom:24px;border:3px solid;}
-  .risk-pct{font-size:4.5em;font-weight:900;margin-bottom:6px;}
-  .risk-sub{font-size:1.2em;font-weight:700;}
-  .risk-why{background:var(--cream);padding:20px;border-radius:12px;margin-bottom:16px;color:var(--muted);line-height:1.7;}
-  .risk-factors{list-style:none;display:flex;flex-direction:column;gap:10px;}
-  .risk-factors li{padding:12px 16px;background:var(--cream);border-radius:10px;padding-left:40px;position:relative;font-size:0.95em;}
-  .risk-factors li::before{content:"⚠️";position:absolute;left:12px;}
-  .care-blocks{display:flex;flex-direction:column;gap:16px;}
-  .care-block{background:var(--cream);border-radius:12px;padding:22px;border-left:5px solid var(--coral);}
-  .care-block h3{color:var(--coral);font-weight:800;font-size:1.1em;margin-bottom:16px;}
-  .care-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
-  .care-item:last-child{border-bottom:none;padding-bottom:0;}
-  .care-ico{font-size:1.6em;min-width:32px;text-align:center;}
-  .care-item h4{font-weight:800;margin-bottom:4px;font-size:0.97em;}
-  .care-item p{color:var(--muted);font-size:0.88em;line-height:1.5;}
-  .prod-list{display:flex;flex-direction:column;gap:14px;}
-  .prod-item{display:flex;gap:16px;align-items:center;padding:18px;border:2px solid var(--border);border-radius:12px;transition:border-color .2s;}
-  .prod-item:hover{border-color:var(--coral);}
-  .prod-ico{width:50px;height:50px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.6em;flex-shrink:0;}
-  .prod-info h4{font-weight:800;margin-bottom:4px;font-size:0.97em;}
-  .prod-info p{color:var(--muted);font-size:0.88em;}
-  .breed-note{background:linear-gradient(135deg,#FFF0EE,white);border:2px solid #FFD5D0;border-radius:12px;padding:22px;margin-top:24px;display:flex;gap:14px;align-items:flex-start;}
-  .breed-note p{color:var(--muted);font-size:0.95em;line-height:1.6;}
-  .cta-box{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;border-radius:var(--radius);padding:40px;text-align:center;margin-top:32px;}
-  .cta-box h2{font-size:1.6em;font-weight:900;margin-bottom:10px;}
-  .cta-box p{opacity:.9;margin-bottom:22px;}
-  .btn-cta{background:white;color:var(--coral);padding:14px 36px;border:none;border-radius:50px;font-weight:800;font-size:1em;cursor:pointer;text-decoration:none;display:inline-block;}
-  footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:30px 20px;font-size:0.88em;line-height:1.8;}
-  footer strong{color:white;}
-  /* Chat */
-  #chat-fab{position:fixed;bottom:24px;right:24px;z-index:500;background:var(--coral);color:white;border:none;border-radius:50px;padding:14px 22px;font-weight:800;font-size:0.95em;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(255,107,107,.4);transition:all .2s;}
-  #chat-fab:hover{transform:translateY(-2px);}
-  #chat-panel{position:fixed;bottom:22px;right:22px;width:360px;max-width:calc(100vw - 28px);max-height:560px;background:white;border-radius:20px;box-shadow:0 16px 50px rgba(0,0,0,.2);z-index:600;display:flex;flex-direction:column;overflow:hidden;transform:scale(.9) translateY(20px);opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.34,1.56,.64,1);}
-  #chat-panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
-  .cp-header{background:linear-gradient(135deg,var(--coral),#FF8E53);color:white;padding:16px 18px;display:flex;align-items:center;gap:12px;}
-  .cp-av{width:40px;height:40px;background:rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3em;}
-  .cp-title strong{font-weight:800;font-size:1em;display:block;}
-  .cp-title span{font-size:.78em;opacity:.9;}
-  .cp-close{background:rgba(255,255,255,.2);border:none;color:white;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1em;margin-left:auto;}
-  .chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
-  .msg{max-width:85%;display:flex;flex-direction:column;}
-  .msg.bot{align-self:flex-start;}
-  .msg.user{align-self:flex-end;}
-  .msg-b{padding:11px 14px;border-radius:14px;font-size:.91em;line-height:1.5;}
-  .msg.bot .msg-b{background:#F3F4F6;color:var(--ink);border-radius:4px 14px 14px 14px;}
-  .msg.user .msg-b{background:var(--coral);color:white;border-radius:14px 4px 14px 14px;}
-  .msg-t{font-size:.7em;color:#bbb;margin-top:3px;padding:0 3px;}
-  .msg.user .msg-t{text-align:right;}
-  .typing{display:flex;gap:5px;padding:12px 14px;background:#F3F4F6;border-radius:4px 14px 14px 14px;width:fit-content;}
-  .td{width:7px;height:7px;background:#9CA3AF;border-radius:50%;animation:bounce 1.2s infinite;}
-  .td:nth-child(2){animation-delay:.2s;}.td:nth-child(3){animation-delay:.4s;}
-  @keyframes bounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
-  .qr-bar{padding:0 14px 10px;display:flex;gap:7px;flex-wrap:wrap;}
-  .qr{background:white;border:2px solid var(--border);padding:6px 13px;border-radius:50px;font-size:.8em;font-weight:600;cursor:pointer;color:var(--ink);transition:all .2s;}
-  .qr:hover{border-color:var(--coral);color:var(--coral);}
-  .chat-bar{padding:12px 14px;border-top:2px solid var(--border);display:flex;gap:8px;align-items:center;}
-  #ci{flex:1;border:2px solid var(--border);border-radius:50px;padding:9px 16px;font-size:.9em;outline:none;}
-  #ci:focus{border-color:var(--coral);}
-  #cs{background:var(--coral);border:none;color:white;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:.95em;}
-  @media(max-width:600px){.hero-inner{flex-direction:column;text-align:center;}.issues-grid{grid-template-columns:1fr;}}
-
-    /* AI chat temporarily hidden */
-    #chat-fab, #chat-panel, #chat-bubble, .btn-chat-top { display:none !important; }
-    .hamburger span{display:block;width:24px;height:2.5px;background:white;border-radius:3px;transition:all .3s;}
-    
-      .btn-chat-top{display:none !important;}
-    }
-  
-    
-  
-    /* ── MOBILE NAV ── */
-    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
-    .hamburger span{display:block;width:24px;height:3px;background:white;border-radius:3px;transition:all .3s;}
-    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
-    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:15px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
-    .mobile-nav a:last-child{border-bottom:none;}
-    .mobile-nav a:active{background:rgba(255,255,255,.1);}
-    .mobile-nav.open{display:flex;}
-    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}.btn-quiz,.btn-chat-top{display:none !important;}}
-  
-    /* ── HERO BACKGROUND IMAGE ── */
-    .hero-bg-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-      opacity: 0.13;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero > *:not(.hero-bg-img),
-    .breed-hero > *:not(.hero-bg-img),
-    .art-hero > *:not(.hero-bg-img) {
-      position: relative;
-      z-index: 1;
-    }
-    .hero, .breed-hero, .art-hero {
-      position: relative;
-      overflow: hidden;
-    }
-  
-    /* ── BREED PHOTO PLACEHOLDER ── */
-    .breed-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 20px;
-      background: rgba(255,107,107,0.12);
-      border: 3px dashed rgba(255,107,107,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .breed-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 17px;
-      display: block;
-    }
-    .breed-photo-placeholder {
-      font-size: 3em;
-      opacity: 0.5;
-    }
-  
-  /* ── FAQ SECTION ── */
-  .article-body .faq-q { color: var(--ink); }
-  
-  .faq-section { margin-top: 0; }
-  .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
-  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .faq-q { font-size: 1.05em; font-weight: 800; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .faq-a { font-size: 0.93em; color: var(--muted); line-height: 1.7; margin: 0; }
-  .article-body .faq-item { padding: 18px 0; }
-  </style>
-
-  <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Pug Dental Care Guide — High Risk (27%) | DentiPaws",
-      "description": "Complete dental care guide for Pugs. Common dental issues, high risk (27% prevalence), daily care routine and vet-recommended products.",
-      "url": "https://www.dentipaws.com/breeds/pug.html",
-      "datePublished": "2025-04-01",
-      "dateModified": "2025-04-01",
-      "author": {"@type": "Organization", "name": "DentiPaws"},
-      "publisher": {
-        "@type": "Organization",
-        "name": "DentiPaws",
-        "url": "https://www.dentipaws.com"
-      }
-    }
-  </script>
-  <!-- Favicon -->
+  <link rel="alternate" hreflang="en" href="https://www.dentipaws.com/breeds/pug.html">
+  <link rel="alternate" hreflang="fr" href="https://www.dentipaws.com/fr/breeds/pug.html">
+  <meta property="og:title" content="Pug Dental Care Guide | DentiPaws">
+  <meta property="og:description" content="Pug dental care guide. High Risk — common issues, daily routine and Canadian-made products on Amazon.ca.">
+  <meta property="og:url" content="https://www.dentipaws.com/breeds/pug.html">
+  <meta property="og:image" content="https://www.dentipaws.com/og-default.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
   <meta name="theme-color" content="#FF6B6B">
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why do Pugs have such bad dental health?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pugs have severely compressed brachycephalic jaws that force teeth to rotate, overlap, and stack in ways that are structurally impossible to clean properly at home. Many Pugs cannot open their mouths wide enough for thorough brushing. Combined with deep facial skin folds near the mouth that trap bacteria, Pugs face dental challenges that no amount of home care can fully compensate for."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I brush my Pug's teeth normally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Standard toothbrush technique is very difficult for Pugs due to jaw compression. A silicone finger brush is the best option as it can navigate the compressed dental arch more effectively. Apply enzymatic toothpaste and reach as many surfaces as possible — partial cleaning is significantly better than no cleaning. Supplement with a dental gel applied directly to the gumline."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often does a Pug need professional dental cleaning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every 6 months. For Pugs, professional cleaning is arguably more important than for any other breed because the structural limitations of their jaw physically restrict what home care can achieve. Do not extend this interval — Pugs deteriorate faster than the average dog."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What dental products work for flat-faced dogs like Pugs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TropiClean Fresh Breath Gel (VOHC accepted) applied directly to gum surfaces without brushing is essential for Pugs. Oxyfresh water additive provides 24/7 bacterial control that compensates for incomplete brushing access. Purina Pro Plan Dental Health kibble (VOHC accepted) can help through the mechanical action of eating for dogs who cannot chew treats safely."
-      }
-    }
-  ]
-}
+  {"@context":"https://schema.org","@type":"Article","headline":"Pug Dental Care Guide | DentiPaws","author":{"@type":"Person","name":"Puffy","url":"https://www.dentipaws.com/about.html"},"publisher":{"@type":"Organization","name":"DentiPaws","url":"https://www.dentipaws.com"}}
   </script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P4XWEVJMV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7P4XWEVJMV');
-  </script>
+  <style>
+    :root{--coral:#FF6B6B;--coral-d:#E85555;--cream:#FFFDF8;--surface:#FFF5EE;--ink:#1A1A2E;--muted:#6B7280;--border:#F0E8DF;--radius:16px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+    .topbar{background:white;border-bottom:2px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+    .logo{font-weight:900;font-size:1.5em;color:var(--coral);text-decoration:none;}
+    .topbar-nav a{font-size:.88em;font-weight:700;color:var(--muted);text-decoration:none;margin-left:20px;transition:color .2s;}
+    .topbar-nav a:hover{color:var(--coral);}
+    .lang-sw{font-size:.82em;font-weight:800;border:1.5px solid var(--border);padding:4px 10px;border-radius:20px;text-decoration:none;color:var(--muted);margin-left:14px;}
+    .lang-sw:hover{border-color:var(--coral);color:var(--coral);}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+    .hamburger span{display:block;width:24px;height:3px;background:var(--ink);border-radius:3px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#1A1A2E;z-index:999;flex-direction:column;padding:8px 0 16px;}
+    .mobile-nav a{color:rgba(255,255,255,.9);text-decoration:none;padding:14px 24px;font-weight:700;font-size:1em;border-bottom:1px solid rgba(255,255,255,.08);display:block;}
+    .mobile-nav a:last-child{border-bottom:none;}
+    .mobile-nav.open{display:flex;}
+    @media(max-width:680px){.hamburger{display:flex;}.topbar-nav{display:none;}}
+    .breed-hero{background:linear-gradient(160deg,white 0%,var(--surface) 100%);padding:48px 20px 40px;border-bottom:2px solid var(--border);}
+    .hero-inner{max-width:980px;margin:0 auto;display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+    .breed-photo{width:120px;height:120px;border-radius:20px;background:rgba(255,107,107,.1);border:3px dashed rgba(255,107,107,.4);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+    .breed-photo img{width:100%;height:100%;object-fit:cover;border-radius:17px;}
+    .hero-text h1{font-size:clamp(1.8em,4vw,2.6em);font-weight:900;margin-bottom:6px;}
+    .hero-sub{color:var(--muted);font-size:1em;margin-bottom:14px;}
+    .risk-badge{display:inline-block;padding:6px 16px;border-radius:50px;font-weight:800;font-size:.88em;color:white;}
+    .risk-badge.high{background:#FF4757;}
+    .risk-badge.medium{background:#FFA502;}
+    .risk-badge.low{background:#2ED573;}
+    .page-body{max-width:980px;margin:0 auto;padding:36px 20px 80px;}
+    .section{background:white;border-radius:var(--radius);padding:28px 32px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+    .s-icon{font-size:1.4em;}
+    .section-head h2{font-size:1.2em;font-weight:900;}
+    .issue-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--border);}
+    .issue-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+    .issue-item h3{font-weight:800;font-size:.97em;margin-bottom:6px;}
+    .issue-item p{font-size:.9em;color:var(--muted);line-height:1.7;}
+    .puffy-take{background:linear-gradient(135deg,#FFF0EE,white);border:2.5px solid #FF6B6B;border-radius:var(--radius);padding:22px 26px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;}
+    .puffy-take-ava{flex-shrink:0;text-align:center;min-width:60px;}
+    .puffy-take-ava img{width:60px;height:60px;border-radius:50%;border:2px solid #FF6B6B;display:block;object-fit:cover;}
+    .puffy-take-ava .label{font-size:.65em;font-weight:900;color:#FF6B6B;margin-top:4px;text-transform:uppercase;line-height:1.2;}
+    .puffy-take-body .byline{font-size:.75em;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#FF6B6B;margin-bottom:6px;}
+    .puffy-take-body blockquote{font-size:.9em;color:#374151;line-height:1.75;margin:0;font-style:italic;}
+    .routine-steps{display:flex;flex-direction:column;gap:10px;}
+    .routine-step{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:var(--cream);border-radius:10px;}
+    .rs-freq{font-size:.72em;font-weight:900;text-transform:uppercase;color:white;background:var(--coral);padding:3px 8px;border-radius:8px;flex-shrink:0;margin-top:2px;white-space:nowrap;}
+    .rs-text{font-size:.9em;font-weight:700;}
+    .prod-list{display:flex;flex-direction:column;gap:14px;}
+    .prod-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--cream);border-radius:10px;}
+    .prod-ico{font-size:1.6em;flex-shrink:0;margin-top:2px;}
+    .prod-info h4{font-size:.95em;font-weight:800;margin-bottom:4px;}
+    .prod-info h4 a{color:var(--ink);text-decoration:none;}
+    .prod-info h4 a:hover{color:var(--coral);}
+    .prod-info p{font-size:.85em;color:var(--muted);line-height:1.55;margin:0;}
+    .ca-badge{background:#FF3B30;color:white;font-size:.65em;font-weight:900;padding:2px 6px;border-radius:5px;margin-left:5px;vertical-align:middle;}
+    .faq-item{padding:20px 0;border-bottom:1px solid var(--border);}
+    .faq-item:last-child{border-bottom:none;padding-bottom:0;}
+    .faq-q{font-size:1.05em;font-weight:800;color:var(--ink);margin-bottom:10px;line-height:1.4;}
+    .faq-a{font-size:.93em;color:var(--muted);line-height:1.7;margin:0;}
+    .cta-box{background:linear-gradient(135deg,var(--coral),#FF8E53);border-radius:var(--radius);padding:28px 32px;text-align:center;color:white;margin-top:20px;}
+    .cta-box h3{font-size:1.3em;font-weight:900;margin-bottom:8px;}
+    .cta-box p{opacity:.9;font-size:.95em;margin-bottom:18px;}
+    .btn-white{display:inline-block;background:white;color:var(--coral);padding:13px 32px;border-radius:50px;font-weight:900;font-size:.95em;text-decoration:none;}
+    .aff-note{font-size:.8em;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--border);}
+    .aff-note a{color:var(--coral);}
+    footer{background:#1A1A2E;color:rgba(255,255,255,.6);text-align:center;padding:32px 20px;font-size:.88em;line-height:1.9;}
+    footer strong{color:white;}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px;}
+    footer a:hover{color:var(--coral);}
+    @media(max-width:600px){.section{padding:20px 16px;}.hero-inner{flex-direction:column;text-align:center;}.breed-photo{width:90px;height:90px;}}
+</style>
 </head>
 <body>
 <header class="topbar">
   <a href="../index.html" class="logo">🦷 DentiPaws</a>
   <nav class="topbar-nav">
     <a href="../index.html">Home</a>
-    <a href="../all-breeds.html">All Breeds</a>
-        <a href="../blog/index.html">Blog</a>
-    <a href="../about.html">Puffy's Story</a>
+    <a href="../all-breeds.html">Breeds</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="../about.html">About</a>
+    <a href="../fr/fr-breeds-pug.html" class="lang-sw">🇫🇷 FR</a>
   </nav>
-  <button class="btn-chat-top" onclick="openChat()">💬 DentiPaws Assistant</button>
-  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Open menu">
+  <button class="hamburger" id="hbg" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </header>
-<nav class="mobile-nav" id="mobileNav">
+<nav class="mobile-nav" id="mnav">
   <a href="../index.html">Home</a>
   <a href="../all-breeds.html">All Breeds</a>
   <a href="../blog/index.html">Blog</a>
-  <a href="../about.html">Puffy's Story</a>
+  <a href="../about.html">About</a>
+  <a href="../fr/fr-breeds-pug.html">🇫🇷 Français</a>
 </nav>
 
 <div class="breed-hero">
-  <img class="hero-bg-img" src="/images/hero-dog.jpg" alt="" aria-hidden="true">
-  
   <div class="hero-inner">
     <div class="breed-photo">
-       
-        <img src="/images/pug.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        
-      </div>
-    <div>
-      <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Breeds</a> › Pug</div>
-      <span class="risk-pill" style="background:#FF6B6B">High Risk — 27% prevalence</span>
-      <h1>Pug Dental Care Guide</h1>
-      <p class="hero-sub">Extreme brachycephalic jaw = worst possible tooth spacing</p>
+      <img src="../images/pug.jpg" alt="Pug" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-text">
+      <h1>Pug</h1>
+      <p class="hero-sub">Severe jaw compression — home brushing alone is not enough</p>
+      <span class="risk-badge high">High Risk</span>
     </div>
   </div>
 </div>
@@ -305,219 +134,73 @@
 <div class="page-body">
 
   <div class="section">
-    <div class="section-head"><span class="s-icon">📋</span><h2>Common Dental Issues</h2></div>
-    <div class="issues-grid">
-    <div class="issue-card">
-      <span class="issue-freq">Extremely Common</span>
-      <h3>Extreme Tooth Crowding & Rotation</h3>
-      <p>The Pug's severely flattened face compresses the jaw so severely that teeth rotate sideways, stack on top of each other, and point in the wrong direction. Impossible to keep clean without professional help.</p>
-    </div>
-
-    <div class="issue-card">
-      <span class="issue-freq">Very Common</span>
-      <h3>Inability to Self-Clean</h3>
-      <p>Pugs can't chew the way normal-jawed dogs do. This eliminates the natural mechanical cleaning that chewing provides, accelerating plaque buildup rapidly.</p>
-    </div>
-
-    <div class="issue-card">
-      <span class="issue-freq">Common</span>
-      <h3>Gum Fold Infections</h3>
-      <p>The deep facial skin folds near the compressed jaw create warm, moist bacteria traps near the mouth. These can cause or worsen dental infections.</p>
-    </div>
-
-    <div class="issue-card">
-      <span class="issue-freq">Progressive</span>
-      <h3>Severe Early Tooth Loss</h3>
-      <p>The structural abnormality of the Pug jaw means teeth have poor root anchorage. Combined with rapid disease progression, early tooth loss is common even with moderate care.</p>
-    </div></div>
+    <div class="section-head"><span class="s-icon">⚠️</span><h2>Common Dental Issues</h2></div>
+    <div class="issue-item"><h3>Severe Brachycephalic Jaw Compression</h3><p>Pugs have severe brachycephalic jaw compression that forces teeth to rotate and overlap in ways that are structurally impossible to clean properly at home.</p></div>
+<div class="issue-item"><h3>Limited Mouth Opening</h3><p>Many Pugs cannot open their mouth wide enough for effective brushing. Home cleaning can only partially compensate.</p></div>
+<div class="issue-item"><h3>Deep Facial Skin Folds</h3><p>Deep skin folds near the mouth trap bacteria that contribute to oral infections and accelerate dental disease.</p></div>
+<div class="issue-item"><h3>Rapid Disease Progression</h3><p>Even with good home care, Pugs deteriorate quickly without regular professional cleaning.</p></div>
   </div>
 
-  <div class="section">
-    <div class="section-head"><span class="s-icon">⚠️</span><h2>Risk Level</h2></div>
-    <div class="risk-big" style="background:#FFF0EE;border-color:#FF6B6B">
-      <div class="risk-pct" style="color:#C0392B">27%</div>
-      <div class="risk-sub" style="color:#C0392B">HIGH RISK</div>
-    </div>
-    <div class="risk-why">Pugs have some of the most severely compromised jaw structure of any breed. Their brachycephalic skull compresses the dental arch into a fraction of the space it needs. This isn't just cosmetic — it causes rotated, overlapping, misaligned teeth that cannot be properly cleaned without professional dental procedures.</div>
-    <ul class="risk-factors"><li>Severe brachycephalic jaw compression</li>
-<li>Teeth physically unable to fit without rotation and overlap</li>
-<li>Cannot chew normally = no natural dental self-cleaning</li>
-<li>Gum fold environment near mouth promotes bacteria growth</li>
-<li>Structural issues worsen with age as bone density decreases</li></ul>
+  <div class="puffy-take">
+  <div class="puffy-take-ava">
+    <img src="../images/puffy1.jpg" alt="Puffy">
+    <div class="label">PUFFY'S<br>TAKE</div>
   </div>
+  <div class="puffy-take-body" style="flex:1;min-width:200px;">
+    <div class="byline">🐩 From Puffy — Toy Poodle, 7 years old</div>
+    <blockquote>"Pugs are one of the breeds where home brushing alone genuinely isn't enough — the jaw structure makes it physically impossible to clean every surface properly. That's not a failure on your part. It just means professional cleanings every six months are essential, not optional."</blockquote>
+  </div>
+</div>
 
   <div class="section">
-    <div class="section-head"><span class="s-icon">✅</span><h2>Care Routine</h2></div>
-    <div class="care-blocks">
-      <div class="care-block">
-        <h3>Daily Care</h3>
-        
-    <div class="care-item">
-      <span class="care-ico">🪥</span>
-      <div><h4>Daily brushing — essential but challenging</h4><p>Use a finger brush with enzymatic paste. You won't reach every surface due to the jaw shape, but partial cleaning is far better than nothing.</p></div>
-    </div>
-
-    <div class="care-item">
-      <span class="care-ico">🧴</span>
-      <div><h4>Dental gel on gums</h4><p>Apply directly to gum surfaces where the brush can't reach. Let your Pug lick it — the enzyme action still works.</p></div>
-    </div>
-
-    <div class="care-item">
-      <span class="care-ico">💧</span>
-      <div><h4>Water additive — mandatory</h4><p>Given the structural limitations of home cleaning, water additives provide important bacteria control you can't achieve with brushing alone.</p></div>
-    </div>
-      </div>
-      <div class="care-block">
-        <h3>Professional Vet Care</h3>
-        <div class="care-item">
-          <span class="care-ico">🏥</span>
-          <div><h4>Dental Examination — Every 6 months — Pugs deteriorate faster than average</h4>
-          <p>Full dental exam with X-rays. X-rays catch the 60% of disease that lives below the gumline. Ask specifically for a dental assessment — it's often skipped unless you request it.</p></div>
-        </div>
-        <div class="care-item">
-          <span class="care-ico">🦷</span>
-          <div><h4>Professional Scaling When Needed</h4>
-          <p>Full cleaning under anesthesia removes calcified tartar that home brushing can't touch. Your vet will advise frequency based on your individual dog's condition.</p></div>
-        </div>
-      </div>
+    <div class="section-head"><span class="s-icon">📋</span><h2>Recommended Care Routine</h2></div>
+    <div class="routine-steps">
+      <div class="routine-step"><span class="rs-freq">Daily</span><span class="rs-text">Apply TropiClean gel to the gum line — no brushing required</span></div>
+<div class="routine-step"><span class="rs-freq">Daily</span><span class="rs-text">Sprinkle PlaqueOff powder on food</span></div>
+<div class="routine-step"><span class="rs-freq">Daily</span><span class="rs-text">Add bluestem to the water bowl</span></div>
+<div class="routine-step"><span class="rs-freq">Daily</span><span class="rs-text">Clean the facial skin folds around the mouth</span></div>
+<div class="routine-step"><span class="rs-freq">Every 6 months</span><span class="rs-text">Professional dental cleaning — critical for Pugs</span></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-head"><span class="s-icon">🛒</span><h2>Recommended Products</h2></div>
     <div class="prod-list">
-    <div class="prod-item">
-      <div class="prod-ico">🧴</div>
-      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B00379KT66/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">TropiClean Fresh Breath Gel</a></h4><p>Apply to gum surfaces — no brushing required. Essential for a breed where full brushing is often impossible.</p></div>
+      <div class="prod-item"><div class="prod-ico">💚</div><div class="prod-info"><h4><a href="https://www.amazon.ca/s?k=tropiclean+fresh+breath+gel+dogs&tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">TropiClean Fresh Breath Gel</a></h4><p>Apply to gum line — no brushing required. Ideal for flat-face breeds.</p></div></div>
+<div class="prod-item"><div class="prod-ico">🌿</div><div class="prod-info"><h4><a href="https://www.amazon.ca/s?k=proden+plaqueoff+powder+dogs&tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">ProDen PlaqueOff Powder</a></h4><p>Natural seaweed powder — sprinkle on food once daily.</p></div></div>
+<div class="prod-item"><div class="prod-ico">💧</div><div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B01F5PCAC0/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">bluestem Water Additive</a><span class='ca-badge'>🇨🇦</span></h4><p>Canadian brand — continuous daily protection in the bowl.</p></div></div>
+<div class="prod-item"><div class="prod-ico">🦴</div><div class="prod-info"><h4><a href="https://www.amazon.ca/s?k=crumps+plaque+busters+small&tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Crumps' Plaque Busters Small</a><span class='ca-badge'>🇨🇦</span></h4><p>Canadian brand — one dental chew per day after meals.</p></div></div>
     </div>
+    <p class="aff-note">🇨🇦 = Made or based in Canada · All links go to Amazon.ca with affiliate tag. <a href="../privacy-policy.html">Affiliate disclosure</a>.</p>
+  </div>
 
-    <div class="prod-item">
-      <div class="prod-ico">💧</div>
-      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B07RK3TP8D/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Oxyfresh Water Additive</a></h4><p>24/7 bacterial control. Critical for Pugs given their structural cleaning limitations.</p></div>
-    </div>
-
-    <div class="prod-item">
-      <div class="prod-ico">🪥</div>
-      <div class="prod-info"><h4><a href="https://www.amazon.ca/dp/B00RZDXA7K/?tag=gainsites-20" target="_blank" rel="nofollow noopener sponsored">Finger Brush + Virbac C.E.T. Paste</a></h4><p>Use together — the finger brush reaches more surfaces in a flat face than any rigid toothbrush.</p></div>
-    </div>
-
-  
-    <div class="breed-note"><span style="font-size:1.8em">💡</span><p><strong>Key tip:</strong> Professional cleaning every 6 months is often more important for Pugs than any home care tool — their jaw structure physically limits what home care can achieve.</p></div>
+  <div class="section">
+    <div class="section-head"><span class="s-icon">❓</span><h2>Frequently Asked Questions</h2></div>
+    <div class="faq-item"><p class="faq-q">Why do Pugs have dental problems if they're medium-sized?</p><p class="faq-a">The severe brachycephalic jaw structure forces teeth to rotate and overlap. Many Pugs can't open their mouth wide enough for effective brushing.</p></div>
+<div class="faq-item"><p class="faq-q">Can I brush my Pug's teeth with a normal toothbrush?</p><p class="faq-a">A regular brush is generally too rigid. A silicone finger brush is a better option, complemented by a no-brush dental gel for inaccessible areas.</p></div>
+<div class="faq-item"><p class="faq-q">How often does a Pug need a professional dental cleaning?</p><p class="faq-a">Every 6 months — this is more critical for Pugs than for almost any other breed due to structural limitations.</p></div>
+<div class="faq-item"><p class="faq-q">What dental products work for flat-face dogs like Pugs?</p><p class="faq-a">TropiClean gel applied directly to the gums without brushing, ProDen PlaqueOff powder in food, and bluestem water additive provide continuous protection.</p></div>
   </div>
 
   <div class="cta-box">
-    <h2>Not sure about your Pug?</h2>
-    <p>Take our 60-second triage quiz for a personalised action plan</p>
-    <a href="../index.html" class="btn-cta">Take the Free Quiz</a>
-  </div>
-
-  <div class="section faq-section">
-    <div class="section-head"><span class="s-icon">❓</span><h2>Frequently Asked Questions</h2></div>
-    <div class="faq-item">
-      <h3 class="faq-q">Why do Pugs have such bad dental health?</h3>
-      <p class="faq-a">Pugs have severely compressed brachycephalic jaws that force teeth to rotate, overlap, and stack in ways that are structurally impossible to clean properly at home. Many Pugs cannot open their mouths wide enough for thorough brushing. Combined with deep facial skin folds near the mouth that trap bacteria, Pugs face dental challenges that no amount of home care can fully compensate for.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Can I brush my Pug's teeth normally?</h3>
-      <p class="faq-a">Standard toothbrush technique is very difficult for Pugs due to jaw compression. A silicone finger brush is the best option as it can navigate the compressed dental arch more effectively. Apply enzymatic toothpaste and reach as many surfaces as possible — partial cleaning is significantly better than no cleaning. Supplement with a dental gel applied directly to the gumline.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">How often does a Pug need professional dental cleaning?</h3>
-      <p class="faq-a">Every 6 months. For Pugs, professional cleaning is arguably more important than for any other breed because the structural limitations of their jaw physically restrict what home care can achieve. Do not extend this interval — Pugs deteriorate faster than the average dog.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What dental products work for flat-faced dogs like Pugs?</h3>
-      <p class="faq-a">TropiClean Fresh Breath Gel (VOHC accepted) applied directly to gum surfaces without brushing is essential for Pugs. Oxyfresh water additive provides 24/7 bacterial control that compensates for incomplete brushing access. Purina Pro Plan Dental Health kibble (VOHC accepted) can help through the mechanical action of eating for dogs who cannot chew treats safely.</p>
-    </div>
+    <h3>Not sure about your Pug?</h3>
+    <p>Take Puffy's free 60-second quiz and get a personalised routine instantly.</p>
+    <a href="../index.html#quiz" class="btn-white">⚡ Take the Free Quiz</a>
   </div>
 
 </div>
 
 <footer>
-  <strong>DentiPaws</strong> — Dog Dental Health Guide<br>
-  Evidence-based advice from peer-reviewed veterinary research<br>
-  <span style="opacity:.6;font-size:.85em">Always consult your vet. Not a substitute for professional care.</span><br>
-  <span style="margin-top:10px;display:inline-block;font-size:.82em;opacity:.6;">
-    As an Amazon Associate we earn from qualifying purchases. &nbsp;|&nbsp;
-    <a href="../privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Privacy Policy &amp; Affiliate Disclosure</a>
+  <strong>DentiPaws</strong> — Dog Dental Care 🇨🇦<br>
+  <span style="opacity:.6;font-size:.85em">Always consult your vet for health concerns.</span><br>
+  <span style="margin-top:8px;display:inline-block;font-size:.82em;opacity:.55;">
+    As an Amazon Associate we earn from qualifying purchases.&nbsp;·&nbsp;
+    <a href="../privacy-policy.html">Privacy Policy</a>
   </span>
 </footer>
-
-<!-- Chat -->
-<button id="chat-fab" onclick="openChat()">💬 DentiPaws Assistant</button>
-<div id="chat-panel">
-  <div class="cp-header">
-    <div class="cp-av">🐾</div>
-    <div class="cp-title"><strong>DentiPaws Assistant</strong><span>AI-powered · Not a real vet</span></div>
-    <button class="cp-close" onclick="closeChat()">✕</button>
-  </div>
-  <div class="chat-msgs" id="chatMsgs">
-    <div class="msg bot"><div class="msg-b">Hi! I'm the DentiPaws Assistant 🐾 Ask me anything about your Pug's dental health — symptoms, routines, products, or when to call a vet.</div><div class="msg-t">Just now</div></div>
-  </div>
-  <div class="qr-bar" id="qr-bar">
-    <button class="qr" onclick="sendQ('Is bad breath normal for a Pug?')">Bad breath?</button>
-    <button class="qr" onclick="sendQ('How do I brush a Pug's teeth?')">Brushing tips</button>
-    <button class="qr" onclick="sendQ('What products work best for a Pug?')">Best products</button>
-  </div>
-  <div class="chat-bar">
-    <input id="ci" type="text" placeholder="Ask about Pug dental care…">
-    <button id="cs" onclick="sendChat()">➤</button>
-  </div>
-</div>
 <script>
-const chatHistory=[];
-function openChat(){document.getElementById('chat-panel').classList.add('open');document.getElementById('chat-fab').style.display='none';setTimeout(()=>document.getElementById('ci').focus(),300);}
-function closeChat(){document.getElementById('chat-panel').classList.remove('open');document.getElementById('chat-fab').style.display='flex';}
-function sendQ(t){document.getElementById('qr-bar').style.display='none';addUserMsg(t);callAI(t);}
-function sendChat(){const i=document.getElementById('ci');const t=i.value.trim();if(!t)return;i.value='';document.getElementById('qr-bar').style.display='none';addUserMsg(t);callAI(t);}
-document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat();});
-function addUserMsg(t){chatHistory.push({role:'user',content:t});renderMsg('user',t);}
-function renderMsg(role,text){const now=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});const d=document.createElement('div');d.className='msg '+role;d.innerHTML='<div class="msg-b">'+text.replace(/\n/g,'<br>')+'</div><div class="msg-t">'+now+'</div>';const m=document.getElementById('chatMsgs');m.appendChild(d);m.scrollTop=m.scrollHeight;}
-function showTyping(){const d=document.createElement('div');d.className='msg bot';d.id='typing-msg';d.innerHTML='<div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>';const m=document.getElementById('chatMsgs');m.appendChild(d);m.scrollTop=m.scrollHeight;}
-function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.remove();}
-async function callAI(msg){
-  showTyping();
-  document.getElementById('cs').disabled=true;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-6',
-        max_tokens:1000,
-        system:`You are DentiPaws Assistant — a warm, knowledgeable AI guide for dog dental health. You speak like a caring friend who knows a lot about dog teeth.
-
-Key facts:
-- 80% of dogs over 3 have periodontal disease
-- Small/toy breeds are 5x higher risk than giant breeds
-- Only 4% of owners brush daily — but it works 3x better than dental chews alone
-- Bad breath = bacterial infection, not just normal dog breath
-- Heavy tartar + red gums = needs vet now
-- Greyhounds: 32% risk (highest), Chihuahua: 28%, Pug: 27%, Toy Poodle: 26%
-- VOHC seal = clinically proven products
-- Periodontal disease causes kidney disease (2.3x risk) and heart valve infection (6.3x)
-- DentiPaws mascot is Puffy, a male Toy Poodle who lost 7 teeth
-
-Style: warm, direct, conversational. Under 130 words unless detail is needed. If symptoms sound serious, say "see a vet soon." Use 1-2 emojis max. Never be preachy.`,
-        messages:chatHistory.slice(-10)
-      })
-    });
-    const data=await res.json();
-    removeTyping();
-    const reply=data.content?.find(b=>b.type==='text')?.text||"Sorry, I couldn't get a response — try again in a moment! 🐾";
-    chatHistory.push({role:'assistant',content:reply});
-    renderMsg('bot',reply);
-  }catch(e){
-    removeTyping();
-    renderMsg('bot',"Oops — something went wrong. Please try again! 🐾");
-  }
-  document.getElementById('cs').disabled=false;
-}
-</script>
-
-<script>
-function toggleNav(){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
-document.addEventListener('click',function(e){var h=document.getElementById('hamburger'),n=document.getElementById('mobileNav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
+function toggleNav(){var h=document.getElementById('hbg'),n=document.getElementById('mnav');if(!h||!n)return;h.classList.toggle('open');n.classList.toggle('open');}
+document.addEventListener('click',function(e){var h=document.getElementById('hbg'),n=document.getElementById('mnav');if(!h||!n)return;if(!h.contains(e.target)&&!n.contains(e.target)){h.classList.remove('open');n.classList.remove('open');}});
 </script>
 </body>
 </html>
